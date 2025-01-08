@@ -42,7 +42,7 @@ PHP 版本 5.6 及以上
 
 #### 2.1 进行相关环境及调试参数的配置
 
-   ```
+   ```php
     # 设置是否调试模式，不配置默认关闭：false
     define("DEBUG", true);
     
@@ -55,14 +55,14 @@ PHP 版本 5.6 及以上
 
 #### 2.2 完成 sdk 初始化
 
-   ```
+   ```php
     # 加载 SDK 初始化文件
     require_once  dirname(__FILE__). "/../BsPaySdk/init.php";
    ```
 
 #### 2.3 完成系统参数的导入
 
-   ```
+   ```php
     # 从文件导入商户系统参数
     BsPay::init(dirname(__FILE__). '/config/config_merch_default.json', false);
     
@@ -78,7 +78,7 @@ PHP 版本 5.6 及以上
 
 #### 3.1 导入前一步实现的 SDK 初始化文件
 
-   ```
+   ```php
    # 导入初始化内容
    require_once dirname(__FILE__) . "/loader.php";
    require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantBusiOpenRequest.php";
@@ -86,7 +86,7 @@ PHP 版本 5.6 及以上
 
 #### 3.2 根据接口文档说明，创建对应请求的参数数据体
 
-   ```
+   ```php
     # 请求必填参数
     $request = new V2MerchantBusiOpenRequest();
     // 请求流水号
@@ -105,7 +105,7 @@ PHP 版本 5.6 及以上
 
 #### 3.3 调用接口
 
-   ```
+   ```php
    # 创建请求Client对象，调用接口
     $client = new BsPayClient();
     $result = $client->postRequest($request);
@@ -113,7 +113,7 @@ PHP 版本 5.6 及以上
 
 #### 3.4 处理返回结果
 
-   ```
+   ```php
    # 成功/失败应答的处理
    if (!$result || $result->isError()){  //失败处理
        var_dump($result -> getErrorInfo());
@@ -130,7 +130,7 @@ PHP 版本 5.6 及以上
 
 #### 4.1 导入前一步实现的 SDK 初始化文件
 
-   ```
+   ```php
    # 导入初始化内容
    require_once dirname(__FILE__) . "/loader.php";
    require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantBusiOpenRequest.php";
@@ -138,7 +138,7 @@ PHP 版本 5.6 及以上
 
 #### 4.2 根据接口文档说明，创建对应请求的参数数据体
 
-   ```
+   ```php
     # 请求实例
     $request = new V2MerchantBusiOpenRequest();
     
@@ -160,7 +160,7 @@ PHP 版本 5.6 及以上
 
 #### 4.3 调用接口
 
-   ```
+   ```php
    # 创建请求Client对象，调用接口
     $client = new BsPayClient();
     $result = $client->postRequest($param);
@@ -168,7 +168,7 @@ PHP 版本 5.6 及以上
 
 #### 4.4 处理返回结果
 
-   ```
+   ```php
    # 成功/失败应答的处理
    if (!$result || $result->isError()){  //失败处理
        var_dump($result -> getErrorInfo());
@@ -184,7 +184,7 @@ PHP 版本 5.6 及以上
     （此方法为返回报文签名验签，将返回data 按字母顺序排序后组成json 字符串，依据 RSA2 算法使用公钥进行验签
 
     示例：
-```
+```php
 $data = array(
     'bank_code' =>'10000',
     'bank_message' =>'Success',
@@ -209,7 +209,7 @@ $result = BsPayTools::verifySign_sort($sign,$data,$merConfig->rsa_huifu_public_k
     （此方法为异步回调验签方法，将返回 data 字符串与商户配置的key 组合后进行md5计算，返回的md5值与回调sign的比较结果
   
     示例：
-```
+```php
 $data = array(
     'bank_code' =>'10000',
     'bank_message' =>'Success',
