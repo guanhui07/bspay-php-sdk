@@ -37,7 +37,7 @@ class BsPayRequestV2 {
             if ($is_json) {
                 $json_data = json_encode($body);
                 BsPay::writeLog("post-json请求参数:" . json_encode($body, JSON_UNESCAPED_UNICODE));
-                array_push($headers, "Content-Length:" . strlen($json_data));
+                $headers[] = "Content-Length:" . strlen($json_data);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, $json_data);
             } else {
                 BsPay::writeLog("post-form请求参数:" . json_encode($body, JSON_UNESCAPED_UNICODE));
@@ -122,8 +122,8 @@ class BsPayRequestV2 {
             $headers = array('Content-type: application/x-www-form-urlencoded');
         }
         
-        array_push($headers, 'sdk_version:' . SDK_VERSION);
-        array_push($headers, 'charset:UTF-8');
+        $headers[] = 'sdk_version:' . SDK_VERSION;
+        $headers[] = 'charset:UTF-8';
         return $headers;
     }
 

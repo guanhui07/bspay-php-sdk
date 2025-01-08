@@ -14,10 +14,10 @@ README.md   # 使用说明
 
 以 laravel >= 5.0.0 版本为例：
 
-1 .  composer 安装  huifurepo/dg-php-sdk
+1 .  composer 安装  guanhui07/dg-php-sdk
 
 ```
-composer require huifurepo/dg-php-sdk
+composer require guanhui07/dg-php-sdk
 ```
 
 2 . 文件拷贝
@@ -43,7 +43,8 @@ composer require huifurepo/dg-php-sdk
 composer dumpautoload
 ```
 
-5 .  引用方法；以 V2MerchantActivityAddRequest 为例，使用 composer 方式不需要重复使用 require_once 资源，直接使用命名空间方式引入即可；
+5 .  引用方法；以 V2MerchantActivityAddRequest 为例，使用 composer 方式不需要重复使用 require_once 资源，
+直接使用命名空间方式引入即可；
 
 ```php
     use BsPaySdk\core\BsPayClient;

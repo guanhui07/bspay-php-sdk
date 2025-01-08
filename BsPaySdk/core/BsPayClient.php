@@ -37,7 +37,7 @@ class BsPayClient extends BsPay
             if (is_object($tag)) {
                 $data['params']['needSign'] = false;    // 请求不加签名
                 $data['params']['needVerfySign'] = false;   // 返回数据不验证签名
-                return self::post($data['funcCode'], $data['params'], $tag, $this->merChantKey);
+                return $this->post($data['funcCode'], $data['params'], $tag, $this->merChantKey);
             }
 
             // 处理页面接口请求
@@ -46,7 +46,7 @@ class BsPayClient extends BsPay
                 $data['params']['needVerfySign'] = false;   // 返回数据不验证签名
             }
 
-            return self::post($data['funcCode'], $data['params'], "", $this->merChantKey);
+            return $this->post($data['funcCode'], $data['params'], "", $this->merChantKey);
         } catch (Exception $e) {
             echo $e->getMessage();
             return null;

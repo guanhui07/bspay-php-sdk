@@ -1,11 +1,11 @@
 <?php
 namespace BsPaySdk;
 
-require_once  dirname(__FILE__). "/BsPaySdk/init.php";
+require_once  __DIR__ . "/BsPaySdk/init.php";
 
-$rootDir = opendir(dirname(__FILE__));
+$rootDir = opendir(__DIR__);
 $packageName = "php_sdk_" . substr_replace(SDK_VERSION, "", 0, 4) . "_" . date("Ymd");
-$build = dirname(__FILE__) . "/" . $packageName;
+$build = __DIR__ . "/" . $packageName;
 
 if (is_dir($build)) {
     del_tree($build);

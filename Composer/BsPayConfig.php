@@ -15,3 +15,4 @@ if (!defined("LOG")) {
 
 # init方法，从 config.json 加载系统参数
 BsPay::init(__DIR__ .'/BsPayConfig.json', false);
+
