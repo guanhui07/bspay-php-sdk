@@ -81,21 +81,21 @@ class BsPay extends BsPayRequestV2
     }
 
     public static function writeLog($message, $level = "INFO"){
-        if (self::$isDebug){
-            if (!is_dir(self::$logDir)){
-                mkdir(self::$logDir, 0777, true);
-            }
-
-            $log_file = self::$logDir."/bspay_".date("Ymd").".log";
-            $server_addr = "127.0.0.1";
-            if (isset($_SERVER["REMOTE_ADDR"])){
-                $server_addr = $_SERVER["REMOTE_ADDR"];
-            }
-            $message_format = "[". $level ."] [".gmdate("Y-m-d\TH:i:s\Z")."] ". $server_addr." ". $message. "\n";
-            $fp = fopen($log_file, "a+");
-            fwrite($fp, $message_format);
-            fclose($fp);
-        }
+//        if (self::$isDebug){
+//            if (!is_dir(self::$logDir)){
+//                mkdir(self::$logDir, 0777, true);
+//            }
+//
+//            $log_file = self::$logDir."/bspay_".date("Ymd").".log";
+//            $server_addr = "127.0.0.1";
+//            if (isset($_SERVER["REMOTE_ADDR"])){
+//                $server_addr = $_SERVER["REMOTE_ADDR"];
+//            }
+//            $message_format = "[". $level ."] [".gmdate("Y-m-d\TH:i:s\Z")."] ". $server_addr." ". $message. "\n";
+//            $fp = fopen($log_file, "a+");
+//            fwrite($fp, $message_format);
+//            fclose($fp);
+//        }
     }
 
     /**
