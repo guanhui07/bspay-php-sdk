@@ -52,7 +52,7 @@ class BsPayRequestV2
         }
 
         # 拼装请求头
-        $this->httpHeaders = $this->createHeaders($headers);
+        $this->httpHeaders = $this->createHeaders($merConfig,$headers);
         BsPay::writeLog("curl请求头:" . json_encode($this->httpHeaders, JSON_UNESCAPED_UNICODE));
         curl_setopt($ch, CURLOPT_HTTPHEADER, $this->httpHeaders);
 
@@ -120,17 +120,13 @@ class BsPayRequestV2
         return $this;
     }
 
-    private function createHeaders($header_data = array())
+    private function createHeaders(MerConfig $merConfig,$header_data = array())
     {
         $headers = $header_data;
         if (empty($header_data)) {
             $headers = array('Content-type: application/x-www-form-urlencoded');
         }
-        if (defined('SDK_VERSION_BSPAY')) {
-            $headers[] = 'sdk_version:' . SDK_VERSION_BSPAY;
-        } else {
-            $headers[] = 'sdk_version:' . 'php#v2.0.14';
-        }
+        $headers[] = 'sdk_version:' . $merConfig->sdk_version;
         $headers[] = 'charset:UTF-8';
         return $headers;
     }

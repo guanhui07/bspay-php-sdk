@@ -20,4 +20,6 @@ class MerConfig
     public $sys_id = '';
 
     public $huifu_id = '';
+
+    public $sdk_version = 'php#v2.0.14';
 }
