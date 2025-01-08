@@ -22,6 +22,12 @@ class BsPay extends BsPayRequestV2
     # 商户配置信息
     private static $merConfigMap = array();
 
+    /**
+     * @param $config_info
+     * @param $is_object
+     * @param $merchantKey
+     * @param $isDebug
+     */
     public static function init($config_info, $is_object = false, $merchantKey = 'default',$isDebug=false)
     {
 
@@ -62,7 +68,8 @@ class BsPay extends BsPayRequestV2
         // 日志路径
         self::$logDir = defined("DEBUG") ? LOG : __DIR__ . "/log";
         // 是否生产模式
-        self::$isProdMode = defined("PROD_MODE") && PROD_MODE;
+//        self::$isProdMode = defined("PROD_MODE") && PROD_MODE;
+        self::$isProdMode = $isDebug;
 
         $merConfig = new MerConfig();
         $merConfig->product_id = isset($config_obj['product_id']) ? $config_obj['product_id'] : '';
