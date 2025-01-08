@@ -62,6 +62,15 @@ composer require guanhui07/dg-php-sdk
 composer dumpautoload
 ```
 
+```php
+if (!defined("DEBUG")) {
+    define("DEBUG", true);
+}
+
+# init方法，从 config.json 加载系统参数
+BsPay::init(__DIR__ .'/BsPayConfig.json', false);
+
+```
 5 .  引用方法；以 V2MerchantActivityAddRequest 为例，使用 composer 方式不需要重复使用 require_once 资源，
 直接使用命名空间方式引入即可；
 

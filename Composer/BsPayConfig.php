@@ -8,10 +8,6 @@ if (!defined("DEBUG")) {
     define("DEBUG", true);
 }
 
-# 设置调试日志路径，不配置默认为SDK同级的log目录下
-if (!defined("LOG")) {
-    define("LOG", __DIR__ ."/../storage/logs");
-}
 
 # init方法，从 config.json 加载系统参数
 BsPay::init(__DIR__ .'/BsPayConfig.json', false);
