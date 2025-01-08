@@ -33,7 +33,7 @@
 
 # 使用方法
 ```
-composer require guanhui07/dg-php-sdk
+composer require guanhui07/dg-php-sdk:dev-master
 ```
 执行命令，使配置生效
 ```
