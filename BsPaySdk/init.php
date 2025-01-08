@@ -4,7 +4,7 @@ namespace BsPaySdk;
 
 ini_set('date.timezone', 'Asia/Shanghai');
 if (!defined("SDK_BASE")) {
-    define("SDK_BASE", dirname(__FILE__));
+    define("SDK_BASE", __DIR__);
 }
 
 # sdk 版本号
