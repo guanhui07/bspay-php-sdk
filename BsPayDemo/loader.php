@@ -9,19 +9,19 @@ use BsPaySdk\core\BsPay;
 define("DEBUG", true);
 
 # 设置调试日志路径，不配置默认为SDK同级的log目录下
-define("LOG", dirname(__FILE__) . "/log");
+define("LOG", __DIR__ . "/log");
 
 # 设置生产模式，不配置默认生产模式：true
 //define("PROD_MODE", false);
 
 # SDK 初始化文件加载
-require_once dirname(__FILE__) . "/../BsPaySdk/init.php";
+require_once __DIR__ . "/../BsPaySdk/init.php";
 
 # 配置商户信息
-require_once dirname(__FILE__) . "/constants/DemoConstants.php";
+require_once __DIR__ . "/constants/DemoConstants.php";
 
 # init方法，从 config.json 加载系统参数
-BsPay::init(dirname(__FILE__) . '/config/config.json', false);
+BsPay::init(__DIR__ . '/config/config.json', false);
 
 # 如果存在多套商户配置，可重复调用 init 方法，并置对应的key来区分多套商户配置,
 # 后续使用对应的 key 来创建这个商户身份的斗拱接口调用实例对象
