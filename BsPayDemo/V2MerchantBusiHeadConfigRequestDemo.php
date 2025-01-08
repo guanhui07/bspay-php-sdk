@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantBusiHeadConfigRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantBusiHeadConfigRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantBusiHeadConfigRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantBusiHeadConfigRequest;
 // 2.组装请求参数
 $request = new V2MerchantBusiHeadConfigRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求时间
 $request->setReqDate(date("Ymd"));
 // 汇付客户Id
@@ -36,7 +37,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -45,7 +46,8 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 支付宝配置对象
@@ -99,7 +101,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getSubmerAliConfList() {
+function getSubmerAliConfList()
+{
     $dto = array();
     // 支付场景
     // $dto["pay_scene"] = "test";
@@ -110,10 +113,11 @@ function getSubmerAliConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerWxConfList() {
+function getSubmerWxConfList()
+{
     $dto = array();
     // 支付场景
     // $dto["pay_scene"] = "test";
@@ -124,10 +128,11 @@ function getSubmerWxConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerUnionConfList() {
+function getSubmerUnionConfList()
+{
     $dto = array();
     // 借记卡手续费1000以上(%)
     // $dto["debit_fee_rate_up"] = "test";
@@ -148,10 +153,11 @@ function getSubmerUnionConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerBankCardConfig() {
+function getSubmerBankCardConfig()
+{
     $dto = array();
     // 借记卡手续费（%）
     // $dto["debit_fee_rate"] = "test";
@@ -174,10 +180,11 @@ function getSubmerBankCardConfig() {
     // 银联手机闪付贷记卡手续费1000以下（%）
     // $dto["cloud_credit_fee_rate_down"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerSplitConfig() {
+function getSubmerSplitConfig()
+{
     $dto = array();
     // 手续费（%）
     // $dto["fee_rate"] = "test";
@@ -186,10 +193,11 @@ function getSubmerSplitConfig() {
     // 固定手续费(元)
     // $dto["fee_fix_amt"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerWxZlConfList() {
+function getSubmerWxZlConfList()
+{
     $dto = array();
     // 支付场景
     // $dto["pay_scene"] = "test";
@@ -200,20 +208,22 @@ function getSubmerWxZlConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerAliZlConf() {
+function getSubmerAliZlConf()
+{
     $dto = array();
     // 手续费（%）
     // $dto["fee_rate"] = "test";
     // 允许开通支付宝直连业务
     // $dto["open_flag"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerOnlineFeeConfList() {
+function getSubmerOnlineFeeConfList()
+{
     $dto = array();
     // 业务类型
     // $dto["bus_type"] = "test";
@@ -230,10 +240,11 @@ function getSubmerOnlineFeeConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerBalancePayConfig() {
+function getSubmerBalancePayConfig()
+{
     $dto = array();
     // 手续费（%）
     // $dto["fee_rate"] = "test";
@@ -242,10 +253,11 @@ function getSubmerBalancePayConfig() {
     // 允许开通余额支付业务
     // $dto["open_flag"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerCombinePayConfig() {
+function getSubmerCombinePayConfig()
+{
     $dto = array();
     // 手续费（%）
     // $dto["fee_rate"] = "test";
@@ -254,10 +266,11 @@ function getSubmerCombinePayConfig() {
     // 允许开通补贴支付业务
     // $dto["open_flag"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerBankBigAmtPayConfig() {
+function getSubmerBankBigAmtPayConfig()
+{
     $dto = array();
     // 手续费（%）
     // $dto["fee_rate"] = "test";
@@ -266,10 +279,11 @@ function getSubmerBankBigAmtPayConfig() {
     // 允许开通大额转账业务
     // $dto["open_flag"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerOutOrderFundsConfig() {
+function getSubmerOutOrderFundsConfig()
+{
     $dto = array();
     // 手续费（%）
     // $dto["fee_rate"] = "test";
@@ -280,10 +294,11 @@ function getSubmerOutOrderFundsConfig() {
     // 允许开通全域资金业务（华通）
     // $dto["open_flag"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getOutOrderFundsNewNetConfig() {
+function getOutOrderFundsNewNetConfig()
+{
     $dto = array();
     // 手续费（%）
     // $dto["fee_rate"] = "test";
@@ -296,10 +311,11 @@ function getOutOrderFundsNewNetConfig() {
     // 允许开通全域资金业务(新网)
     // $dto["open_flag"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerSettleConfigList() {
+function getSubmerSettleConfigList()
+{
     $dto = array();
     // 业务类型
     // $dto["bus_type"] = "test";
@@ -312,10 +328,11 @@ function getSubmerSettleConfigList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerCashConfigList() {
+function getSubmerCashConfigList()
+{
     $dto = array();
     // 业务类型
     // $dto["bus_type"] = "test";
@@ -328,10 +345,11 @@ function getSubmerCashConfigList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubmerOutFeeConfig() {
+function getSubmerOutFeeConfig()
+{
     $dto = array();
     // 支持结算手续费外扣
     // $dto["settle_out_fee_flag"] = "test";
@@ -340,10 +358,11 @@ function getSubmerOutFeeConfig() {
     // 支持取现手续费外扣
     // $dto["cash_out_fee_flag"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getLargeAmtPayConfigList() {
+function getLargeAmtPayConfigList()
+{
     $dto = array();
     // 手续费（%）
     // $dto["fee_rate"] = "test";
@@ -358,10 +377,11 @@ function getLargeAmtPayConfigList() {
     // 银行卡绑定支付权限
     // $dto["mer_same_card_recharge_flag"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getOutOrderFundsSuShangConfig() {
+function getOutOrderFundsSuShangConfig()
+{
     $dto = array();
     // 手续费（%）
     // $dto["fee_rate"] = "test";
@@ -374,7 +394,7 @@ function getOutOrderFundsSuShangConfig() {
     // 允许开通全域资金业务(苏商)
     // $dto["open_flag"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

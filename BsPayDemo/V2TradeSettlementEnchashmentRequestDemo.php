@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeSettlementEnchashmentRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradeSettlementEnchashmentRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradeSettlementEnchashmentRequest;
@@ -20,7 +21,7 @@ $request = new V2TradeSettlementEnchashmentRequest();
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 取现金额
 $request->setCashAmt("0.01");
 // 取现方ID号
@@ -38,7 +39,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -47,17 +48,18 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 账户号
     // $extendInfoMap["acct_id"]= "";
     // 取现渠道
-    $extendInfoMap["enchashment_channel"]= "00";
+    $extendInfoMap["enchashment_channel"] = "00";
     // 备注
     // $extendInfoMap["remark"]= "";
     // 异步通知地址
-    $extendInfoMap["notify_url"]= "http://www.gangcai.com";
+    $extendInfoMap["notify_url"] = "http://www.gangcai.com";
     return $extendInfoMap;
 }
 

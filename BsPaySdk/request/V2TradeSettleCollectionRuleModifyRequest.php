@@ -30,40 +30,49 @@ class V2TradeSettleCollectionRuleModifyRequest extends BaseRequest
      */
     private $outAcctId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_SETTLE_COLLECTION_RULE_MODIFY;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getOutHuifuId() {
+    public function getOutHuifuId()
+    {
         return $this->outHuifuId;
     }
 
-    public function setOutHuifuId($outHuifuId) {
+    public function setOutHuifuId($outHuifuId)
+    {
         $this->outHuifuId = $outHuifuId;
     }
 
-    public function getOutAcctId() {
+    public function getOutAcctId()
+    {
         return $this->outAcctId;
     }
 
-    public function setOutAcctId($outAcctId) {
+    public function setOutAcctId($outAcctId)
+    {
         $this->outAcctId = $outAcctId;
     }
 

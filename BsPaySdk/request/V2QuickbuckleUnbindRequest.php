@@ -34,48 +34,59 @@ class V2QuickbuckleUnbindRequest extends BaseRequest
      */
     private $tokenNo;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_QUICKBUCKLE_UNBIND;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOutCustId() {
+    public function getOutCustId()
+    {
         return $this->outCustId;
     }
 
-    public function setOutCustId($outCustId) {
+    public function setOutCustId($outCustId)
+    {
         $this->outCustId = $outCustId;
     }
 
-    public function getTokenNo() {
+    public function getTokenNo()
+    {
         return $this->tokenNo;
     }
 
-    public function setTokenNo($tokenNo) {
+    public function setTokenNo($tokenNo)
+    {
         $this->tokenNo = $tokenNo;
     }
 

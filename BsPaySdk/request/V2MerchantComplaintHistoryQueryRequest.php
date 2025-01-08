@@ -30,40 +30,49 @@ class V2MerchantComplaintHistoryQueryRequest extends BaseRequest
      */
     private $mchId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_COMPLAINT_HISTORY_QUERY;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getComplaintId() {
+    public function getComplaintId()
+    {
         return $this->complaintId;
     }
 
-    public function setComplaintId($complaintId) {
+    public function setComplaintId($complaintId)
+    {
         $this->complaintId = $complaintId;
     }
 
-    public function getMchId() {
+    public function getMchId()
+    {
         return $this->mchId;
     }
 
-    public function setMchId($mchId) {
+    public function setMchId($mchId)
+    {
         $this->mchId = $mchId;
     }
 

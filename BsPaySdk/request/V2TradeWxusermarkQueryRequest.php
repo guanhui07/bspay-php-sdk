@@ -30,40 +30,49 @@ class V2TradeWxusermarkQueryRequest extends BaseRequest
      */
     private $authCode;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_WXUSERMARK_QUERY;
     }
 
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getAuthCode() {
+    public function getAuthCode()
+    {
         return $this->authCode;
     }
 
-    public function setAuthCode($authCode) {
+    public function setAuthCode($authCode)
+    {
         $this->authCode = $authCode;
     }
 

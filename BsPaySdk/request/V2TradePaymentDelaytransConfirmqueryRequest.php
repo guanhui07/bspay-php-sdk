@@ -26,32 +26,39 @@ class V2TradePaymentDelaytransConfirmqueryRequest extends BaseRequest
      */
     private $huifuId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_PAYMENT_DELAYTRANS_CONFIRMQUERY;
     }
 
 
-    public function getOrgReqDate() {
+    public function getOrgReqDate()
+    {
         return $this->orgReqDate;
     }
 
-    public function setOrgReqDate($orgReqDate) {
+    public function setOrgReqDate($orgReqDate)
+    {
         $this->orgReqDate = $orgReqDate;
     }
 
-    public function getOrgReqSeqId() {
+    public function getOrgReqSeqId()
+    {
         return $this->orgReqSeqId;
     }
 
-    public function setOrgReqSeqId($orgReqSeqId) {
+    public function setOrgReqSeqId($orgReqSeqId)
+    {
         $this->orgReqSeqId = $orgReqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 

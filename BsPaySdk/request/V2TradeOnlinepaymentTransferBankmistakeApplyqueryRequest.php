@@ -30,40 +30,49 @@ class V2TradeOnlinepaymentTransferBankmistakeApplyqueryRequest extends BaseReque
      */
     private $orderType;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_TRANSFER_BANKMISTAKE_APPLYQUERY;
     }
 
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOrgReqDate() {
+    public function getOrgReqDate()
+    {
         return $this->orgReqDate;
     }
 
-    public function setOrgReqDate($orgReqDate) {
+    public function setOrgReqDate($orgReqDate)
+    {
         $this->orgReqDate = $orgReqDate;
     }
 
-    public function getOrgReqSeqId() {
+    public function getOrgReqSeqId()
+    {
         return $this->orgReqSeqId;
     }
 
-    public function setOrgReqSeqId($orgReqSeqId) {
+    public function setOrgReqSeqId($orgReqSeqId)
+    {
         $this->orgReqSeqId = $orgReqSeqId;
     }
 
-    public function getOrderType() {
+    public function getOrderType()
+    {
         return $this->orderType;
     }
 
-    public function setOrderType($orderType) {
+    public function setOrderType($orderType)
+    {
         $this->orderType = $orderType;
     }
 

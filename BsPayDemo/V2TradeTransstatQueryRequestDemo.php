@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeTransstatQueryRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradeTransstatQueryRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradeTransstatQueryRequest;
@@ -34,7 +35,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -43,11 +44,12 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 请求订单
-    $extendInfoMap["reqseqid_list"]= "[\"295700155481522176\",\"20221108104817E93140\",\"20221108104800E93135\",\"20221108112153E93750\",\"20221108133737E96102\"]";
+    $extendInfoMap["reqseqid_list"] = "[\"295700155481522176\",\"20221108104817E93140\",\"20221108104800E93135\",\"20221108112153E93750\",\"20221108133737E96102\"]";
     return $extendInfoMap;
 }
 

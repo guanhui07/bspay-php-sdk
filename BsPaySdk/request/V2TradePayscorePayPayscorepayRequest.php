@@ -46,72 +46,89 @@ class V2TradePayscorePayPayscorepayRequest extends BaseRequest
      */
     private $riskCheckData;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_PAYSCORE_PAY_PAYSCOREPAY;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getDeductReqSeqId() {
+    public function getDeductReqSeqId()
+    {
         return $this->deductReqSeqId;
     }
 
-    public function setDeductReqSeqId($deductReqSeqId) {
+    public function setDeductReqSeqId($deductReqSeqId)
+    {
         $this->deductReqSeqId = $deductReqSeqId;
     }
 
-    public function getDeductHfSeqId() {
+    public function getDeductHfSeqId()
+    {
         return $this->deductHfSeqId;
     }
 
-    public function setDeductHfSeqId($deductHfSeqId) {
+    public function setDeductHfSeqId($deductHfSeqId)
+    {
         $this->deductHfSeqId = $deductHfSeqId;
     }
 
-    public function getOutTradeNo() {
+    public function getOutTradeNo()
+    {
         return $this->outTradeNo;
     }
 
-    public function setOutTradeNo($outTradeNo) {
+    public function setOutTradeNo($outTradeNo)
+    {
         $this->outTradeNo = $outTradeNo;
     }
 
-    public function getGoodsDesc() {
+    public function getGoodsDesc()
+    {
         return $this->goodsDesc;
     }
 
-    public function setGoodsDesc($goodsDesc) {
+    public function setGoodsDesc($goodsDesc)
+    {
         $this->goodsDesc = $goodsDesc;
     }
 
-    public function getRiskCheckData() {
+    public function getRiskCheckData()
+    {
         return $this->riskCheckData;
     }
 
-    public function setRiskCheckData($riskCheckData) {
+    public function setRiskCheckData($riskCheckData)
+    {
         $this->riskCheckData = $riskCheckData;
     }
 

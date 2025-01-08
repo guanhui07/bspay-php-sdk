@@ -7,7 +7,8 @@ namespace BsPaySdk\request;
  * @Description: 支付基础参数
  *
  */
-class BaseRequest {
+class BaseRequest
+{
 
     /**
      * 其他拓展信息
@@ -18,7 +19,8 @@ class BaseRequest {
      * 获取拓展参数
      *
      */
-    public function getExtendInfos() {
+    public function getExtendInfos()
+    {
         return $this->extendInfos;
     }
 
@@ -26,7 +28,8 @@ class BaseRequest {
      * 新增拓展参数
      *
      */
-    public function setExtendInfo($extendInfos) {
+    public function setExtendInfo($extendInfos)
+    {
         $this->extendInfos = $extendInfos;
     }
 }

@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradePayafteruseCreditbizorderCreateRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradePayafteruseCreditbizorderCreateRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradePayafteruseCreditbizorderCreateRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2TradePayafteruseCreditbizorderCreateRequest;
 // 2.组装请求参数
 $request = new V2TradePayafteruseCreditbizorderCreateRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 商户号
@@ -48,7 +49,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -57,21 +58,23 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 异步通知地址
-    $extendInfoMap["notify_url"]= "https://mock.uutool.cn/4pga0jqv8vv0";
+    $extendInfoMap["notify_url"] = "https://mock.uutool.cn/4pga0jqv8vv0";
     // 支付宝交易号
-    $extendInfoMap["trade_no"]= "2024092722001408251414114417";
+    $extendInfoMap["trade_no"] = "2024092722001408251414114417";
     // 代扣协议签约场景
-    $extendInfoMap["deduct_sign_scene"]= "INDUSTRY|XIANXIANG_BIKE_CHARGE";
+    $extendInfoMap["deduct_sign_scene"] = "INDUSTRY|XIANXIANG_BIKE_CHARGE";
     // 芝麻信用外部类⽬
-    $extendInfoMap["zm_category_id"]= "credit_pay_for_battery_charging";
+    $extendInfoMap["zm_category_id"] = "credit_pay_for_battery_charging";
     return $extendInfoMap;
 }
 
-function getItemInstallmentInfo() {
+function getItemInstallmentInfo()
+{
     $dto = array();
     // 总分期数
     $dto["period_num"] = 1;
@@ -83,7 +86,8 @@ function getItemInstallmentInfo() {
     return $dto;
 }
 
-function getItemInfos() {
+function getItemInfos()
+{
     $dto = array();
     // 商户商品ID
     $dto["out_item_id"] = "1234567";
@@ -100,7 +104,7 @@ function getItemInfos() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

@@ -38,56 +38,69 @@ class V2InvoiceClerkRegRequest extends BaseRequest
      */
     private $loginPassword;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_INVOICE_CLERK_REG;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getClerkIdentity() {
+    public function getClerkIdentity()
+    {
         return $this->clerkIdentity;
     }
 
-    public function setClerkIdentity($clerkIdentity) {
+    public function setClerkIdentity($clerkIdentity)
+    {
         $this->clerkIdentity = $clerkIdentity;
     }
 
-    public function getLoginAccount() {
+    public function getLoginAccount()
+    {
         return $this->loginAccount;
     }
 
-    public function setLoginAccount($loginAccount) {
+    public function setLoginAccount($loginAccount)
+    {
         $this->loginAccount = $loginAccount;
     }
 
-    public function getLoginPassword() {
+    public function getLoginPassword()
+    {
         return $this->loginPassword;
     }
 
-    public function setLoginPassword($loginPassword) {
+    public function setLoginPassword($loginPassword)
+    {
         $this->loginPassword = $loginPassword;
     }
 

@@ -38,56 +38,69 @@ class V2PcreditOrderQueryRequest extends BaseRequest
      */
     private $endTime;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_PCREDIT_ORDER_QUERY;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getSolutionId() {
+    public function getSolutionId()
+    {
         return $this->solutionId;
     }
 
-    public function setSolutionId($solutionId) {
+    public function setSolutionId($solutionId)
+    {
         $this->solutionId = $solutionId;
     }
 
-    public function getStartTime() {
+    public function getStartTime()
+    {
         return $this->startTime;
     }
 
-    public function setStartTime($startTime) {
+    public function setStartTime($startTime)
+    {
         $this->startTime = $startTime;
     }
 
-    public function getEndTime() {
+    public function getEndTime()
+    {
         return $this->endTime;
     }
 
-    public function setEndTime($endTime) {
+    public function setEndTime($endTime)
+    {
         $this->endTime = $endTime;
     }
 

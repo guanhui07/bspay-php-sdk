@@ -1,4 +1,5 @@
 <?php
+
 namespace BsPaySdk\core;
 
 use BsPaySdk\config\MerConfig;
@@ -21,9 +22,10 @@ class BsPay extends BsPayRequestV2
     # 商户配置信息
     private static $merConfigMap = array();
 
-    public static function init($config_info, $is_object=false, $merchantKey = 'default'){
+    public static function init($config_info, $is_object = false, $merchantKey = 'default')
+    {
 
-        if (empty($config_info)){
+        if (empty($config_info)) {
             try {
                 throw new Exception('缺少SDK配置信息');
             } catch (Exception $e) {
@@ -31,10 +33,10 @@ class BsPay extends BsPayRequestV2
             }
         }
 
-        if ($is_object){
+        if ($is_object) {
             $config_obj = $config_info;
-        }else{
-            if (!file_exists($config_info)){
+        } else {
+            if (!file_exists($config_info)) {
                 try {
                     throw new Exception('SDK配置文件不存在');
                 } catch (Exception $e) {
@@ -42,11 +44,10 @@ class BsPay extends BsPayRequestV2
                 }
             }
             $cfg_file_str = file_get_contents($config_info);
-            $config_obj = json_decode($cfg_file_str,  true);
+            $config_obj = json_decode($cfg_file_str, true);
 
             // 处理 json 文件格式异常
-            if(!$config_obj)
-            {
+            if (!$config_obj) {
                 try {
                     throw new Exception('SDK配置文件格式异常');
                 } catch (Exception $e) {
@@ -58,7 +59,7 @@ class BsPay extends BsPayRequestV2
         // 是否调试模式
         self::$isDebug = defined("DEBUG") && DEBUG;
         // 日志路径
-        self::$logDir = defined("DEBUG") ? LOG: dirname(__FILE__)."/log";
+        self::$logDir = defined("DEBUG") ? LOG : dirname(__FILE__) . "/log";
         // 是否生产模式
         self::$isProdMode = defined("PROD_MODE") && PROD_MODE;
 
@@ -67,12 +68,13 @@ class BsPay extends BsPayRequestV2
         $merConfig->sys_id = isset($config_obj['sys_id']) ? $config_obj['sys_id'] : '';
         $merConfig->rsa_merch_private_key = isset($config_obj['rsa_merch_private_key']) ? $config_obj['rsa_merch_private_key'] : '';
         $merConfig->rsa_huifu_public_key = isset($config_obj['rsa_huifu_public_key']) ? $config_obj['rsa_huifu_public_key'] : '';
-        
+
         self::addMerConfig($merchantKey, $merConfig);
     }
 
-    protected function filterEmptyData($req_params){
-        return array_filter($req_params, function($v){
+    protected function filterEmptyData($req_params)
+    {
+        return array_filter($req_params, function ($v) {
             if (!empty($v) || $v == '0') {
                 return true;
             }
@@ -80,7 +82,8 @@ class BsPay extends BsPayRequestV2
         });
     }
 
-    public static function writeLog($message, $level = "INFO"){
+    public static function writeLog($message, $level = "INFO")
+    {
 //        if (self::$isDebug){
 //            if (!is_dir(self::$logDir)){
 //                mkdir(self::$logDir, 0777, true);
@@ -103,7 +106,8 @@ class BsPay extends BsPayRequestV2
      * @param $funcCode
      * @return string $req_url
      */
-    public function getRequestUrl($funcCode) {
+    public function getRequestUrl($funcCode)
+    {
         // 判断请求环境确定接口域名地址
         $req_url = self::$isProdMode ? self::BASE_API_URL_V2 : self::BASE_API_TEST_URL_V2;
 
@@ -111,7 +115,7 @@ class BsPay extends BsPayRequestV2
         if (!BsPayTools::endWith($req_url, "/")) {
             $req_url = $req_url . "/";
         }
-        
+
         # 根据功能编码获取实际接口请求地址
         $actualUrl = str_replace(".", "/", $funcCode);
         # 拼接得到完整请求地址
@@ -121,31 +125,33 @@ class BsPay extends BsPayRequestV2
     /**
      * @throws Exception
      */
-    public function post($funcCode, $params, $file, $merchantKey){
+    public function post($funcCode, $params, $file, $merchantKey)
+    {
         # 获取商户配置信息
         $merchantConfig = self::getConfig($merchantKey);
-		if(empty($merchantConfig)){
-			throw new Exception('系统公私密钥配置不存在');
-		}
+        if (empty($merchantConfig)) {
+            throw new Exception('系统公私密钥配置不存在');
+        }
         # 根据功能编码获取实际请求路径
         $req_url = $this->getRequestUrl($funcCode);
         $request_params = $this->filterEmptyData($params);
 
         # 获取请求头
-		if (empty($file)){
-			$header = array('Content-Type:application/json');
+        if (empty($file)) {
+            $header = array('Content-Type:application/json');
             $is_json = true;
-		}else{
-			$header = array('Content-Type:multipart/form-data');
-			$is_json = false;
-		}
+        } else {
+            $header = array('Content-Type:multipart/form-data');
+            $is_json = false;
+        }
 
-		// 实例化 http 请求执行
-		$bs_request = new BsPayRequestV2();
+        // 实例化 http 请求执行
+        $bs_request = new BsPayRequestV2();
         return $bs_request->curlRequest($merchantConfig, $req_url, $request_params, $file, $header, $is_json);
     }
-    
-    public function get($funcCode, $params, $merchantKey){
+
+    public function get($funcCode, $params, $merchantKey)
+    {
         ksort($params);
         # 获取商户配置信息
         $merchantConfig = $this->getConfig($merchantKey);
@@ -153,17 +159,18 @@ class BsPay extends BsPayRequestV2
         $req_url = $this->getRequestUrl($funcCode);
         $request_params = $this->filterEmptyData($params);
         # 获取请求头
-        $header =  array('Content-Type:text/html');
+        $header = array('Content-Type:text/html');
 
         // 实例化 http 请求执行
         $bs_request = new BsPayRequestV2();
         return $bs_request->curlRequest($merchantConfig, $req_url . "?" . http_build_query($request_params), "", $header, false);
     }
-   
-    public static function addMerConfig($merchantKey, MerConfig $merConfig) {
+
+    public static function addMerConfig($merchantKey, MerConfig $merConfig)
+    {
         self::$merConfigMap[$merchantKey] = $merConfig;
     }
-    
+
     public static function getConfig($merChantKey = "default")
     {
         return isset(self::$merConfigMap[$merChantKey]) ? self::$merConfigMap[$merChantKey] : array();

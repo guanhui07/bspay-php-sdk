@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradePaymentScanpayRefundRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradePaymentScanpayRefundRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradePaymentScanpayRefundRequest;
@@ -20,7 +21,7 @@ $request = new V2TradePaymentScanpayRefundRequest();
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 商户号
 $request->setHuifuId("6666000108854952");
 // 申请退款金额
@@ -36,7 +37,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -45,11 +46,12 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 原交易全局流水号
-    $extendInfoMap["org_hf_seq_id"]= "002900TOP3B221107142320P992ac139c0c00000";
+    $extendInfoMap["org_hf_seq_id"] = "002900TOP3B221107142320P992ac139c0c00000";
     // 原交易微信支付宝的商户单号
     // $extendInfoMap["org_party_order_id"]= "";
     // 原交易请求流水号
@@ -81,7 +83,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getAcctInfosRucan() {
+function getAcctInfosRucan()
+{
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "test";
@@ -95,15 +98,17 @@ function getAcctInfosRucan() {
     return $dtoList;
 }
 
-function getAcctSplitBunchRucan() {
+function getAcctSplitBunchRucan()
+{
     $dto = array();
     // 分账信息列表
     // $dto["acct_infos"] = getAcctInfosRucan();
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getGoodsDetail() {
+function getGoodsDetail()
+{
     $dto = array();
     // 商品编码
     // $dto["goods_id"] = "test";
@@ -119,7 +124,8 @@ function getGoodsDetail() {
     return $dtoList;
 }
 
-function getDetail() {
+function getDetail()
+{
     $dto = array();
     // 商品详情列表
     // $dto["goods_detail"] = getGoodsDetail();
@@ -127,7 +133,8 @@ function getDetail() {
     return $dto;
 }
 
-function getWxData() {
+function getWxData()
+{
     $dto = array();
     // 退款商品详情
     // $dto["detail"] = getDetail();
@@ -135,15 +142,17 @@ function getWxData() {
     return $dto;
 }
 
-function getDigitalCurrencyData() {
+function getDigitalCurrencyData()
+{
     $dto = array();
     // 退款原因
     // $dto["refund_desc"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCombinedpayData() {
+function getCombinedpayData()
+{
     $dto = array();
     // 补贴方汇付编号
     // $dto["huifu_id"] = "test";
@@ -156,10 +165,11 @@ function getCombinedpayData() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getRiskCheckData()
+{
     $dto = array();
     // ip地址
     // $dto["ip_addr"] = "";
@@ -170,10 +180,11 @@ function getRiskCheckData() {
     // 经度
     // $dto["longitude"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceData() {
+function getTerminalDeviceData()
+{
     $dto = array();
     // 设备类型
     // $dto["device_type"] = "";
@@ -192,15 +203,16 @@ function getTerminalDeviceData() {
     // 交易设备GPS
     // $dto["device_gps"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getUnionpayData() {
+function getUnionpayData()
+{
     $dto = array();
     // 收款方附加数据
     // $dto["addn_data"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

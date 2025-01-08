@@ -38,56 +38,69 @@ class V2InvoicePermissionQueryRequest extends BaseRequest
      */
     private $pageSize;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_INVOICE_PERMISSION_QUERY;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getIncludeSubFlag() {
+    public function getIncludeSubFlag()
+    {
         return $this->includeSubFlag;
     }
 
-    public function setIncludeSubFlag($includeSubFlag) {
+    public function setIncludeSubFlag($includeSubFlag)
+    {
         $this->includeSubFlag = $includeSubFlag;
     }
 
-    public function getPageNum() {
+    public function getPageNum()
+    {
         return $this->pageNum;
     }
 
-    public function setPageNum($pageNum) {
+    public function setPageNum($pageNum)
+    {
         $this->pageNum = $pageNum;
     }
 
-    public function getPageSize() {
+    public function getPageSize()
+    {
         return $this->pageSize;
     }
 
-    public function setPageSize($pageSize) {
+    public function setPageSize($pageSize)
+    {
         $this->pageSize = $pageSize;
     }
 

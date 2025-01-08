@@ -30,40 +30,49 @@ class V2MerchantBusiEfpdetailRequest extends BaseRequest
      */
     private $outFundsGateId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_BUSI_EFPDETAIL;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOutFundsGateId() {
+    public function getOutFundsGateId()
+    {
         return $this->outFundsGateId;
     }
 
-    public function setOutFundsGateId($outFundsGateId) {
+    public function setOutFundsGateId($outFundsGateId)
+    {
         $this->outFundsGateId = $outFundsGateId;
     }
 

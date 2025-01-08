@@ -26,32 +26,39 @@ class V2TradeAcctpaymentAcctlogQueryRequest extends BaseRequest
      */
     private $acctDate;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_ACCTPAYMENT_ACCTLOG_QUERY;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getAcctDate() {
+    public function getAcctDate()
+    {
         return $this->acctDate;
     }
 
-    public function setAcctDate($acctDate) {
+    public function setAcctDate($acctDate)
+    {
         $this->acctDate = $acctDate;
     }
 

@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantBasicdataIndvRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantBasicdataIndvRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantBasicdataIndvRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantBasicdataIndvRequest;
 // 2.组装请求参数
 $request = new V2MerchantBasicdataIndvRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 上级主体ID
@@ -50,7 +51,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -59,23 +60,24 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 商户简称
-    $extendInfoMap["short_name"]= "张天德";
+    $extendInfoMap["short_name"] = "张天德";
     // 商户通知标识
-    $extendInfoMap["sms_send_flag"]= "1";
+    $extendInfoMap["sms_send_flag"] = "1";
     // 管理员账号
-    $extendInfoMap["login_name"]= "tinysword0116";
+    $extendInfoMap["login_name"] = "tinysword0116";
     // 取现信息配置
-    $extendInfoMap["cash_config"]= getCashConfig();
+    $extendInfoMap["cash_config"] = getCashConfig();
     // 结算规则配置
-    $extendInfoMap["settle_config"]= getSettleConfig();
+    $extendInfoMap["settle_config"] = getSettleConfig();
     // 异步通知地址
-    $extendInfoMap["async_return_url"]= "http://192.168.85.157:30031/sspm/testVirgo";
+    $extendInfoMap["async_return_url"] = "http://192.168.85.157:30031/sspm/testVirgo";
     // D1结算协议图片文件
-    $extendInfoMap["settle_agree_pic"]= "119bc780-b1c5-3a9c-8b18-f911de6ff28c";
+    $extendInfoMap["settle_agree_pic"] = "119bc780-b1c5-3a9c-8b18-f911de6ff28c";
     // 商户主页URL
     // $extendInfoMap["mer_url"]= "";
     // 商户ICP备案编号
@@ -93,7 +95,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getCardInfo() {
+function getCardInfo()
+{
     $dto = array();
     // 卡户名
     $dto["card_name"] = "张天德";
@@ -118,10 +121,11 @@ function getCardInfo() {
     // 银行编号
     $dto["bank_code"] = "01030000";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCashConfig() {
+function getCashConfig()
+{
     $dto = array();
     // 取现类型
     $dto["cash_type"] = "D1";
@@ -138,10 +142,11 @@ function getCashConfig() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSettleConfig() {
+function getSettleConfig()
+{
     $dto = array();
     // 结算周期
     $dto["settle_cycle"] = "D1";
@@ -170,7 +175,7 @@ function getSettleConfig() {
     // 节假日结算手续费固定金额（元）
     // $dto["constant_amt"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

@@ -26,32 +26,39 @@ class V2TradeBankinstallmentinfoQueryRequest extends BaseRequest
      */
     private $productId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_BANKINSTALLMENTINFO_QUERY;
     }
 
 
-    public function getPageNum() {
+    public function getPageNum()
+    {
         return $this->pageNum;
     }
 
-    public function setPageNum($pageNum) {
+    public function setPageNum($pageNum)
+    {
         $this->pageNum = $pageNum;
     }
 
-    public function getPageSize() {
+    public function getPageSize()
+    {
         return $this->pageSize;
     }
 
-    public function setPageSize($pageSize) {
+    public function setPageSize($pageSize)
+    {
         $this->pageSize = $pageSize;
     }
 
-    public function getProductId() {
+    public function getProductId()
+    {
         return $this->productId;
     }
 
-    public function setProductId($productId) {
+    public function setProductId($productId)
+    {
         $this->productId = $productId;
     }
 

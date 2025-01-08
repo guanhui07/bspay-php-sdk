@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradePayafteruseInstallmentPayRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradePayafteruseInstallmentPayRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradePayafteruseInstallmentPayRequest;
@@ -20,7 +21,7 @@ $request = new V2TradePayafteruseInstallmentPayRequest();
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 客户号
 $request->setHuifuId("6666000108281250");
 // 交易金额
@@ -42,7 +43,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -51,25 +52,27 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 入账账户号
-    $extendInfoMap["acct_id"]= "C02682415";
+    $extendInfoMap["acct_id"] = "C02682415";
     // 交易备注
-    $extendInfoMap["remark"]= "";
+    $extendInfoMap["remark"] = "";
     // 是否延迟交易
     // $extendInfoMap["delay_acct_flag"]= "";
     // 分账串
     // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunch();
     // 设备信息
-    $extendInfoMap["terminal_device_info"]= getTerminalDeviceInfo();
+    $extendInfoMap["terminal_device_info"] = getTerminalDeviceInfo();
     // 异步通知地址
-    $extendInfoMap["notify_url"]= "http://www.baidu.com";
+    $extendInfoMap["notify_url"] = "http://www.baidu.com";
     return $extendInfoMap;
 }
 
-function getAcctInfos() {
+function getAcctInfos()
+{
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "test";
@@ -85,7 +88,8 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function getAcctSplitBunch()
+{
     $dto = array();
     // 百分比分账标志
     // $dto["percentage_flag"] = "";
@@ -94,10 +98,11 @@ function getAcctSplitBunch() {
     // 分账明细
     // $dto["acct_infos"] = getAcctInfos();
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getRiskCheckData()
+{
     $dto = array();
     // IP地址
     // $dto["ip_addr"] = "test";
@@ -106,10 +111,11 @@ function getRiskCheckData() {
     // 纬度
     $dto["latitude"] = "2";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceInfo() {
+function getTerminalDeviceInfo()
+{
     $dto = array();
     // 商户设备类型
     $dto["mer_device_type"] = "01";
@@ -136,10 +142,11 @@ function getTerminalDeviceInfo() {
     // 交易设备GPS
     $dto["device_gps"] = "20.346790";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getGoodsDetail() {
+function getGoodsDetail()
+{
     $dto = array();
     // 商品的编号
     // $dto["goods_id"] = "test";
@@ -161,7 +168,8 @@ function getGoodsDetail() {
     return $dtoList;
 }
 
-function getExtendParams() {
+function getExtendParams()
+{
     $dto = array();
     // 业务主单号
     $dto["trade_component_order_id"] = "2024101001502300000002570023887054";
@@ -173,7 +181,8 @@ function getExtendParams() {
     return $dto;
 }
 
-function getAlipayData() {
+function getAlipayData()
+{
     $dto = array();
     // 业务扩展参数
     $dto["extend_params"] = getExtendParams();
@@ -186,7 +195,7 @@ function getAlipayData() {
     // 订单包含的商品列表信息
     // $dto["goods_detail"] = getGoodsDetail();
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

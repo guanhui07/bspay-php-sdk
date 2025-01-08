@@ -42,64 +42,79 @@ class V2MerchantDirectAlipayAppauthtokenExchangeRequest extends BaseRequest
      */
     private $appAuthToken;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_DIRECT_ALIPAY_APPAUTHTOKEN_EXCHANGE;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getAppId() {
+    public function getAppId()
+    {
         return $this->appId;
     }
 
-    public function setAppId($appId) {
+    public function setAppId($appId)
+    {
         $this->appId = $appId;
     }
 
-    public function getOperType() {
+    public function getOperType()
+    {
         return $this->operType;
     }
 
-    public function setOperType($operType) {
+    public function setOperType($operType)
+    {
         $this->operType = $operType;
     }
 
-    public function getAppAuthCode() {
+    public function getAppAuthCode()
+    {
         return $this->appAuthCode;
     }
 
-    public function setAppAuthCode($appAuthCode) {
+    public function setAppAuthCode($appAuthCode)
+    {
         $this->appAuthCode = $appAuthCode;
     }
 
-    public function getAppAuthToken() {
+    public function getAppAuthToken()
+    {
         return $this->appAuthToken;
     }
 
-    public function setAppAuthToken($appAuthToken) {
+    public function setAppAuthToken($appAuthToken)
+    {
         $this->appAuthToken = $appAuthToken;
     }
 

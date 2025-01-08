@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradePayscoreServiceorderCompleteRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradePayscoreServiceorderCompleteRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradePayscoreServiceorderCompleteRequest;
@@ -34,7 +35,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -43,7 +44,8 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 创建服务订单返回的汇付全局流水号
@@ -61,7 +63,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getPostPayments() {
+function getPostPayments()
+{
     $dto = array();
     // 付费名称
     // $dto["name"] = "";
@@ -74,10 +77,11 @@ function getPostPayments() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getPostDiscounts() {
+function getPostDiscounts()
+{
     $dto = array();
     // 优惠名称
     // $dto["name"] = "";
@@ -90,10 +94,11 @@ function getPostDiscounts() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getTimeRange() {
+function getTimeRange()
+{
     $dto = array();
     // 服务开始时间
     // $dto["start_time"] = "";
@@ -104,17 +109,18 @@ function getTimeRange() {
     // 服务结束时间备注
     // $dto["end_time_remark"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getLocation() {
+function getLocation()
+{
     $dto = array();
     // 服务开始地点
     // $dto["start_location"] = "";
     // 服务结束地点
     // $dto["end_location"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

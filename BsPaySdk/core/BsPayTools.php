@@ -1,4 +1,5 @@
 <?php
+
 namespace BsPaySdk\core;
 
 class BsPayTools
@@ -7,15 +8,16 @@ class BsPayTools
      * 私钥加签（对数据源排序），可用于 V2 版本接口数据加签
      *
      * @param @param array $data 原数据( 排序后的json字符串; 数组参数排序后转json字符串(数据的中文和斜杠均不转码):
-                            ksort($post_data); json_encode($post_data, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE); )
+     * ksort($post_data); json_encode($post_data, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE); )
      * @param string $rsaPrivateKey 私钥
      * @param int $alg 默认 OPENSSL_ALGO_SHA256
      *
      * @return string 签名串
      */
-    public static function sha_with_rsa_sign($data, $rsaPrivateKey, $alg=OPENSSL_ALGO_SHA256){
-        $key = "-----BEGIN PRIVATE KEY-----\n".wordwrap($rsaPrivateKey, 64, "\n", true)."\n-----END PRIVATE KEY-----";
-        $signature= '';
+    public static function sha_with_rsa_sign($data, $rsaPrivateKey, $alg = OPENSSL_ALGO_SHA256)
+    {
+        $key = "-----BEGIN PRIVATE KEY-----\n" . wordwrap($rsaPrivateKey, 64, "\n", true) . "\n-----END PRIVATE KEY-----";
+        $signature = '';
         try {
             openssl_sign($data, $signature, $key, $alg);
         } catch (\Exception $e) {
@@ -24,9 +26,10 @@ class BsPayTools
         return base64_encode($signature);
     }
 
-    public static function encrypt_with_rsa_pubkey($data, $rsaPublicKey, $padding=OPENSSL_PKCS1_PADDING){
-        $key = "-----BEGIN PUBLIC KEY-----\n".wordwrap($rsaPublicKey, 64, "\n", true)."\n-----END PUBLIC KEY-----";
-        $encryptResult= '';
+    public static function encrypt_with_rsa_pubkey($data, $rsaPublicKey, $padding = OPENSSL_PKCS1_PADDING)
+    {
+        $key = "-----BEGIN PUBLIC KEY-----\n" . wordwrap($rsaPublicKey, 64, "\n", true) . "\n-----END PUBLIC KEY-----";
+        $encryptResult = '';
         try {
             openssl_public_encrypt($data, $encryptResult, $key, $padding);
         } catch (\Exception $e) {
@@ -45,8 +48,9 @@ class BsPayTools
      *
      * @return false|int 验证结果：成功/失败
      */
-    public static function verifySign($signature, $data, $rsaPublicKey, $alg=OPENSSL_ALGO_SHA256){
-        $key = "-----BEGIN PUBLIC KEY-----\n".wordwrap($rsaPublicKey, 64, "\n", true)."\n-----END PUBLIC KEY-----";
+    public static function verifySign($signature, $data, $rsaPublicKey, $alg = OPENSSL_ALGO_SHA256)
+    {
+        $key = "-----BEGIN PUBLIC KEY-----\n" . wordwrap($rsaPublicKey, 64, "\n", true) . "\n-----END PUBLIC KEY-----";
         return openssl_verify($data, base64_decode($signature), $key, $alg);
     }
 
@@ -60,22 +64,25 @@ class BsPayTools
      *
      * @return false|int 验证结果：成功/失败
      */
-    public static function verifySign_sort($signature, $data, $rsaPublicKey, $alg=OPENSSL_ALGO_SHA256){
-        $key = "-----BEGIN PUBLIC KEY-----\n".wordwrap($rsaPublicKey, 64, "\n", true)."\n-----END PUBLIC KEY-----";
+    public static function verifySign_sort($signature, $data, $rsaPublicKey, $alg = OPENSSL_ALGO_SHA256)
+    {
+        $key = "-----BEGIN PUBLIC KEY-----\n" . wordwrap($rsaPublicKey, 64, "\n", true) . "\n-----END PUBLIC KEY-----";
         ksort($data);
-        $data = json_encode($data, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE);
-        $data = str_replace("\n","\\n",$data);
-        $data = str_replace('"enter_fee":0,','"enter_fee":0.00,',$data); // 单独替换指定类型格式不正确的字段 如 enter_fee
+        $data = json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        $data = str_replace("\n", "\\n", $data);
+        $data = str_replace('"enter_fee":0,', '"enter_fee":0.00,', $data); // 单独替换指定类型格式不正确的字段 如 enter_fee
         return openssl_verify($data, base64_decode($signature), $key, $alg);
-     }
+    }
 
-    public static function checkEmpty($value) {
+    public static function checkEmpty($value)
+    {
         return !isset($value) || trim($value) === "";
     }
 
-    public static function endWith($str, $suffix) {
+    public static function endWith($str, $suffix)
+    {
         $length = strlen($suffix);
-        if($length == 0){
+        if ($length == 0) {
             return false;
         }
         return (substr($str, -$length) === $suffix);
@@ -91,8 +98,9 @@ class BsPayTools
      *
      * @return true|false 验证结果：成功/失败
      */
-    public static function verify_webhook_sign($signature, $data, $key){
-        $sign = md5(json_encode($data, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE).$key);
+    public static function verify_webhook_sign($signature, $data, $key)
+    {
+        $sign = md5(json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . $key);
         return $sign == strtolower($signature);
     }
 }

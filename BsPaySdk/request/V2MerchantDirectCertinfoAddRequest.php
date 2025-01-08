@@ -38,56 +38,69 @@ class V2MerchantDirectCertinfoAddRequest extends BaseRequest
      */
     private $fileList;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_DIRECT_CERTINFO_ADD;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getUpperHuifuId() {
+    public function getUpperHuifuId()
+    {
         return $this->upperHuifuId;
     }
 
-    public function setUpperHuifuId($upperHuifuId) {
+    public function setUpperHuifuId($upperHuifuId)
+    {
         $this->upperHuifuId = $upperHuifuId;
     }
 
-    public function getPayWay() {
+    public function getPayWay()
+    {
         return $this->payWay;
     }
 
-    public function setPayWay($payWay) {
+    public function setPayWay($payWay)
+    {
         $this->payWay = $payWay;
     }
 
-    public function getAppId() {
+    public function getAppId()
+    {
         return $this->appId;
     }
 
-    public function setAppId($appId) {
+    public function setAppId($appId)
+    {
         $this->appId = $appId;
     }
 
-    public function getFileList() {
+    public function getFileList()
+    {
         return $this->fileList;
     }
 
-    public function setFileList($fileList) {
+    public function setFileList($fileList)
+    {
         $this->fileList = $fileList;
     }
 

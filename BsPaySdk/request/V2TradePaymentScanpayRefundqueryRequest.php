@@ -34,48 +34,59 @@ class V2TradePaymentScanpayRefundqueryRequest extends BaseRequest
      */
     private $merOrdId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_PAYMENT_SCANPAY_REFUNDQUERY;
     }
 
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOrgReqDate() {
+    public function getOrgReqDate()
+    {
         return $this->orgReqDate;
     }
 
-    public function setOrgReqDate($orgReqDate) {
+    public function setOrgReqDate($orgReqDate)
+    {
         $this->orgReqDate = $orgReqDate;
     }
 
-    public function getOrgHfSeqId() {
+    public function getOrgHfSeqId()
+    {
         return $this->orgHfSeqId;
     }
 
-    public function setOrgHfSeqId($orgHfSeqId) {
+    public function setOrgHfSeqId($orgHfSeqId)
+    {
         $this->orgHfSeqId = $orgHfSeqId;
     }
 
-    public function getOrgReqSeqId() {
+    public function getOrgReqSeqId()
+    {
         return $this->orgReqSeqId;
     }
 
-    public function setOrgReqSeqId($orgReqSeqId) {
+    public function setOrgReqSeqId($orgReqSeqId)
+    {
         $this->orgReqSeqId = $orgReqSeqId;
     }
 
-    public function getMerOrdId() {
+    public function getMerOrdId()
+    {
         return $this->merOrdId;
     }
 
-    public function setMerOrdId($merOrdId) {
+    public function setMerOrdId($merOrdId)
+    {
         $this->merOrdId = $merOrdId;
     }
 

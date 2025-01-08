@@ -74,128 +74,159 @@ class V2QuickbuckleConfirmRequest extends BaseRequest
      */
     private $trxDeviceInf;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_QUICKBUCKLE_CONFIRM;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOutCustId() {
+    public function getOutCustId()
+    {
         return $this->outCustId;
     }
 
-    public function setOutCustId($outCustId) {
+    public function setOutCustId($outCustId)
+    {
         $this->outCustId = $outCustId;
     }
 
-    public function getOrderId() {
+    public function getOrderId()
+    {
         return $this->orderId;
     }
 
-    public function setOrderId($orderId) {
+    public function setOrderId($orderId)
+    {
         $this->orderId = $orderId;
     }
 
-    public function getOrderDate() {
+    public function getOrderDate()
+    {
         return $this->orderDate;
     }
 
-    public function setOrderDate($orderDate) {
+    public function setOrderDate($orderDate)
+    {
         $this->orderDate = $orderDate;
     }
 
-    public function getCardId() {
+    public function getCardId()
+    {
         return $this->cardId;
     }
 
-    public function setCardId($cardId) {
+    public function setCardId($cardId)
+    {
         $this->cardId = $cardId;
     }
 
-    public function getCardName() {
+    public function getCardName()
+    {
         return $this->cardName;
     }
 
-    public function setCardName($cardName) {
+    public function setCardName($cardName)
+    {
         $this->cardName = $cardName;
     }
 
-    public function getCertType() {
+    public function getCertType()
+    {
         return $this->certType;
     }
 
-    public function setCertType($certType) {
+    public function setCertType($certType)
+    {
         $this->certType = $certType;
     }
 
-    public function getCertId() {
+    public function getCertId()
+    {
         return $this->certId;
     }
 
-    public function setCertId($certId) {
+    public function setCertId($certId)
+    {
         $this->certId = $certId;
     }
 
-    public function getCardMp() {
+    public function getCardMp()
+    {
         return $this->cardMp;
     }
 
-    public function setCardMp($cardMp) {
+    public function setCardMp($cardMp)
+    {
         $this->cardMp = $cardMp;
     }
 
-    public function getVerifyCode() {
+    public function getVerifyCode()
+    {
         return $this->verifyCode;
     }
 
-    public function setVerifyCode($verifyCode) {
+    public function setVerifyCode($verifyCode)
+    {
         $this->verifyCode = $verifyCode;
     }
 
-    public function getVipCode() {
+    public function getVipCode()
+    {
         return $this->vipCode;
     }
 
-    public function setVipCode($vipCode) {
+    public function setVipCode($vipCode)
+    {
         $this->vipCode = $vipCode;
     }
 
-    public function getExpiration() {
+    public function getExpiration()
+    {
         return $this->expiration;
     }
 
-    public function setExpiration($expiration) {
+    public function setExpiration($expiration)
+    {
         $this->expiration = $expiration;
     }
 
-    public function getTrxDeviceInf() {
+    public function getTrxDeviceInf()
+    {
         return $this->trxDeviceInf;
     }
 
-    public function setTrxDeviceInf($trxDeviceInf) {
+    public function setTrxDeviceInf($trxDeviceInf)
+    {
         $this->trxDeviceInf = $trxDeviceInf;
     }
 

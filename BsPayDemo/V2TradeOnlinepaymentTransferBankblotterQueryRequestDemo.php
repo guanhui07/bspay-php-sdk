@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeOnlinepaymentTransferBankblotterQueryRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradeOnlinepaymentTransferBankblotterQueryRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradeOnlinepaymentTransferBankblotterQueryRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2TradeOnlinepaymentTransferBankblotterQueryRequest;
 // 2.组装请求参数
 $request = new V2TradeOnlinepaymentTransferBankblotterQueryRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 商户号
@@ -36,7 +37,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -45,13 +46,14 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 实际付款方银行卡号
     // $extendInfoMap["bank_card_no"]= "";
     // 实际付款方姓名
-    $extendInfoMap["certificate_name"]= "沈显龙";
+    $extendInfoMap["certificate_name"] = "沈显龙";
     // 实际付款日期
     // $extendInfoMap["trans_date"]= "";
     // 交易金额

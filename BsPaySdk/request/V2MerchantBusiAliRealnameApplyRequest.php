@@ -34,48 +34,59 @@ class V2MerchantBusiAliRealnameApplyRequest extends BaseRequest
      */
     private $contactPersonInfo;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_BUSI_ALI_REALNAME_APPLY;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getAuthIdentityInfo() {
+    public function getAuthIdentityInfo()
+    {
         return $this->authIdentityInfo;
     }
 
-    public function setAuthIdentityInfo($authIdentityInfo) {
+    public function setAuthIdentityInfo($authIdentityInfo)
+    {
         $this->authIdentityInfo = $authIdentityInfo;
     }
 
-    public function getContactPersonInfo() {
+    public function getContactPersonInfo()
+    {
         return $this->contactPersonInfo;
     }
 
-    public function setContactPersonInfo($contactPersonInfo) {
+    public function setContactPersonInfo($contactPersonInfo)
+    {
         $this->contactPersonInfo = $contactPersonInfo;
     }
 

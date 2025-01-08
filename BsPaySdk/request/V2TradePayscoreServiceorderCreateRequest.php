@@ -42,64 +42,79 @@ class V2TradePayscoreServiceorderCreateRequest extends BaseRequest
      */
     private $notifyUrl;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_PAYSCORE_SERVICEORDER_CREATE;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getServiceIntroduction() {
+    public function getServiceIntroduction()
+    {
         return $this->serviceIntroduction;
     }
 
-    public function setServiceIntroduction($serviceIntroduction) {
+    public function setServiceIntroduction($serviceIntroduction)
+    {
         $this->serviceIntroduction = $serviceIntroduction;
     }
 
-    public function getRiskFund() {
+    public function getRiskFund()
+    {
         return $this->riskFund;
     }
 
-    public function setRiskFund($riskFund) {
+    public function setRiskFund($riskFund)
+    {
         $this->riskFund = $riskFund;
     }
 
-    public function getTimeRange() {
+    public function getTimeRange()
+    {
         return $this->timeRange;
     }
 
-    public function setTimeRange($timeRange) {
+    public function setTimeRange($timeRange)
+    {
         $this->timeRange = $timeRange;
     }
 
-    public function getNotifyUrl() {
+    public function getNotifyUrl()
+    {
         return $this->notifyUrl;
     }
 
-    public function setNotifyUrl($notifyUrl) {
+    public function setNotifyUrl($notifyUrl)
+    {
         $this->notifyUrl = $notifyUrl;
     }
 

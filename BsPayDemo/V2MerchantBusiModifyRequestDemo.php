@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantBusiModifyRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantBusiModifyRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantBusiModifyRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantBusiModifyRequest;
 // 2.组装请求参数
 $request = new V2MerchantBusiModifyRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 汇付客户Id
@@ -32,7 +33,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -41,57 +42,58 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 经营简称
-    $extendInfoMap["short_name"]= "";
+    $extendInfoMap["short_name"] = "";
     // 税务登记证
-    $extendInfoMap["tax_reg_pic"]= "";
+    $extendInfoMap["tax_reg_pic"] = "";
     // 公司照片一
-    $extendInfoMap["comp_pic1"]= "";
+    $extendInfoMap["comp_pic1"] = "";
     // 公司照片二
-    $extendInfoMap["comp_pic2"]= "";
+    $extendInfoMap["comp_pic2"] = "";
     // 公司照片三
-    $extendInfoMap["comp_pic3"]= "";
+    $extendInfoMap["comp_pic3"] = "";
     // 法人身份证反面
-    $extendInfoMap["legal_cert_back_pic"]= "";
+    $extendInfoMap["legal_cert_back_pic"] = "";
     // 法人身份证正面
-    $extendInfoMap["legal_cert_front_pic"]= "";
+    $extendInfoMap["legal_cert_front_pic"] = "";
     // 营业执照图片
-    $extendInfoMap["license_pic"]= "";
+    $extendInfoMap["license_pic"] = "";
     // 组织机构代码证
-    $extendInfoMap["org_code_pic"]= "";
+    $extendInfoMap["org_code_pic"] = "";
     // 开户许可证
-    $extendInfoMap["reg_acct_pic"]= "";
+    $extendInfoMap["reg_acct_pic"] = "";
     // 结算卡反面
-    $extendInfoMap["settle_card_back_pic"]= "";
+    $extendInfoMap["settle_card_back_pic"] = "";
     // 结算卡正面
-    $extendInfoMap["settle_card_front_pic"]= "";
+    $extendInfoMap["settle_card_front_pic"] = "";
     // 结算人身份证反面
-    $extendInfoMap["settle_cert_back_pic"]= "";
+    $extendInfoMap["settle_cert_back_pic"] = "";
     // 结算人身份证正面
-    $extendInfoMap["settle_cert_front_pic"]= "";
+    $extendInfoMap["settle_cert_front_pic"] = "";
     // 授权委托书
-    $extendInfoMap["auth_enturst_pic"]= "http://192.168.85.157:30031/sspm/testVirgo";
+    $extendInfoMap["auth_enturst_pic"] = "http://192.168.85.157:30031/sspm/testVirgo";
     // 协议信息实体
-    $extendInfoMap["agreement_info"]= getAgreementInfo();
+    $extendInfoMap["agreement_info"] = getAgreementInfo();
     // 是否交易手续费外扣
-    $extendInfoMap["out_fee_flag"]= "2";
+    $extendInfoMap["out_fee_flag"] = "2";
     // 交易手续费外扣汇付ID
-    $extendInfoMap["out_fee_huifuid"]= "";
+    $extendInfoMap["out_fee_huifuid"] = "";
     // 交易手续费外扣时的账户类型
-    $extendInfoMap["out_fee_acct_type"]= "";
+    $extendInfoMap["out_fee_acct_type"] = "";
     // 是否开通网银
-    $extendInfoMap["online_flag"]= "";
+    $extendInfoMap["online_flag"] = "";
     // 是否开通快捷
-    $extendInfoMap["quick_flag"]= "";
+    $extendInfoMap["quick_flag"] = "";
     // 是否开通代扣
-    $extendInfoMap["withhold_flag"]= "";
+    $extendInfoMap["withhold_flag"] = "";
     // 延迟入账开关
-    $extendInfoMap["delay_flag"]= "Y";
+    $extendInfoMap["delay_flag"] = "Y";
     // 开通支付宝预授权
-    $extendInfoMap["alipay_pre_auth_flag"]= "Y";
+    $extendInfoMap["alipay_pre_auth_flag"] = "Y";
     // 开通微信预授权
     // $extendInfoMap["wechatpay_pre_auth_flag"]= "";
     // 商户业务类型
@@ -99,17 +101,17 @@ function getExtendInfos() {
     // 线上费率配置
     // $extendInfoMap["online_fee_conf_list"]= getOnlineFeeConfList();
     // 支付宝配置对象
-    $extendInfoMap["ali_conf_list"]= getAliConfList();
+    $extendInfoMap["ali_conf_list"] = getAliConfList();
     // 微信配置对象
-    $extendInfoMap["wx_conf_list"]= getWxConfList();
+    $extendInfoMap["wx_conf_list"] = getWxConfList();
     // 银联二维码配置对象
-    $extendInfoMap["union_conf_list"]= getUnionConfList();
+    $extendInfoMap["union_conf_list"] = getUnionConfList();
     // 银行卡支付配置信息
-    $extendInfoMap["bank_card_conf"]= getBankCardConf();
+    $extendInfoMap["bank_card_conf"] = getBankCardConf();
     // 余额支付配置对象
-    $extendInfoMap["balance_pay_config"]= getBalancePayConfig();
+    $extendInfoMap["balance_pay_config"] = getBalancePayConfig();
     // 补贴支付
-    $extendInfoMap["combine_pay_config"]= getCombinePayConfig();
+    $extendInfoMap["combine_pay_config"] = getCombinePayConfig();
     // 线上手续费承担方配置
     // $extendInfoMap["online_pay_fee_conf_list"]= getOnlinePayFeeConfList();
     // 银行大额转账对象
@@ -121,11 +123,11 @@ function getExtendInfos() {
     // 微信直连配置对象
     // $extendInfoMap["wx_zl_conf"]= getWxZlConf();
     // 异步消息接收地址
-    $extendInfoMap["async_return_url"]= "http://www.baidu55.com/";
+    $extendInfoMap["async_return_url"] = "http://www.baidu55.com/";
     // 业务开通结果异步消息接收地址
-    $extendInfoMap["busi_async_return_url"]= "";
+    $extendInfoMap["busi_async_return_url"] = "";
     // 交易异步应答地址
-    $extendInfoMap["recon_resp_addr"]= "http://192.168.85.157:30031/sspm/testVirgo";
+    $extendInfoMap["recon_resp_addr"] = "http://192.168.85.157:30031/sspm/testVirgo";
     // 支付宝直连配置对象
     // $extendInfoMap["ali_zl_conf"]= getAliZlConf();
     // 开户费用值(元)
@@ -135,7 +137,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getAgreementInfo() {
+function getAgreementInfo()
+{
     $dto = array();
     // 协议类型
     $dto["agreement_type"] = "0";
@@ -152,10 +155,11 @@ function getAgreementInfo() {
     // 签约日期
     $dto["sign_date"] = "20200325";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getOnlineFeeConfList() {
+function getOnlineFeeConfList()
+{
     $dto = array();
     // 业务类型
     // $dto["fee_type"] = "test";
@@ -176,10 +180,11 @@ function getOnlineFeeConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getAliConfList() {
+function getAliConfList()
+{
     $dto = array();
     // 手续费（%）
     $dto["fee_rate"] = "3.15";
@@ -194,10 +199,11 @@ function getAliConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getWxConfList() {
+function getWxConfList()
+{
     $dto = array();
     // 手续费（%）
     $dto["fee_rate"] = "2.15";
@@ -214,10 +220,11 @@ function getWxConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getUnionConfList() {
+function getUnionConfList()
+{
     $dto = array();
     // 银联二维码1000以上借记卡费率
     $dto["debit_fee_rate_up"] = "6";
@@ -236,10 +243,11 @@ function getUnionConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getBankCardConf() {
+function getBankCardConf()
+{
     $dto = array();
     // 借记卡手续费（%）
     $dto["debit_fee_rate"] = "3";
@@ -268,10 +276,11 @@ function getBankCardConf() {
     // 小额双免手续费（%）
     $dto["small_fee_amt"] = "1";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getBalancePayConfig() {
+function getBalancePayConfig()
+{
     $dto = array();
     // 支付手续费(%)
     $dto["fee_rate"] = "2";
@@ -286,10 +295,11 @@ function getBalancePayConfig() {
     // 是否交易手续费外扣
     // $dto["out_fee_flag"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCombinePayConfig() {
+function getCombinePayConfig()
+{
     $dto = array();
     // 开通状态
     $dto["switch_state"] = "0";
@@ -304,10 +314,11 @@ function getCombinePayConfig() {
     // 是否交易手续费外扣
     // $dto["out_fee_flag"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getOnlinePayFeeConfList() {
+function getOnlinePayFeeConfList()
+{
     $dto = array();
     // 业务类型
     // $dto["pay_type"] = "";
@@ -320,10 +331,11 @@ function getOnlinePayFeeConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getBankBigAmtPayConfig() {
+function getBankBigAmtPayConfig()
+{
     $dto = array();
     // 开关状态
     // $dto["switch_state"] = "";
@@ -344,10 +356,11 @@ function getBankBigAmtPayConfig() {
     // 银行大额转账单日额度
     // $dto["big_amt_limit_per_day"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getOutOrderAcctCard() {
+function getOutOrderAcctCard()
+{
     $dto = array();
     // 结算账户名
     // $dto["card_name"] = "test";
@@ -380,10 +393,11 @@ function getOutOrderAcctCard() {
     // 开户许可证核准号
     // $dto["open_licence_no"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getOutOrderAcctOpenFees() {
+function getOutOrderAcctOpenFees()
+{
     $dto = array();
     // 开户手续费(元)
     // $dto["fee_fix_amt"] = "test";
@@ -392,10 +406,11 @@ function getOutOrderAcctOpenFees() {
     // 开户手续费外扣汇付ID
     // $dto["out_fee_huifuid"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getOutOrderFundsConfig() {
+function getOutOrderFundsConfig()
+{
     $dto = array();
     // 开通状态
     // $dto["switch_state"] = "test";
@@ -426,10 +441,11 @@ function getOutOrderFundsConfig() {
     // 全域支付业务模式
     // $dto["business_model"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCollectionSettleConfigList() {
+function getCollectionSettleConfigList()
+{
     $dto = array();
     // 归集留存金(元)
     // $dto["out_resv_amt"] = "test";
@@ -446,10 +462,11 @@ function getCollectionSettleConfigList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getWxZlPayConfList() {
+function getWxZlPayConfList()
+{
     $dto = array();
     // 申请服务
     // $dto["service_code"] = "test";
@@ -465,7 +482,8 @@ function getWxZlPayConfList() {
     return $dtoList;
 }
 
-function getFileList() {
+function getFileList()
+{
     $dto = array();
     // 文件类型
     // $dto["file_type"] = "test";
@@ -474,10 +492,11 @@ function getFileList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getContactInfo() {
+function getContactInfo()
+{
     $dto = array();
     // 联系人类型
     // $dto["contact_type"] = "test";
@@ -500,10 +519,11 @@ function getContactInfo() {
     // 证件有效期截止日期
     // $dto["contact_cert_end_date"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCertificateInfo() {
+function getCertificateInfo()
+{
     $dto = array();
     // 登记证书类型
     // $dto["cert_type"] = "test";
@@ -524,10 +544,11 @@ function getCertificateInfo() {
     // 证书有效期截止日期
     // $dto["cert_end_date"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getUboInfoList() {
+function getUboInfoList()
+{
     $dto = array();
     // 证件类型
     // $dto["ubo_cert_type"] = "test";
@@ -548,20 +569,22 @@ function getUboInfoList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getUboInfo() {
+function getUboInfo()
+{
     $dto = array();
     // 经营者/法人是否为受益人
     // $dto["ubo_type"] = "test";
     // 受益人信息列表jsonArray格式,当ubo_type为Y时可不填
     // $dto["ubo_info_list"] = getUboInfoList();
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSalesInfo() {
+function getSalesInfo()
+{
     $dto = array();
     // 经营场景类型
     // $dto["sales_scenes_type"] = "test";
@@ -600,10 +623,11 @@ function getSalesInfo() {
     // 门店地址
     // $dto["biz_store_address"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getWxCardInfo() {
+function getWxCardInfo()
+{
     $dto = array();
     // 账户类型
     // $dto["card_type"] = "test";
@@ -622,10 +646,11 @@ function getWxCardInfo() {
     // 银行账号
     // $dto["card_no"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getWxZlConf() {
+function getWxZlConf()
+{
     $dto = array();
     // 微信子商户号
     // $dto["sub_mch_id"] = "test";
@@ -648,10 +673,11 @@ function getWxZlConf() {
     // 补充说明文件列表
     // $dto["addition_file_list"] = getFileList();
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getAliZlConf() {
+function getAliZlConf()
+{
     $dto = array();
     // 申请类型
     // $dto["apply_type"] = "test";
@@ -678,7 +704,7 @@ function getAliZlConf() {
     // 营业执照有效期截止日期
     // $dto["license_end_date"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

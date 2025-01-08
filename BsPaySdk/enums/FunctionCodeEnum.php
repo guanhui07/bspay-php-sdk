@@ -1,4 +1,5 @@
 <?php
+
 namespace BsPaySdk\enums;
 
 
@@ -221,7 +222,7 @@ class FunctionCodeEnum
      * 商户注册
      */
     static $V2_INVOICE_MER_REG = 'v2/invoice/mer/reg';
-  
+
     /**
      * 开票员登录
      */

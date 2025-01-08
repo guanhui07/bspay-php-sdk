@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantSettleModifyRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantSettleModifyRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantSettleModifyRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantSettleModifyRequest;
 // 2.组装请求参数
 $request = new V2MerchantSettleModifyRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 商户/用户汇付Id
@@ -36,7 +37,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -45,21 +46,23 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 结算卡信息配置
-    $extendInfoMap["card_info"]= getCardInfo();
+    $extendInfoMap["card_info"] = getCardInfo();
     // 结算规则配置
-    $extendInfoMap["settle_config"]= getSettleConfig();
+    $extendInfoMap["settle_config"] = getSettleConfig();
     // 异步请求地址
-    $extendInfoMap["async_return_url"]= "";
+    $extendInfoMap["async_return_url"] = "";
     // 汇总结算配置实体
     // $extendInfoMap["collection_settle_config"]= getCollectionSettleConfig();
     return $extendInfoMap;
 }
 
-function getCardInfo() {
+function getCardInfo()
+{
     $dto = array();
     // 结算账户类型
     $dto["card_type"] = "0";
@@ -90,10 +93,11 @@ function getCardInfo() {
     // 结算人手机号
     $dto["mp"] = "17521216927";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSettleConfig() {
+function getSettleConfig()
+{
     $dto = array();
     // 状态
     $dto["settle_status"] = "0";
@@ -126,10 +130,11 @@ function getSettleConfig() {
     // 卡序列号
     $dto["token_no"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCollectionSettleConfig() {
+function getCollectionSettleConfig()
+{
     $dto = array();
     // 归集留存金(元)
     // $dto["out_resv_amt"] = "test";
@@ -144,7 +149,7 @@ function getCollectionSettleConfig() {
     // 转出账户
     // $dto["out_acct_id"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

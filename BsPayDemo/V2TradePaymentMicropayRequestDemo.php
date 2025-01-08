@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradePaymentMicropayRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradePaymentMicropayRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradePaymentMicropayRequest;
@@ -20,7 +21,7 @@ $request = new V2TradePaymentMicropayRequest();
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 商户号
 $request->setHuifuId("6666000109133323");
 // 交易金额
@@ -40,7 +41,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -49,7 +50,8 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 交易有效期
@@ -79,7 +81,7 @@ function getExtendInfos() {
     // 设备信息
     // $extendInfoMap["terminal_device_info"]= getTerminalDeviceInfo();
     // 异步通知地址
-    $extendInfoMap["notify_url"]= "http://www.baidu.com";
+    $extendInfoMap["notify_url"] = "http://www.baidu.com";
     // 交易备注
     // $extendInfoMap["remark"]= "";
     // 账户号
@@ -87,7 +89,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getAcctInfosRucan() {
+function getAcctInfosRucan()
+{
     $dto = array();
     // 分账接收方ID
     // $dto["huifu_id"] = "test";
@@ -103,7 +106,8 @@ function getAcctInfosRucan() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function getAcctSplitBunch()
+{
     $dto = array();
     // 分账明细
     // $dto["acct_infos"] = getAcctInfosRucan();
@@ -112,10 +116,11 @@ function getAcctSplitBunch() {
     // 是否净值分账
     // $dto["is_clean_split"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getGoodsDetailWxRucan() {
+function getGoodsDetailWxRucan()
+{
     $dto = array();
     // 商品编码
     // $dto["goods_id"] = "test";
@@ -133,7 +138,8 @@ function getGoodsDetailWxRucan() {
     return $dtoList;
 }
 
-function getDetail() {
+function getDetail()
+{
     $dto = array();
     // 单品列表
     // $dto["goods_detail"] = getGoodsDetailWxRucan();
@@ -145,7 +151,8 @@ function getDetail() {
     return $dto;
 }
 
-function getStoreInfo() {
+function getStoreInfo()
+{
     $dto = array();
     // 门店id
     // $dto["id"] = "";
@@ -159,7 +166,8 @@ function getStoreInfo() {
     return $dto;
 }
 
-function getSceneInfo() {
+function getSceneInfo()
+{
     $dto = array();
     // 门店信息
     // $dto["store_info"] = getStoreInfo();
@@ -167,7 +175,8 @@ function getSceneInfo() {
     return $dto;
 }
 
-function getWxData() {
+function getWxData()
+{
     $dto = array();
     // 收款设备IP直联模式必填字段；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：192.168.2.2&lt;/font&gt;
     // $dto["spbill_create_ip"] = "test";
@@ -186,10 +195,11 @@ function getWxData() {
     // 电子发票入口开放标识
     // $dto["receipt"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getGoodsDetail() {
+function getGoodsDetail()
+{
     $dto = array();
     // 商品的编号
     // $dto["goods_id"] = "test";
@@ -213,7 +223,8 @@ function getGoodsDetail() {
     return $dtoList;
 }
 
-function getExtendParams() {
+function getExtendParams()
+{
     $dto = array();
     // 卡类型
     // $dto["card_type"] = "";
@@ -233,7 +244,8 @@ function getExtendParams() {
     return $dto;
 }
 
-function getExtUserInfo() {
+function getExtUserInfo()
+{
     $dto = array();
     // 姓名
     // $dto["name"] = "";
@@ -253,7 +265,8 @@ function getExtUserInfo() {
     return $dto;
 }
 
-function getAlipayData() {
+function getAlipayData()
+{
     $dto = array();
     // 优惠明细参数
     // $dto["ali_promo_params"] = "test";
@@ -274,10 +287,11 @@ function getAlipayData() {
     // 订单描述
     // $dto["body"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getUnionpayData() {
+function getUnionpayData()
+{
     $dto = array();
     // 币种
     // $dto["currency_code"] = "";
@@ -294,10 +308,11 @@ function getUnionpayData() {
     // 收款方附加数据
     // $dto["addn_data"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getRiskCheckData()
+{
     $dto = array();
     // ip地址
     $dto["ip_addr"] = "180.167.105.130";
@@ -308,10 +323,11 @@ function getRiskCheckData() {
     // 经度
     $dto["longitude"] = "33.3";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceInfo() {
+function getTerminalDeviceInfo()
+{
     $dto = array();
     // 商户设备类型
     // $dto["mer_device_type"] = "test";
@@ -354,7 +370,7 @@ function getTerminalDeviceInfo() {
     // 商户终端序列号
     // $dto["serial_num"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

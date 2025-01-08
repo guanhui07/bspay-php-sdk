@@ -1,4 +1,5 @@
 <?php
+
 namespace BsPaySdk\core;
 
 use Exception;
@@ -24,7 +25,8 @@ class BsPayClient extends BsPay
      *                     boolean  $tag  true (页面接口请求) | false (非页面接口请求)
      *                     CURLFile $tag 待上传的文件
      */
-    public function postRequest($request, $tag = false) {
+    public function postRequest($request, $tag = false)
+    {
         try {
             // 请求接口获取应答
             if (is_object($request)) {
@@ -55,9 +57,10 @@ class BsPayClient extends BsPay
 
     /**
      *  对象转换数组
-     * @param object $object  待转化参数对象
+     * @param object $object 待转化参数对象
      */
-    public function objectToArray($object) {
+    public function objectToArray($object)
+    {
         $class = new ReflectionClass($object);
         $properties = $class->getProperties();
         $arrayData = array();
@@ -66,8 +69,8 @@ class BsPayClient extends BsPay
         // 转换接口参数
         foreach ($properties as $key => $value) {
             $attrName = $value->getName();
-            $method = 'get'.ucfirst($attrName);
-            if ( $class->hasMethod($method) ) {
+            $method = 'get' . ucfirst($attrName);
+            if ($class->hasMethod($method)) {
                 $attrValue = $class->getMethod($method)->invoke($object);
                 if (isset($attrValue)) {
                     if ($attrName != "extendInfos") {

@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantDirectWechatSignRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantDirectWechatSignRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantDirectWechatSignRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantDirectWechatSignRequest;
 // 2.组装请求参数
 $request = new V2MerchantDirectWechatSignRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 商户汇付Id
@@ -48,7 +49,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -57,27 +58,29 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 服务商微信公众号APPID对应密钥
-    $extendInfoMap["wx_woa_secret"]= "1234567890";
+    $extendInfoMap["wx_woa_secret"] = "1234567890";
     // 公司类型
-    $extendInfoMap["ent_type"]= "2";
+    $extendInfoMap["ent_type"] = "2";
     // 登记证书
-    $extendInfoMap["certificate_info"]= getCertificateInfo();
+    $extendInfoMap["certificate_info"] = getCertificateInfo();
     // 最终受益人信息
-    $extendInfoMap["ubo_info"]= getUboInfo();
+    $extendInfoMap["ubo_info"] = getUboInfo();
     // 银行账户信息
-    $extendInfoMap["bank_account_info"]= getBankAccountInfo();
+    $extendInfoMap["bank_account_info"] = getBankAccountInfo();
     // 补充说明
-    $extendInfoMap["business_addition_msg"]= "补充说明";
+    $extendInfoMap["business_addition_msg"] = "补充说明";
     // 文件列表
-    $extendInfoMap["file_list"]= getFileList();
+    $extendInfoMap["file_list"] = getFileList();
     return $extendInfoMap;
 }
 
-function getContactInfo() {
+function getContactInfo()
+{
     $dto = array();
     // 超级管理员姓名
     $dto["contact_name"] = "超级管理员姓名7586";
@@ -92,10 +95,11 @@ function getContactInfo() {
     // 超级管理员证件类型
     $dto["cert_type"] = "00";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getFileList() {
+function getFileList()
+{
     $dto = array();
     // 文件类型
     $dto["file_type"] = "F85";
@@ -106,10 +110,11 @@ function getFileList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCertificateInfo() {
+function getCertificateInfo()
+{
     $dto = array();
     // 登记证书类型
     $dto["cert_type"] = "所有场景类型";
@@ -130,10 +135,11 @@ function getCertificateInfo() {
     // 证书有效期截止日期
     $dto["cert_end_date"] = "20400420";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getUboInfo() {
+function getUboInfo()
+{
     $dto = array();
     // 证件类型
     $dto["cert_type"] = "00";
@@ -150,10 +156,11 @@ function getUboInfo() {
     // 证件有效期截止日期
     $dto["cert_end_date"] = "20400420";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSalesInfo() {
+function getSalesInfo()
+{
     $dto = array();
     // 服务商公众号APPID公众号场景必传(与mp_sub_appid二选一) 。可填写当前服务商商户号已绑定的公众号APPID。&lt;font color&#x3D;&quot;green&quot;&gt;示例值：wx5934540532 &lt;/font&gt;
     $dto["mp_appid"] = "服务商公众号APPID";
@@ -184,10 +191,11 @@ function getSalesInfo() {
     // 商家企业微信CorpID
     $dto["sub_corp_id"] = "商家企业微信CorpID";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSettlementInfo() {
+function getSettlementInfo()
+{
     $dto = array();
     // 入驻结算规则ID
     $dto["settlement_id"] = "716";
@@ -200,10 +208,11 @@ function getSettlementInfo() {
     // 优惠费率活动值
     $dto["activities_rate"] = "0.60";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getBankAccountInfo() {
+function getBankAccountInfo()
+{
     $dto = array();
     // 账户类型
     $dto["bank_account_type"] = "BANK_ACCOUNT_TYPE_CORPORATE";
@@ -220,7 +229,7 @@ function getBankAccountInfo() {
     // 银行账号
     $dto["account_number"] = "102110001296";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

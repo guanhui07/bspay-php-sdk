@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradePayscorePayPayscorepayRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradePayscorePayPayscorepayRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradePayscorePayPayscorepayRequest;
@@ -20,7 +21,7 @@ $request = new V2TradePayscorePayPayscorepayRequest();
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 商户号
 $request->setHuifuId("6666000141569791");
 // 扣款登记创建请求流水号deduct_req_seq_id与deduct_hf_seq_id二选一；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：2022012614120615001&lt;/font&gt;
@@ -42,7 +43,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -51,7 +52,8 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 聚合反扫微信参数集合
@@ -69,7 +71,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getWxData() {
+function getWxData()
+{
     $dto = array();
     // 子商户用户标识
     // $dto["sub_openid"] = "test";
@@ -80,10 +83,11 @@ function getWxData() {
     // 设备号
     // $dto["device_info"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getAcctInfos() {
+function getAcctInfos()
+{
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "test";
@@ -95,15 +99,17 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function getAcctSplitBunch()
+{
     $dto = array();
     // 分账明细
     // $dto["acct_infos"] = getAcctInfos();
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getRiskCheckData()
+{
     $dto = array();
     // ip地址
     $dto["ip_address"] = "127.0.0.1";
@@ -114,10 +120,11 @@ function getRiskCheckData() {
     // 经度
     // $dto["longitude"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceInfo() {
+function getTerminalDeviceInfo()
+{
     $dto = array();
     // 设备类型
     // $dto["device_type"] = "";
@@ -138,7 +145,7 @@ function getTerminalDeviceInfo() {
     // 商户终端应用程序版
     // $dto["app_version"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

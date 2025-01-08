@@ -26,32 +26,39 @@ class V2TradeOnlinepaymentBankpayBanklistRequest extends BaseRequest
      */
     private $orderType;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_BANKPAY_BANKLIST;
     }
 
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getGateType() {
+    public function getGateType()
+    {
         return $this->gateType;
     }
 
-    public function setGateType($gateType) {
+    public function setGateType($gateType)
+    {
         $this->gateType = $gateType;
     }
 
-    public function getOrderType() {
+    public function getOrderType()
+    {
         return $this->orderType;
     }
 
-    public function setOrderType($orderType) {
+    public function setOrderType($orderType)
+    {
         $this->orderType = $orderType;
     }
 

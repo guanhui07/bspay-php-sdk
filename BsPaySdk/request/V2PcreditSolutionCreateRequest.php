@@ -70,120 +70,149 @@ class V2PcreditSolutionCreateRequest extends BaseRequest
      */
     private $subShopInfoList;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_PCREDIT_SOLUTION_CREATE;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getActivityName() {
+    public function getActivityName()
+    {
         return $this->activityName;
     }
 
-    public function setActivityName($activityName) {
+    public function setActivityName($activityName)
+    {
         $this->activityName = $activityName;
     }
 
-    public function getStartTime() {
+    public function getStartTime()
+    {
         return $this->startTime;
     }
 
-    public function setStartTime($startTime) {
+    public function setStartTime($startTime)
+    {
         $this->startTime = $startTime;
     }
 
-    public function getEndTime() {
+    public function getEndTime()
+    {
         return $this->endTime;
     }
 
-    public function setEndTime($endTime) {
+    public function setEndTime($endTime)
+    {
         $this->endTime = $endTime;
     }
 
-    public function getMinMoneyLimit() {
+    public function getMinMoneyLimit()
+    {
         return $this->minMoneyLimit;
     }
 
-    public function setMinMoneyLimit($minMoneyLimit) {
+    public function setMinMoneyLimit($minMoneyLimit)
+    {
         $this->minMoneyLimit = $minMoneyLimit;
     }
 
-    public function getMaxMoneyLimit() {
+    public function getMaxMoneyLimit()
+    {
         return $this->maxMoneyLimit;
     }
 
-    public function setMaxMoneyLimit($maxMoneyLimit) {
+    public function setMaxMoneyLimit($maxMoneyLimit)
+    {
         $this->maxMoneyLimit = $maxMoneyLimit;
     }
 
-    public function getAmountBudget() {
+    public function getAmountBudget()
+    {
         return $this->amountBudget;
     }
 
-    public function setAmountBudget($amountBudget) {
+    public function setAmountBudget($amountBudget)
+    {
         $this->amountBudget = $amountBudget;
     }
 
-    public function getInstallNumStrList() {
+    public function getInstallNumStrList()
+    {
         return $this->installNumStrList;
     }
 
-    public function setInstallNumStrList($installNumStrList) {
+    public function setInstallNumStrList($installNumStrList)
+    {
         $this->installNumStrList = $installNumStrList;
     }
 
-    public function getBudgetWarningMoney() {
+    public function getBudgetWarningMoney()
+    {
         return $this->budgetWarningMoney;
     }
 
-    public function setBudgetWarningMoney($budgetWarningMoney) {
+    public function setBudgetWarningMoney($budgetWarningMoney)
+    {
         $this->budgetWarningMoney = $budgetWarningMoney;
     }
 
-    public function getBudgetWarningMailList() {
+    public function getBudgetWarningMailList()
+    {
         return $this->budgetWarningMailList;
     }
 
-    public function setBudgetWarningMailList($budgetWarningMailList) {
+    public function setBudgetWarningMailList($budgetWarningMailList)
+    {
         $this->budgetWarningMailList = $budgetWarningMailList;
     }
 
-    public function getBudgetWarningMobileNoList() {
+    public function getBudgetWarningMobileNoList()
+    {
         return $this->budgetWarningMobileNoList;
     }
 
-    public function setBudgetWarningMobileNoList($budgetWarningMobileNoList) {
+    public function setBudgetWarningMobileNoList($budgetWarningMobileNoList)
+    {
         $this->budgetWarningMobileNoList = $budgetWarningMobileNoList;
     }
 
-    public function getSubShopInfoList() {
+    public function getSubShopInfoList()
+    {
         return $this->subShopInfoList;
     }
 
-    public function setSubShopInfoList($subShopInfoList) {
+    public function setSubShopInfoList($subShopInfoList)
+    {
         $this->subShopInfoList = $subShopInfoList;
     }
 

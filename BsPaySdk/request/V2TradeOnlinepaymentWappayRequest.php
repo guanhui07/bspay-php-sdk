@@ -58,96 +58,119 @@ class V2TradeOnlinepaymentWappayRequest extends BaseRequest
      */
     private $notifyUrl;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_WAPPAY;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getTransAmt() {
+    public function getTransAmt()
+    {
         return $this->transAmt;
     }
 
-    public function setTransAmt($transAmt) {
+    public function setTransAmt($transAmt)
+    {
         $this->transAmt = $transAmt;
     }
 
-    public function getInstalmentsNum() {
+    public function getInstalmentsNum()
+    {
         return $this->instalmentsNum;
     }
 
-    public function setInstalmentsNum($instalmentsNum) {
+    public function setInstalmentsNum($instalmentsNum)
+    {
         $this->instalmentsNum = $instalmentsNum;
     }
 
-    public function getBankCardNo() {
+    public function getBankCardNo()
+    {
         return $this->bankCardNo;
     }
 
-    public function setBankCardNo($bankCardNo) {
+    public function setBankCardNo($bankCardNo)
+    {
         $this->bankCardNo = $bankCardNo;
     }
 
-    public function getExtendPayData() {
+    public function getExtendPayData()
+    {
         return $this->extendPayData;
     }
 
-    public function setExtendPayData($extendPayData) {
+    public function setExtendPayData($extendPayData)
+    {
         $this->extendPayData = $extendPayData;
     }
 
-    public function getRiskCheckData() {
+    public function getRiskCheckData()
+    {
         return $this->riskCheckData;
     }
 
-    public function setRiskCheckData($riskCheckData) {
+    public function setRiskCheckData($riskCheckData)
+    {
         $this->riskCheckData = $riskCheckData;
     }
 
-    public function getTerminalDeviceData() {
+    public function getTerminalDeviceData()
+    {
         return $this->terminalDeviceData;
     }
 
-    public function setTerminalDeviceData($terminalDeviceData) {
+    public function setTerminalDeviceData($terminalDeviceData)
+    {
         $this->terminalDeviceData = $terminalDeviceData;
     }
 
-    public function getFrontUrl() {
+    public function getFrontUrl()
+    {
         return $this->frontUrl;
     }
 
-    public function setFrontUrl($frontUrl) {
+    public function setFrontUrl($frontUrl)
+    {
         $this->frontUrl = $frontUrl;
     }
 
-    public function getNotifyUrl() {
+    public function getNotifyUrl()
+    {
         return $this->notifyUrl;
     }
 
-    public function setNotifyUrl($notifyUrl) {
+    public function setNotifyUrl($notifyUrl)
+    {
         $this->notifyUrl = $notifyUrl;
     }
 

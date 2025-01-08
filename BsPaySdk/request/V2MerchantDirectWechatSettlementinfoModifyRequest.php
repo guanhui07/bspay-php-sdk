@@ -54,88 +54,109 @@ class V2MerchantDirectWechatSettlementinfoModifyRequest extends BaseRequest
      */
     private $accountNumber;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_DIRECT_WECHAT_SETTLEMENTINFO_MODIFY;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getAppId() {
+    public function getAppId()
+    {
         return $this->appId;
     }
 
-    public function setAppId($appId) {
+    public function setAppId($appId)
+    {
         $this->appId = $appId;
     }
 
-    public function getMchId() {
+    public function getMchId()
+    {
         return $this->mchId;
     }
 
-    public function setMchId($mchId) {
+    public function setMchId($mchId)
+    {
         $this->mchId = $mchId;
     }
 
-    public function getSubMchid() {
+    public function getSubMchid()
+    {
         return $this->subMchid;
     }
 
-    public function setSubMchid($subMchid) {
+    public function setSubMchid($subMchid)
+    {
         $this->subMchid = $subMchid;
     }
 
-    public function getAccountType() {
+    public function getAccountType()
+    {
         return $this->accountType;
     }
 
-    public function setAccountType($accountType) {
+    public function setAccountType($accountType)
+    {
         $this->accountType = $accountType;
     }
 
-    public function getAccountBank() {
+    public function getAccountBank()
+    {
         return $this->accountBank;
     }
 
-    public function setAccountBank($accountBank) {
+    public function setAccountBank($accountBank)
+    {
         $this->accountBank = $accountBank;
     }
 
-    public function getBankAddressCode() {
+    public function getBankAddressCode()
+    {
         return $this->bankAddressCode;
     }
 
-    public function setBankAddressCode($bankAddressCode) {
+    public function setBankAddressCode($bankAddressCode)
+    {
         $this->bankAddressCode = $bankAddressCode;
     }
 
-    public function getAccountNumber() {
+    public function getAccountNumber()
+    {
         return $this->accountNumber;
     }
 
-    public function setAccountNumber($accountNumber) {
+    public function setAccountNumber($accountNumber)
+    {
         $this->accountNumber = $accountNumber;
     }
 

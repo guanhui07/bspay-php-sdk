@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V3QuickbuckleConfirmRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V3QuickbuckleConfirmRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V3QuickbuckleConfirmRequest;
@@ -20,7 +21,7 @@ $request = new V3QuickbuckleConfirmRequest();
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 汇付商户Id
 $request->setHuifuId("6666000109133323");
 // 原申请流水号
@@ -38,7 +39,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -47,7 +48,8 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     return $extendInfoMap;

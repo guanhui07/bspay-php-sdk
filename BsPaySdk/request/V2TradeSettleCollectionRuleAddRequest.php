@@ -38,56 +38,69 @@ class V2TradeSettleCollectionRuleAddRequest extends BaseRequest
      */
     private $fileId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_SETTLE_COLLECTION_RULE_ADD;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getInHuifuId() {
+    public function getInHuifuId()
+    {
         return $this->inHuifuId;
     }
 
-    public function setInHuifuId($inHuifuId) {
+    public function setInHuifuId($inHuifuId)
+    {
         $this->inHuifuId = $inHuifuId;
     }
 
-    public function getOutHuifuId() {
+    public function getOutHuifuId()
+    {
         return $this->outHuifuId;
     }
 
-    public function setOutHuifuId($outHuifuId) {
+    public function setOutHuifuId($outHuifuId)
+    {
         $this->outHuifuId = $outHuifuId;
     }
 
-    public function getSignUserMobileNo() {
+    public function getSignUserMobileNo()
+    {
         return $this->signUserMobileNo;
     }
 
-    public function setSignUserMobileNo($signUserMobileNo) {
+    public function setSignUserMobileNo($signUserMobileNo)
+    {
         $this->signUserMobileNo = $signUserMobileNo;
     }
 
-    public function getFileId() {
+    public function getFileId()
+    {
         return $this->fileId;
     }
 
-    public function setFileId($fileId) {
+    public function setFileId($fileId)
+    {
         $this->fileId = $fileId;
     }
 

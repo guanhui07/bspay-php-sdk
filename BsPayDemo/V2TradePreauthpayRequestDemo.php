@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradePreauthpayRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradePreauthpayRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradePreauthpayRequest;
@@ -20,7 +21,7 @@ $request = new V2TradePreauthpayRequest();
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 商户号
 $request->setHuifuId("6666000108854952");
 // 原交易请求日期
@@ -40,7 +41,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -49,19 +50,20 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 外部订单号
-    $extendInfoMap["out_ord_id"]= "12345678901234567890123456789012";
+    $extendInfoMap["out_ord_id"] = "12345678901234567890123456789012";
     // 原授权号
-    $extendInfoMap["org_auth_no"]= "";
+    $extendInfoMap["org_auth_no"] = "";
     // 原预授权交易请求流水号
-    $extendInfoMap["org_req_seq_id"]= "";
+    $extendInfoMap["org_req_seq_id"] = "";
     // 预授权汇付全局流水号
-    $extendInfoMap["pre_auth_hf_seq_id"]= "0029000topB221031163126P798c0a8305400000";
+    $extendInfoMap["pre_auth_hf_seq_id"] = "0029000topB221031163126P798c0a8305400000";
     // 备注
-    $extendInfoMap["remark"]= "123451111";
+    $extendInfoMap["remark"] = "123451111";
     // 批次号
     // $extendInfoMap["batch_id"]= "";
     // 商户操作员号
@@ -69,13 +71,14 @@ function getExtendInfos() {
     // 扩展域
     // $extendInfoMap["mer_priv"]= "";
     // 设备信息
-    $extendInfoMap["terminal_device_data"]= getTerminalDeviceData();
+    $extendInfoMap["terminal_device_data"] = getTerminalDeviceData();
     // 异步通知地址
-    $extendInfoMap["notify_url"]= "http://www.baidu.com";
+    $extendInfoMap["notify_url"] = "http://www.baidu.com";
     return $extendInfoMap;
 }
 
-function getRiskCheckData() {
+function getRiskCheckData()
+{
     $dto = array();
     // 基站地址
     $dto["base_station"] = "192.168.1.1";
@@ -86,10 +89,11 @@ function getRiskCheckData() {
     // 经度
     $dto["longitude"] = "33.3";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceData() {
+function getTerminalDeviceData()
+{
     $dto = array();
     // 商户终端序列号
     $dto["app_version"] = "";
@@ -128,7 +132,7 @@ function getTerminalDeviceData() {
     // 商户终端序列号
     $dto["serial_num"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

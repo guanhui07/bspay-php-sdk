@@ -66,112 +66,139 @@ class V2InvoiceMerRegRequest extends BaseRequest
      */
     private $cityId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_INVOICE_MER_REG;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getTaxPayerId() {
+    public function getTaxPayerId()
+    {
         return $this->taxPayerId;
     }
 
-    public function setTaxPayerId($taxPayerId) {
+    public function setTaxPayerId($taxPayerId)
+    {
         $this->taxPayerId = $taxPayerId;
     }
 
-    public function getTaxPayerName() {
+    public function getTaxPayerName()
+    {
         return $this->taxPayerName;
     }
 
-    public function setTaxPayerName($taxPayerName) {
+    public function setTaxPayerName($taxPayerName)
+    {
         $this->taxPayerName = $taxPayerName;
     }
 
-    public function getTelNo() {
+    public function getTelNo()
+    {
         return $this->telNo;
     }
 
-    public function setTelNo($telNo) {
+    public function setTelNo($telNo)
+    {
         $this->telNo = $telNo;
     }
 
-    public function getRegAddress() {
+    public function getRegAddress()
+    {
         return $this->regAddress;
     }
 
-    public function setRegAddress($regAddress) {
+    public function setRegAddress($regAddress)
+    {
         $this->regAddress = $regAddress;
     }
 
-    public function getBankName() {
+    public function getBankName()
+    {
         return $this->bankName;
     }
 
-    public function setBankName($bankName) {
+    public function setBankName($bankName)
+    {
         $this->bankName = $bankName;
     }
 
-    public function getAccountNo() {
+    public function getAccountNo()
+    {
         return $this->accountNo;
     }
 
-    public function setAccountNo($accountNo) {
+    public function setAccountNo($accountNo)
+    {
         $this->accountNo = $accountNo;
     }
 
-    public function getContactPhoneNo() {
+    public function getContactPhoneNo()
+    {
         return $this->contactPhoneNo;
     }
 
-    public function setContactPhoneNo($contactPhoneNo) {
+    public function setContactPhoneNo($contactPhoneNo)
+    {
         $this->contactPhoneNo = $contactPhoneNo;
     }
 
-    public function getOpenMode() {
+    public function getOpenMode()
+    {
         return $this->openMode;
     }
 
-    public function setOpenMode($openMode) {
+    public function setOpenMode($openMode)
+    {
         $this->openMode = $openMode;
     }
 
-    public function getProvId() {
+    public function getProvId()
+    {
         return $this->provId;
     }
 
-    public function setProvId($provId) {
+    public function setProvId($provId)
+    {
         $this->provId = $provId;
     }
 
-    public function getCityId() {
+    public function getCityId()
+    {
         return $this->cityId;
     }
 
-    public function setCityId($cityId) {
+    public function setCityId($cityId)
+    {
         $this->cityId = $cityId;
     }
 

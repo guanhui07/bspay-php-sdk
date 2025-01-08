@@ -38,56 +38,69 @@ class V2TradePaymentPreauthcancelRefundRequest extends BaseRequest
      */
     private $riskCheckInfo;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_PAYMENT_PREAUTHCANCEL_REFUND;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOrgReqDate() {
+    public function getOrgReqDate()
+    {
         return $this->orgReqDate;
     }
 
-    public function setOrgReqDate($orgReqDate) {
+    public function setOrgReqDate($orgReqDate)
+    {
         $this->orgReqDate = $orgReqDate;
     }
 
-    public function getOrdAmt() {
+    public function getOrdAmt()
+    {
         return $this->ordAmt;
     }
 
-    public function setOrdAmt($ordAmt) {
+    public function setOrdAmt($ordAmt)
+    {
         $this->ordAmt = $ordAmt;
     }
 
-    public function getRiskCheckInfo() {
+    public function getRiskCheckInfo()
+    {
         return $this->riskCheckInfo;
     }
 
-    public function setRiskCheckInfo($riskCheckInfo) {
+    public function setRiskCheckInfo($riskCheckInfo)
+    {
         $this->riskCheckInfo = $riskCheckInfo;
     }
 

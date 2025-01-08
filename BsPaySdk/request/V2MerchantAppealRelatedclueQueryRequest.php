@@ -30,40 +30,49 @@ class V2MerchantAppealRelatedclueQueryRequest extends BaseRequest
      */
     private $assistId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_APPEAL_RELATEDCLUE_QUERY;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getPageSize() {
+    public function getPageSize()
+    {
         return $this->pageSize;
     }
 
-    public function setPageSize($pageSize) {
+    public function setPageSize($pageSize)
+    {
         $this->pageSize = $pageSize;
     }
 
-    public function getAssistId() {
+    public function getAssistId()
+    {
         return $this->assistId;
     }
 
-    public function setAssistId($assistId) {
+    public function setAssistId($assistId)
+    {
         $this->assistId = $assistId;
     }
 

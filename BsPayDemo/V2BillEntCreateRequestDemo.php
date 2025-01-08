@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2BillEntCreateRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2BillEntCreateRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2BillEntCreateRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2BillEntCreateRequest;
 // 2.组装请求参数
 $request = new V2BillEntCreateRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求时间
 $request->setReqDate(date("Ymd"));
 // 商户号
@@ -44,7 +45,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -53,49 +54,53 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 账单说明
-    $extendInfoMap["bill_remark"]= "您本次 SaaS 服务周期为[开始日期]至[结束日期]。费用包括基础服务套餐[X]元，高级功能模块[X]元，总计[X]元。";
+    $extendInfoMap["bill_remark"] = "您本次 SaaS 服务周期为[开始日期]至[结束日期]。费用包括基础服务套餐[X]元，高级功能模块[X]元，总计[X]元。";
     // 汇总信息
     // $extendInfoMap["bill_summary_info"]= getBillSummaryInfo();
     // 更多信息
     // $extendInfoMap["bill_extend_info"]= getBillExtendInfo();
     // 账单推送方式
-    $extendInfoMap["push_type"]= "EMAIL";
+    $extendInfoMap["push_type"] = "EMAIL";
     // 抄送邮箱
-    $extendInfoMap["copy_email"]= "xuemei.ren@huifu.com,guowen.jiang@huifu.com";
+    $extendInfoMap["copy_email"] = "xuemei.ren@huifu.com,guowen.jiang@huifu.com";
     // 备注信息
-    $extendInfoMap["remark"]= "I_remark";
+    $extendInfoMap["remark"] = "I_remark";
     // 账单信息异步通知地址
-    $extendInfoMap["notify_url"]= "https://spin-test.cloudpnr.com/trade/billing/pcredit/status";
+    $extendInfoMap["notify_url"] = "https://spin-test.cloudpnr.com/trade/billing/pcredit/status";
     // 回调地址
-    $extendInfoMap["front_url"]= "https://spin-test.cloudpnr.com/trade/billing/pcredit/status";
+    $extendInfoMap["front_url"] = "https://spin-test.cloudpnr.com/trade/billing/pcredit/status";
     return $extendInfoMap;
 }
 
-function getBillSummaryInfo() {
+function getBillSummaryInfo()
+{
     $dto = array();
     // 字段名
     // $dto["extend_name"] = "test";
     // 字段值
     // $dto["extend_value"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getBillExtendInfo() {
+function getBillExtendInfo()
+{
     $dto = array();
     // 字段名
     // $dto["extend_name"] = "test";
     // 字段值
     // $dto["extend_value"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getPayeeInfo() {
+function getPayeeInfo()
+{
     $dto = array();
     // 收款联系人姓名
     $dto["payee_name"] = "黄云";
@@ -106,7 +111,7 @@ function getPayeeInfo() {
     // 收款联系人邮箱payee_mobile_no、payee_tel、payee_email 三选一必填
     $dto["payee_email"] = "lieecho@163.com";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

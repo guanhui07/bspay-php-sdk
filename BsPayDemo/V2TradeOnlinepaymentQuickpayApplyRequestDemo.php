@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeOnlinepaymentQuickpayApplyRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradeOnlinepaymentQuickpayApplyRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradeOnlinepaymentQuickpayApplyRequest;
@@ -20,7 +21,7 @@ $request = new V2TradeOnlinepaymentQuickpayApplyRequest();
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 商户号
 $request->setHuifuId("6666000109133323");
 // 用户客户号
@@ -46,7 +47,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -55,7 +56,8 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 订单类型
@@ -75,7 +77,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getExtendPayData() {
+function getExtendPayData()
+{
     $dto = array();
     // 业务种类
     // $dto["biz_tp"] = "test";
@@ -84,10 +87,11 @@ function getExtendPayData() {
     // 网关支付受理渠道
     $dto["gw_chnnl_tp"] = "99";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getAcctInfos() {
+function getAcctInfos()
+{
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "";
@@ -103,7 +107,8 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunchRucan() {
+function getAcctSplitBunchRucan()
+{
     $dto = array();
     // 分账信息列表
     // $dto["acct_infos"] = getAcctInfos();
@@ -112,10 +117,11 @@ function getAcctSplitBunchRucan() {
     // 是否净值分账
     // $dto["is_clean_split"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCombinedpayData() {
+function getCombinedpayData()
+{
     $dto = array();
     // 补贴方汇付编号
     // $dto["huifu_id"] = "test";
@@ -128,10 +134,11 @@ function getCombinedpayData() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getRiskCheckData()
+{
     $dto = array();
     // ip地址
     $dto["ip_addr"] = "106.33.180.238";
@@ -142,10 +149,11 @@ function getRiskCheckData() {
     // 经度
     // $dto["longitude"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceData() {
+function getTerminalDeviceData()
+{
     $dto = array();
     // 设备类型
     $dto["device_type"] = "1";
@@ -164,7 +172,7 @@ function getTerminalDeviceData() {
     // 交易设备wifimac
     // $dto["device_wifi_mac"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

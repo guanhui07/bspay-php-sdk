@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantDirectZftRegRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantDirectZftRegRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantDirectZftRegRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantDirectZftRegRequest;
 // 2.组装请求参数
 $request = new V2MerchantDirectZftRegRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求时间
 $request->setReqDate(date("Ymd"));
 // 汇付ID
@@ -84,7 +85,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -93,27 +94,28 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 渠道商汇付ID
-    $extendInfoMap["upper_huifu_id"]= "6666000103521824";
+    $extendInfoMap["upper_huifu_id"] = "6666000103521824";
     // 商户别名
-    $extendInfoMap["alias_name"]= "哈市盈超市";
+    $extendInfoMap["alias_name"] = "哈市盈超市";
     // 法人证件类型
-    $extendInfoMap["legal_cert_type"]= "100";
+    $extendInfoMap["legal_cert_type"] = "100";
     // 联系人身份证号
-    $extendInfoMap["contact_id_card_no"]= "120101199003071300";
+    $extendInfoMap["contact_id_card_no"] = "120101199003071300";
     // 联系人电话
-    $extendInfoMap["contact_phone"]= "13576266246";
+    $extendInfoMap["contact_phone"] = "13576266246";
     // 联系人电子邮箱
-    $extendInfoMap["contact_email"]= "a066545074@qq.com";
+    $extendInfoMap["contact_email"] = "a066545074@qq.com";
     // 商户站点信息
-    $extendInfoMap["zft_site_info_list"]= "[{\"site_type\":\"02\",\"site_url\":\"站点地址\",\"site_name\":\"站点名称\",\"account\":\"\",\"password\":\"测试密码\"}]";
+    $extendInfoMap["zft_site_info_list"] = "[{\"site_type\":\"02\",\"site_url\":\"站点地址\",\"site_name\":\"站点名称\",\"account\":\"\",\"password\":\"测试密码\"}]";
     // 开票资料信息
-    $extendInfoMap["zft_invoice_info_list"]= "[{\"auto_invoice_flag\":\"N\",\"accept_electronic_flag\":\"N\",\"tax_payer_qualification\":\"01\",\"title\":\"发票抬头\",\"tax_no\":\"纳税人识别号\",\"tax_payer_valid\":\"20210127\",\"address\":\"开票地址\",\"telephone\":\"10087\",\"bank_account\":\"6228480123456789\",\"mail_name\":\"雷均一\",\"prov_id\":\"310000\",\"area_id\":\"310100\",\"district_id\":\"310104\",\"detail_addr\":\"经营详细地址\",\"mail_telephone\":\"13576266246\",\"bank_name\":\"中国农业银行\"}]";
+    $extendInfoMap["zft_invoice_info_list"] = "[{\"auto_invoice_flag\":\"N\",\"accept_electronic_flag\":\"N\",\"tax_payer_qualification\":\"01\",\"title\":\"发票抬头\",\"tax_no\":\"纳税人识别号\",\"tax_payer_valid\":\"20210127\",\"address\":\"开票地址\",\"telephone\":\"10087\",\"bank_account\":\"6228480123456789\",\"mail_name\":\"雷均一\",\"prov_id\":\"310000\",\"area_id\":\"310100\",\"district_id\":\"310104\",\"detail_addr\":\"经营详细地址\",\"mail_telephone\":\"13576266246\",\"bank_name\":\"中国农业银行\"}]";
     // 审核结果异步通知地址
-    $extendInfoMap["async_return_url"]= "http://192.168.85.157:30031/sspm/testVirgo";
+    $extendInfoMap["async_return_url"] = "http://192.168.85.157:30031/sspm/testVirgo";
     return $extendInfoMap;
 }
 

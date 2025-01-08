@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeFeecalcRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradeFeecalcRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradeFeecalcRequest;
@@ -22,7 +23,7 @@ $request->setHuifuId("6666000109133323");
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 交易类型
 $request->setTradeType("ONLINE_PAY");
 // 交易金额
@@ -36,7 +37,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -45,23 +46,24 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 网银交易类型
-    $extendInfoMap["online_trans_type"]= "3000";
+    $extendInfoMap["online_trans_type"] = "3000";
     // 付款方银行编号
-    $extendInfoMap["bank_id"]= "01020000";
+    $extendInfoMap["bank_id"] = "01020000";
     // 卡类型
-    $extendInfoMap["card_type"]= "D";
+    $extendInfoMap["card_type"] = "D";
     // 渠道号
-    $extendInfoMap["channel_no"]= "10000001";
+    $extendInfoMap["channel_no"] = "10000001";
     // 数字货币银行编号
-    $extendInfoMap["digital_bank_no"]= "01002";
+    $extendInfoMap["digital_bank_no"] = "01002";
     // 取现到账类型
-    $extendInfoMap["encash_type"]= "T0";
+    $extendInfoMap["encash_type"] = "T0";
     // 场景类型
-    $extendInfoMap["pay_scene"]= "01";
+    $extendInfoMap["pay_scene"] = "01";
     return $extendInfoMap;
 }
 

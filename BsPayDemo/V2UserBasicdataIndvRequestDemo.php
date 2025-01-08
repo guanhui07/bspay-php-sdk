@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2UserBasicdataIndvRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2UserBasicdataIndvRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2UserBasicdataIndvRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2UserBasicdataIndvRequest;
 // 2.组装请求参数
 $request = new V2UserBasicdataIndvRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 个人姓名
@@ -44,7 +45,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -53,25 +54,27 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 个人证件有效期截止日期
-    $extendInfoMap["cert_end_date"]= "20400117";
+    $extendInfoMap["cert_end_date"] = "20400117";
     // 电子邮箱
-    $extendInfoMap["email"]= "jeff.peng@huifu.com";
+    $extendInfoMap["email"] = "jeff.peng@huifu.com";
     // 管理员账号
-    $extendInfoMap["login_name"]= "Lg2022022201394910571";
+    $extendInfoMap["login_name"] = "Lg2022022201394910571";
     // 是否发送短信标识
-    $extendInfoMap["sms_send_flag"]= "1";
+    $extendInfoMap["sms_send_flag"] = "1";
     // 拓展方字段
-    $extendInfoMap["expand_id"]= "";
+    $extendInfoMap["expand_id"] = "";
     // 文件列表
-    $extendInfoMap["file_list"]= getFileList();
+    $extendInfoMap["file_list"] = getFileList();
     return $extendInfoMap;
 }
 
-function getFileList() {
+function getFileList()
+{
     $dto = array();
     // 文件类型
     $dto["file_type"] = "F04";
@@ -82,7 +85,7 @@ function getFileList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

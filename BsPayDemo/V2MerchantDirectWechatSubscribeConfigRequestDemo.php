@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantDirectWechatSubscribeConfigRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantDirectWechatSubscribeConfigRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantDirectWechatSubscribeConfigRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantDirectWechatSubscribeConfigRequest;
 // 2.组装请求参数
 $request = new V2MerchantDirectWechatSubscribeConfigRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 汇付ID
@@ -38,7 +39,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -47,29 +48,32 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 绑定APPID配置
-    $extendInfoMap["bind_app_id_conf_list"]= getBindAppIdConfList();
+    $extendInfoMap["bind_app_id_conf_list"] = getBindAppIdConfList();
     // 关注配置
-    $extendInfoMap["subscribe_conf_list"]= getSubscribeConfList();
+    $extendInfoMap["subscribe_conf_list"] = getSubscribeConfList();
     // 支付目录配置
-    $extendInfoMap["pay_path_conf_list"]= getPayPathConfList();
+    $extendInfoMap["pay_path_conf_list"] = getPayPathConfList();
     return $extendInfoMap;
 }
 
-function getBindAppIdConfList() {
+function getBindAppIdConfList()
+{
     $dto = array();
     // 关联APPID
     $dto["sub_appid"] = "oQOa46X2FxRqEy6F4YmwIRCrA7Mk";
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSubscribeConfList() {
+function getSubscribeConfList()
+{
     $dto = array();
     // 关联APPID
     $dto["sub_appid"] = "wx5934540532";
@@ -80,17 +84,18 @@ function getSubscribeConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getPayPathConfList() {
+function getPayPathConfList()
+{
     $dto = array();
     // 授权目录
     $dto["jsapi_path"] = "http://www.dsf.com/init";
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

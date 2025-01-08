@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2InvoiceMerRegRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2InvoiceMerRegRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2InvoiceMerRegRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2InvoiceMerRegRequest;
 // 2.组装请求参数
 $request = new V2InvoiceMerRegRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求时间
 $request->setReqDate(date("Ymd"));
 // 开票方汇付ID
@@ -52,7 +53,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -61,19 +62,20 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 联系人
-    $extendInfoMap["contact"]= "王姗";
+    $extendInfoMap["contact"] = "王姗";
     // 联系人身份证号
-    $extendInfoMap["id_card_no"]= "210123198702122747";
+    $extendInfoMap["id_card_no"] = "210123198702122747";
     // 业务到期年限
-    $extendInfoMap["valid_period"]= "1";
+    $extendInfoMap["valid_period"] = "1";
     // 自动续约
-    $extendInfoMap["auto_renewal"]= "Y";
+    $extendInfoMap["auto_renewal"] = "Y";
     // 开票结果异步通知地址
-    $extendInfoMap["callback_url"]= "http: //service.example.com/to/path";
+    $extendInfoMap["callback_url"] = "http: //service.example.com/to/path";
     return $extendInfoMap;
 }
 

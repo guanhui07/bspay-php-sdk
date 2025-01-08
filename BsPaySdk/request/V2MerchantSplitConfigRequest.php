@@ -42,64 +42,79 @@ class V2MerchantSplitConfigRequest extends BaseRequest
      */
     private $startType;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_SPLIT_CONFIG;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getRuleOrigin() {
+    public function getRuleOrigin()
+    {
         return $this->ruleOrigin;
     }
 
-    public function setRuleOrigin($ruleOrigin) {
+    public function setRuleOrigin($ruleOrigin)
+    {
         $this->ruleOrigin = $ruleOrigin;
     }
 
-    public function getDivFlag() {
+    public function getDivFlag()
+    {
         return $this->divFlag;
     }
 
-    public function setDivFlag($divFlag) {
+    public function setDivFlag($divFlag)
+    {
         $this->divFlag = $divFlag;
     }
 
-    public function getApplyRatio() {
+    public function getApplyRatio()
+    {
         return $this->applyRatio;
     }
 
-    public function setApplyRatio($applyRatio) {
+    public function setApplyRatio($applyRatio)
+    {
         $this->applyRatio = $applyRatio;
     }
 
-    public function getStartType() {
+    public function getStartType()
+    {
         return $this->startType;
     }
 
-    public function setStartType($startType) {
+    public function setStartType($startType)
+    {
         $this->startType = $startType;
     }
 

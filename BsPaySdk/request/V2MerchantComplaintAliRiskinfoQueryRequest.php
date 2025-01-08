@@ -30,40 +30,49 @@ class V2MerchantComplaintAliRiskinfoQueryRequest extends BaseRequest
      */
     private $endDate;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_COMPLAINT_ALI_RISKINFO_QUERY;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getBeginDate() {
+    public function getBeginDate()
+    {
         return $this->beginDate;
     }
 
-    public function setBeginDate($beginDate) {
+    public function setBeginDate($beginDate)
+    {
         $this->beginDate = $beginDate;
     }
 
-    public function getEndDate() {
+    public function getEndDate()
+    {
         return $this->endDate;
     }
 
-    public function setEndDate($endDate) {
+    public function setEndDate($endDate)
+    {
         $this->endDate = $endDate;
     }
 

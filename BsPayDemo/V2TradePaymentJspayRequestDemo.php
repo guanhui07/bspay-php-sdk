@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradePaymentJspayRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradePaymentJspayRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradePaymentJspayRequest;
@@ -20,7 +21,7 @@ $request = new V2TradePaymentJspayRequest();
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 商户号
 $request->setHuifuId("6666000109133323");
 // 商品描述
@@ -38,7 +39,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -47,51 +48,53 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 账户号
     // $extendInfoMap["acct_id"]= "";
     // 交易有效期
-    $extendInfoMap["time_expire"]= "20250518235959";
+    $extendInfoMap["time_expire"] = "20250518235959";
     // 微信参数集合
-    $extendInfoMap["wx_data"]= getWxData();
+    $extendInfoMap["wx_data"] = getWxData();
     // 支付宝参数集合
-    $extendInfoMap["alipay_data"]= getAlipayData();
+    $extendInfoMap["alipay_data"] = getAlipayData();
     // 银联参数集合
-    $extendInfoMap["unionpay_data"]= getUnionpayData();
+    $extendInfoMap["unionpay_data"] = getUnionpayData();
     // 数字人民币参数集合
     // $extendInfoMap["dc_data"]= getDcData();
     // 是否延迟交易
-    $extendInfoMap["delay_acct_flag"]= "N";
+    $extendInfoMap["delay_acct_flag"] = "N";
     // 手续费扣款标志
     // $extendInfoMap["fee_flag"]= "";
     // 分账对象
-    $extendInfoMap["acct_split_bunch"]= getAcctSplitBunch();
+    $extendInfoMap["acct_split_bunch"] = getAcctSplitBunch();
     // 传入分账遇到优惠的处理规则
-    $extendInfoMap["term_div_coupon_type"]= "0";
+    $extendInfoMap["term_div_coupon_type"] = "0";
     // 补贴支付信息
     // $extendInfoMap["combinedpay_data"]= getCombinedpayData();
     // 禁用信用卡标记
-    $extendInfoMap["limit_pay_type"]= "NO_CREDIT";
+    $extendInfoMap["limit_pay_type"] = "NO_CREDIT";
     // 商户贴息标记
-    $extendInfoMap["fq_mer_discount_flag"]= "N";
+    $extendInfoMap["fq_mer_discount_flag"] = "N";
     // 渠道号
-    $extendInfoMap["channel_no"]= "";
+    $extendInfoMap["channel_no"] = "";
     // 场景类型
-    $extendInfoMap["pay_scene"]= "02";
+    $extendInfoMap["pay_scene"] = "02";
     // 备注
-    $extendInfoMap["remark"]= "string";
+    $extendInfoMap["remark"] = "string";
     // 安全信息
-    $extendInfoMap["risk_check_data"]= getRiskCheckData();
+    $extendInfoMap["risk_check_data"] = getRiskCheckData();
     // 设备信息
-    $extendInfoMap["terminal_device_data"]= getTerminalDeviceData();
+    $extendInfoMap["terminal_device_data"] = getTerminalDeviceData();
     // 异步通知地址
-    $extendInfoMap["notify_url"]= "http://www.baidu.com";
+    $extendInfoMap["notify_url"] = "http://www.baidu.com";
     return $extendInfoMap;
 }
 
-function getGoodsDetailWxRucan() {
+function getGoodsDetailWxRucan()
+{
     $dto = array();
     // 商品编码
     $dto["goods_id"] = "6934572310301";
@@ -109,7 +112,8 @@ function getGoodsDetailWxRucan() {
     return $dtoList;
 }
 
-function getDetail() {
+function getDetail()
+{
     $dto = array();
     // 单品列表
     $dto["goods_detail"] = getGoodsDetailWxRucan();
@@ -121,7 +125,8 @@ function getDetail() {
     return $dto;
 }
 
-function getStoreInfo() {
+function getStoreInfo()
+{
     $dto = array();
     // 门店id
     // $dto["id"] = "";
@@ -135,7 +140,8 @@ function getStoreInfo() {
     return $dto;
 }
 
-function getSceneInfo() {
+function getSceneInfo()
+{
     $dto = array();
     // 门店信息
     // $dto["store_info"] = getStoreInfo();
@@ -143,7 +149,8 @@ function getSceneInfo() {
     return $dto;
 }
 
-function getWxData() {
+function getWxData()
+{
     $dto = array();
     // 子商户应用ID
     $dto["sub_appid"] = "wxdfe9a5d141f96685";
@@ -174,10 +181,11 @@ function getWxData() {
     // 指定支付者
     // $dto["limit_payer"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getExtendParams() {
+function getExtendParams()
+{
     $dto = array();
     // 卡类型
     $dto["card_type"] = "";
@@ -199,7 +207,8 @@ function getExtendParams() {
     return $dto;
 }
 
-function getGoodsDetail() {
+function getGoodsDetail()
+{
     $dto = array();
     // 商品的编号
     $dto["goods_id"] = "12312321";
@@ -223,7 +232,8 @@ function getGoodsDetail() {
     return $dtoList;
 }
 
-function getExtUserInfo() {
+function getExtUserInfo()
+{
     $dto = array();
     // 姓名
     // $dto["name"] = "";
@@ -243,7 +253,8 @@ function getExtUserInfo() {
     return $dto;
 }
 
-function getAlipayData() {
+function getAlipayData()
+{
     $dto = array();
     // 买家的支付宝唯一用户号
     $dto["buyer_id"] = "2088702699908257";
@@ -280,10 +291,11 @@ function getAlipayData() {
     // 订单描述
     // $dto["body"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getPayeeInfo() {
+function getPayeeInfo()
+{
     $dto = array();
     // 商户类别
     // $dto["mer_cat_code"] = "";
@@ -297,7 +309,8 @@ function getPayeeInfo() {
     return $dto;
 }
 
-function getUnionpayData() {
+function getUnionpayData()
+{
     $dto = array();
     // 二维码
     // $dto["qr_code"] = "";
@@ -324,18 +337,20 @@ function getUnionpayData() {
     // 银联用户标识
     // $dto["user_id"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getDcData() {
+function getDcData()
+{
     $dto = array();
     // 数字货币银行编号
     // $dto["digital_bank_no"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getAcctInfosRucan() {
+function getAcctInfosRucan()
+{
     $dto = array();
     // 分账接收方ID
     $dto["huifu_id"] = "6666000109133323";
@@ -351,7 +366,8 @@ function getAcctInfosRucan() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function getAcctSplitBunch()
+{
     $dto = array();
     // 分账明细
     $dto["acct_infos"] = getAcctInfosRucan();
@@ -360,10 +376,11 @@ function getAcctSplitBunch() {
     // 是否净值分账
     // $dto["is_clean_split"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCombinedpayData() {
+function getCombinedpayData()
+{
     $dto = array();
     // 补贴方汇付商户号
     // $dto["huifu_id"] = "test";
@@ -376,10 +393,11 @@ function getCombinedpayData() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getRiskCheckData()
+{
     $dto = array();
     // ip地址
     $dto["ip_addr"] = "180.167.105.130";
@@ -390,10 +408,11 @@ function getRiskCheckData() {
     // 经度
     $dto["longitude"] = "33.3";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceData() {
+function getTerminalDeviceData()
+{
     $dto = array();
     // 商户设备类型
     // $dto["mer_device_type"] = "test";
@@ -432,7 +451,7 @@ function getTerminalDeviceData() {
     // 商户终端序列号
     // $dto["serial_num"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

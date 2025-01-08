@@ -22,24 +22,29 @@ class V2TradeOnlinepaymentRefundQueryRequest extends BaseRequest
      */
     private $orgReqDate;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_REFUND_QUERY;
     }
 
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOrgReqDate() {
+    public function getOrgReqDate()
+    {
         return $this->orgReqDate;
     }
 
-    public function setOrgReqDate($orgReqDate) {
+    public function setOrgReqDate($orgReqDate)
+    {
         $this->orgReqDate = $orgReqDate;
     }
 

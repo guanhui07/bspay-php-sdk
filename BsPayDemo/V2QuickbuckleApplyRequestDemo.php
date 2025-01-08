@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2QuickbuckleApplyRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2QuickbuckleApplyRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2QuickbuckleApplyRequest;
@@ -20,7 +21,7 @@ $request = new V2QuickbuckleApplyRequest();
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 汇付客户Id
 $request->setHuifuId("6666000109133323");
 // 商户用户id
@@ -62,7 +63,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -71,13 +72,14 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 商户名称
-    $extendInfoMap["merch_name"]= "测试";
+    $extendInfoMap["merch_name"] = "测试";
     // 电子邮箱
-    $extendInfoMap["email"]= "changliang.wang@huifu.com";
+    $extendInfoMap["email"] = "changliang.wang@huifu.com";
     // 卡的借贷类型
     // $extendInfoMap["dc_type"]= "";
     // 风控信息
@@ -85,7 +87,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getTrxDeviceInf() {
+function getTrxDeviceInf()
+{
     $dto = array();
     // 银行预留手机号
     // $dto["trx_mobile_num"] = "test";
@@ -106,10 +109,11 @@ function getTrxDeviceInf() {
     // 交易设备GPS
     // $dto["trx_device_gps"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskInfo() {
+function getRiskInfo()
+{
     $dto = array();
     // IP类型
     // $dto["ip_type"] = "test";
@@ -122,7 +126,7 @@ function getRiskInfo() {
     // 银行预留手机号
     // $dto["mobile"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

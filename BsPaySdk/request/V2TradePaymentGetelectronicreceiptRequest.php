@@ -38,56 +38,69 @@ class V2TradePaymentGetelectronicreceiptRequest extends BaseRequest
      */
     private $payType;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_PAYMENT_GETELECTRONICRECEIPT;
     }
 
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getShowFeemat() {
+    public function getShowFeemat()
+    {
         return $this->showFeemat;
     }
 
-    public function setShowFeemat($showFeemat) {
+    public function setShowFeemat($showFeemat)
+    {
         $this->showFeemat = $showFeemat;
     }
 
-    public function getOrgHfSeqId() {
+    public function getOrgHfSeqId()
+    {
         return $this->orgHfSeqId;
     }
 
-    public function setOrgHfSeqId($orgHfSeqId) {
+    public function setOrgHfSeqId($orgHfSeqId)
+    {
         $this->orgHfSeqId = $orgHfSeqId;
     }
 
-    public function getOrgReqDate() {
+    public function getOrgReqDate()
+    {
         return $this->orgReqDate;
     }
 
-    public function setOrgReqDate($orgReqDate) {
+    public function setOrgReqDate($orgReqDate)
+    {
         $this->orgReqDate = $orgReqDate;
     }
 
-    public function getOrgReqSeqId() {
+    public function getOrgReqSeqId()
+    {
         return $this->orgReqSeqId;
     }
 
-    public function setOrgReqSeqId($orgReqSeqId) {
+    public function setOrgReqSeqId($orgReqSeqId)
+    {
         $this->orgReqSeqId = $orgReqSeqId;
     }
 
-    public function getPayType() {
+    public function getPayType()
+    {
         return $this->payType;
     }
 
-    public function setPayType($payType) {
+    public function setPayType($payType)
+    {
         $this->payType = $payType;
     }
 

@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantDirectWechatSettlementinfoModifyRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantDirectWechatSettlementinfoModifyRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantDirectWechatSettlementinfoModifyRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantDirectWechatSettlementinfoModifyRequest;
 // 2.组装请求参数
 $request = new V2MerchantDirectWechatSettlementinfoModifyRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 汇付ID
@@ -46,7 +47,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -55,13 +56,14 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 开户银行全称（含支行）
-    $extendInfoMap["bank_name"]= "中国农业银行股份有限公司上海马当路支行";
+    $extendInfoMap["bank_name"] = "中国农业银行股份有限公司上海马当路支行";
     // 开户银行联行号
-    $extendInfoMap["bank_branch_id"]= "103290040169";
+    $extendInfoMap["bank_branch_id"] = "103290040169";
     return $extendInfoMap;
 }
 

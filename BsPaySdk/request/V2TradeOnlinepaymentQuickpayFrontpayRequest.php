@@ -46,72 +46,89 @@ class V2TradeOnlinepaymentQuickpayFrontpayRequest extends BaseRequest
      */
     private $notifyUrl;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_QUICKPAY_FRONTPAY;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getTransAmt() {
+    public function getTransAmt()
+    {
         return $this->transAmt;
     }
 
-    public function setTransAmt($transAmt) {
+    public function setTransAmt($transAmt)
+    {
         $this->transAmt = $transAmt;
     }
 
-    public function getExtendPayData() {
+    public function getExtendPayData()
+    {
         return $this->extendPayData;
     }
 
-    public function setExtendPayData($extendPayData) {
+    public function setExtendPayData($extendPayData)
+    {
         $this->extendPayData = $extendPayData;
     }
 
-    public function getTerminalDeviceData() {
+    public function getTerminalDeviceData()
+    {
         return $this->terminalDeviceData;
     }
 
-    public function setTerminalDeviceData($terminalDeviceData) {
+    public function setTerminalDeviceData($terminalDeviceData)
+    {
         $this->terminalDeviceData = $terminalDeviceData;
     }
 
-    public function getRiskCheckData() {
+    public function getRiskCheckData()
+    {
         return $this->riskCheckData;
     }
 
-    public function setRiskCheckData($riskCheckData) {
+    public function setRiskCheckData($riskCheckData)
+    {
         $this->riskCheckData = $riskCheckData;
     }
 
-    public function getNotifyUrl() {
+    public function getNotifyUrl()
+    {
         return $this->notifyUrl;
     }
 
-    public function setNotifyUrl($notifyUrl) {
+    public function setNotifyUrl($notifyUrl)
+    {
         $this->notifyUrl = $notifyUrl;
     }
 

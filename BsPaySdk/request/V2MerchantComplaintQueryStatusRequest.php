@@ -30,40 +30,49 @@ class V2MerchantComplaintQueryStatusRequest extends BaseRequest
      */
     private $bankMerCode;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_COMPLAINT_QUERY_STATUS;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getRiskBizId() {
+    public function getRiskBizId()
+    {
         return $this->riskBizId;
     }
 
-    public function setRiskBizId($riskBizId) {
+    public function setRiskBizId($riskBizId)
+    {
         $this->riskBizId = $riskBizId;
     }
 
-    public function getBankMerCode() {
+    public function getBankMerCode()
+    {
         return $this->bankMerCode;
     }
 
-    public function setBankMerCode($bankMerCode) {
+    public function setBankMerCode($bankMerCode)
+    {
         $this->bankMerCode = $bankMerCode;
     }
 

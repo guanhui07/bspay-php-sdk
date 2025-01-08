@@ -30,40 +30,49 @@ class V2TerminaldeviceDeviceinfoCancelRequest extends BaseRequest
      */
     private $deviceId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TERMINALDEVICE_DEVICEINFO_CANCEL;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getDeviceId() {
+    public function getDeviceId()
+    {
         return $this->deviceId;
     }
 
-    public function setDeviceId($deviceId) {
+    public function setDeviceId($deviceId)
+    {
         $this->deviceId = $deviceId;
     }
 

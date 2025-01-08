@@ -42,64 +42,79 @@ class V2TradeHostingPaymentHtrefundRequest extends BaseRequest
      */
     private $terminalDeviceData;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_HOSTING_PAYMENT_HTREFUND;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOrdAmt() {
+    public function getOrdAmt()
+    {
         return $this->ordAmt;
     }
 
-    public function setOrdAmt($ordAmt) {
+    public function setOrdAmt($ordAmt)
+    {
         $this->ordAmt = $ordAmt;
     }
 
-    public function getOrgReqDate() {
+    public function getOrgReqDate()
+    {
         return $this->orgReqDate;
     }
 
-    public function setOrgReqDate($orgReqDate) {
+    public function setOrgReqDate($orgReqDate)
+    {
         $this->orgReqDate = $orgReqDate;
     }
 
-    public function getRiskCheckData() {
+    public function getRiskCheckData()
+    {
         return $this->riskCheckData;
     }
 
-    public function setRiskCheckData($riskCheckData) {
+    public function setRiskCheckData($riskCheckData)
+    {
         $this->riskCheckData = $riskCheckData;
     }
 
-    public function getTerminalDeviceData() {
+    public function getTerminalDeviceData()
+    {
         return $this->terminalDeviceData;
     }
 
-    public function setTerminalDeviceData($terminalDeviceData) {
+    public function setTerminalDeviceData($terminalDeviceData)
+    {
         $this->terminalDeviceData = $terminalDeviceData;
     }
 

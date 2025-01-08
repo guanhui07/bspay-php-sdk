@@ -30,40 +30,49 @@ class V2HycContractQueryRequest extends BaseRequest
      */
     private $data;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_HYC_CONTRACT_QUERY;
     }
 
 
-    public function getSysId() {
+    public function getSysId()
+    {
         return $this->sysId;
     }
 
-    public function setSysId($sysId) {
+    public function setSysId($sysId)
+    {
         $this->sysId = $sysId;
     }
 
-    public function getProductId() {
+    public function getProductId()
+    {
         return $this->productId;
     }
 
-    public function setProductId($productId) {
+    public function setProductId($productId)
+    {
         $this->productId = $productId;
     }
 
-    public function getSign() {
+    public function getSign()
+    {
         return $this->sign;
     }
 
-    public function setSign($sign) {
+    public function setSign($sign)
+    {
         $this->sign = $sign;
     }
 
-    public function getData() {
+    public function getData()
+    {
         return $this->data;
     }
 
-    public function setData($data) {
+    public function setData($data)
+    {
         $this->data = $data;
     }
 

@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeHostingPaymentPreorderWxRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradeHostingPaymentPreorderWxRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradeHostingPaymentPreorderWxRequest;
@@ -22,7 +23,7 @@ $request->setPreOrderType("3");
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 商户号
 $request->setHuifuId("6666000109133323");
 // 交易金额
@@ -40,7 +41,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -49,27 +50,29 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 收银台样式
     // $extendInfoMap["style_id"]= "";
     // 是否延迟交易
-    $extendInfoMap["delay_acct_flag"]= "Y";
+    $extendInfoMap["delay_acct_flag"] = "Y";
     // 分账对象
-    $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
+    $extendInfoMap["acct_split_bunch"] = getAcctSplitBunchRucan();
     // 交易失效时间
     // $extendInfoMap["time_expire"]= "";
     // 业务信息
     // $extendInfoMap["biz_info"]= getBizInfo();
     // 交易异步通知地址
-    $extendInfoMap["notify_url"]= "https://callback.service.com/xx";
+    $extendInfoMap["notify_url"] = "https://callback.service.com/xx";
     // 微信参数集合
     // $extendInfoMap["wx_data"]= getWxData();
     return $extendInfoMap;
 }
 
-function getAcctInfosRucan() {
+function getAcctInfosRucan()
+{
     $dto = array();
     // 分账金额
     $dto["div_amt"] = "0.01";
@@ -81,15 +84,17 @@ function getAcctInfosRucan() {
     return $dtoList;
 }
 
-function getAcctSplitBunchRucan() {
+function getAcctSplitBunchRucan()
+{
     $dto = array();
     // 分账明细
     $dto["acct_infos"] = getAcctInfosRucan();
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getMiniappDataRucan() {
+function getMiniappDataRucan()
+{
     $dto = array();
     // 是否生成scheme_code
     $dto["need_scheme"] = "Y";
@@ -98,10 +103,11 @@ function getMiniappDataRucan() {
     // 私有信息
     $dto["private_info"] = "oppsHosting://";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getPayCheckWx() {
+function getPayCheckWx()
+{
     $dto = array();
     // 指定支付者
     // $dto["limit_payer"] = "";
@@ -111,7 +117,8 @@ function getPayCheckWx() {
     return $dto;
 }
 
-function getPersonPayer() {
+function getPersonPayer()
+{
     $dto = array();
     // 姓名
     // $dto["name"] = "";
@@ -123,17 +130,19 @@ function getPersonPayer() {
     return $dto;
 }
 
-function getBizInfo() {
+function getBizInfo()
+{
     $dto = array();
     // 付款人验证（微信）
     // $dto["payer_check_wx"] = getPayCheckWx();
     // 个人付款人信息
     // $dto["person_payer"] = getPersonPayer();
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getGoodsDetailWxRucan() {
+function getGoodsDetailWxRucan()
+{
     $dto = array();
     // 商品编码
     // $dto["goods_id"] = "";
@@ -151,7 +160,8 @@ function getGoodsDetailWxRucan() {
     return $dtoList;
 }
 
-function getDetail() {
+function getDetail()
+{
     $dto = array();
     // 单品列表
     // $dto["goods_detail"] = getGoodsDetailWxRucan();
@@ -163,7 +173,8 @@ function getDetail() {
     return $dto;
 }
 
-function getStoreInfo() {
+function getStoreInfo()
+{
     $dto = array();
     // 门店id
     // $dto["id"] = "";
@@ -177,7 +188,8 @@ function getStoreInfo() {
     return $dto;
 }
 
-function getSceneInfo() {
+function getSceneInfo()
+{
     $dto = array();
     // 门店信息
     // $dto["store_info"] = getStoreInfo();
@@ -185,7 +197,8 @@ function getSceneInfo() {
     return $dto;
 }
 
-function getWxData() {
+function getWxData()
+{
     $dto = array();
     // 子商户应用ID
     // $dto["sub_appid"] = "";
@@ -216,7 +229,7 @@ function getWxData() {
     // 指定支付者
     // $dto["limit_payer"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

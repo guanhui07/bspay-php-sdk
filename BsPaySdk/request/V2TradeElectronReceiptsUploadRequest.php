@@ -50,80 +50,99 @@ class V2TradeElectronReceiptsUploadRequest extends BaseRequest
      */
     private $imageContent;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_ELECTRON_RECEIPTS_UPLOAD;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOrgReqDate() {
+    public function getOrgReqDate()
+    {
         return $this->orgReqDate;
     }
 
-    public function setOrgReqDate($orgReqDate) {
+    public function setOrgReqDate($orgReqDate)
+    {
         $this->orgReqDate = $orgReqDate;
     }
 
-    public function getOrgReqSeqId() {
+    public function getOrgReqSeqId()
+    {
         return $this->orgReqSeqId;
     }
 
-    public function setOrgReqSeqId($orgReqSeqId) {
+    public function setOrgReqSeqId($orgReqSeqId)
+    {
         $this->orgReqSeqId = $orgReqSeqId;
     }
 
-    public function getOrgHfSeqId() {
+    public function getOrgHfSeqId()
+    {
         return $this->orgHfSeqId;
     }
 
-    public function setOrgHfSeqId($orgHfSeqId) {
+    public function setOrgHfSeqId($orgHfSeqId)
+    {
         $this->orgHfSeqId = $orgHfSeqId;
     }
 
-    public function getReceiptData() {
+    public function getReceiptData()
+    {
         return $this->receiptData;
     }
 
-    public function setReceiptData($receiptData) {
+    public function setReceiptData($receiptData)
+    {
         $this->receiptData = $receiptData;
     }
 
-    public function getFileName() {
+    public function getFileName()
+    {
         return $this->fileName;
     }
 
-    public function setFileName($fileName) {
+    public function setFileName($fileName)
+    {
         $this->fileName = $fileName;
     }
 
-    public function getImageContent() {
+    public function getImageContent()
+    {
         return $this->imageContent;
     }
 
-    public function setImageContent($imageContent) {
+    public function setImageContent($imageContent)
+    {
         $this->imageContent = $imageContent;
     }
 

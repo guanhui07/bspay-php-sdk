@@ -34,48 +34,59 @@ class V2TradePaymentScanpayQueryRequest extends BaseRequest
      */
     private $orgReqSeqId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_PAYMENT_SCANPAY_QUERY;
     }
 
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOrgReqDate() {
+    public function getOrgReqDate()
+    {
         return $this->orgReqDate;
     }
 
-    public function setOrgReqDate($orgReqDate) {
+    public function setOrgReqDate($orgReqDate)
+    {
         $this->orgReqDate = $orgReqDate;
     }
 
-    public function getOutOrdId() {
+    public function getOutOrdId()
+    {
         return $this->outOrdId;
     }
 
-    public function setOutOrdId($outOrdId) {
+    public function setOutOrdId($outOrdId)
+    {
         $this->outOrdId = $outOrdId;
     }
 
-    public function getOrgHfSeqId() {
+    public function getOrgHfSeqId()
+    {
         return $this->orgHfSeqId;
     }
 
-    public function setOrgHfSeqId($orgHfSeqId) {
+    public function setOrgHfSeqId($orgHfSeqId)
+    {
         $this->orgHfSeqId = $orgHfSeqId;
     }
 
-    public function getOrgReqSeqId() {
+    public function getOrgReqSeqId()
+    {
         return $this->orgReqSeqId;
     }
 
-    public function setOrgReqSeqId($orgReqSeqId) {
+    public function setOrgReqSeqId($orgReqSeqId)
+    {
         $this->orgReqSeqId = $orgReqSeqId;
     }
 

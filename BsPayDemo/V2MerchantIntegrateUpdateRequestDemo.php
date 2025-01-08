@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantIntegrateUpdateRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantIntegrateUpdateRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantIntegrateUpdateRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantIntegrateUpdateRequest;
 // 2.组装请求参数
 $request = new V2MerchantIntegrateUpdateRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 汇付ID
@@ -36,7 +37,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -45,11 +46,12 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 商户基本信息
-    $extendInfoMap["basic_info"]= getBasicInfo();
+    $extendInfoMap["basic_info"] = getBasicInfo();
     // 卡信息配置实体
     // $extendInfoMap["card_info"]= getCardInfo();
     // 协议信息实体
@@ -87,15 +89,16 @@ function getExtendInfos() {
     // 文件列表
     // $extendInfoMap["file_info"]= getFileInfo();
     // 异步消息接收地址(审核)
-    $extendInfoMap["async_return_url"]= "";
+    $extendInfoMap["async_return_url"] = "";
     // 业务开通结果异步消息接收地址
-    $extendInfoMap["busi_async_return_url"]= "";
+    $extendInfoMap["busi_async_return_url"] = "";
     // 交易异步应答地址
-    $extendInfoMap["recon_resp_addr"]= "";
+    $extendInfoMap["recon_resp_addr"] = "";
     return $extendInfoMap;
 }
 
-function getLegalInfo() {
+function getLegalInfo()
+{
     $dto = array();
     // 法人姓名
     // $dto["legal_name"] = "test";
@@ -110,10 +113,11 @@ function getLegalInfo() {
     // 法人证件有效期截止日期
     // $dto["legal_cert_end_date"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getContactInfo() {
+function getContactInfo()
+{
     $dto = array();
     // 联系人姓名
     // $dto["contact_name"] = "test";
@@ -124,10 +128,11 @@ function getContactInfo() {
     // 联系人身份证号
     // $dto["contact_cert_no"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSignUserInfo() {
+function getSignUserInfo()
+{
     $dto = array();
     // 签约人类型
     // $dto["type"] = "test";
@@ -138,10 +143,11 @@ function getSignUserInfo() {
     // 身份证
     // $dto["sign_cert_no"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getBasicInfo() {
+function getBasicInfo()
+{
     $dto = array();
     // 经营简称
     $dto["short_name"] = "张三";
@@ -190,10 +196,11 @@ function getBasicInfo() {
     // 签约人
     // $dto["sign_user_info"] = getSignUserInfo();
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCardInfo() {
+function getCardInfo()
+{
     $dto = array();
     // 结算类型
     // $dto["card_type"] = "test";
@@ -224,10 +231,11 @@ function getCardInfo() {
     // 结算人手机号
     // $dto["mp"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getAgreementInfo() {
+function getAgreementInfo()
+{
     $dto = array();
     // 协议类型
     // $dto["agreement_type"] = "test";
@@ -244,10 +252,11 @@ function getAgreementInfo() {
     // 纸质签约日期
     // $dto["sign_date"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCombinePayConfig() {
+function getCombinePayConfig()
+{
     $dto = array();
     // 支付手续费(%)
     // $dto["fee_rate"] = "";
@@ -260,10 +269,11 @@ function getCombinePayConfig() {
     // 是否交易手续费外扣
     // $dto["out_fee_flag"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCashConfig() {
+function getCashConfig()
+{
     $dto = array();
     // 是否开通取现
     // $dto["switch_state"] = "test";
@@ -280,10 +290,11 @@ function getCashConfig() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSettleConfig() {
+function getSettleConfig()
+{
     $dto = array();
     // 结算周期
     // $dto["settle_cycle"] = "test";
@@ -310,10 +321,11 @@ function getSettleConfig() {
     // 自定义结算处理时间
     // $dto["settle_time"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getBizConf() {
+function getBizConf()
+{
     $dto = array();
     // 延迟入账开关
     // $dto["delay_flag"] = "";
@@ -336,10 +348,11 @@ function getBizConf() {
     // 是否开通结算
     // $dto["settle_flag"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getWxConfList() {
+function getWxConfList()
+{
     $dto = array();
     // 支付场景
     // $dto["pay_scene"] = "test";
@@ -372,10 +385,11 @@ function getWxConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getUboInfo() {
+function getUboInfo()
+{
     $dto = array();
     // 证件类型
     // $dto["ubo_id_doc_type"] = "test";
@@ -396,10 +410,11 @@ function getUboInfo() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getWxRealnameInfo() {
+function getWxRealnameInfo()
+{
     $dto = array();
     // 支付场景
     // $dto["pay_scene"] = "test";
@@ -446,10 +461,11 @@ function getWxRealnameInfo() {
     // 受益人信息
     // $dto["ubo_info_list"] = getUboInfo();
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getAliConfList() {
+function getAliConfList()
+{
     $dto = array();
     // 支付场景
     // $dto["pay_scene"] = "test";
@@ -470,10 +486,11 @@ function getAliConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getUnionMicroInfo() {
+function getUnionMicroInfo()
+{
     $dto = array();
     // 银联商户类别
     // $dto["mchnt_type"] = "test";
@@ -486,10 +503,11 @@ function getUnionMicroInfo() {
     // 商户经营类目
     // $dto["mcc"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getUnionConfList() {
+function getUnionConfList()
+{
     $dto = array();
     // 借记卡手续费1000以上（%）
     // $dto["debit_fee_rate_up"] = "test";
@@ -516,10 +534,11 @@ function getUnionConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getBankCardConf() {
+function getBankCardConf()
+{
     $dto = array();
     // 借记卡手续费（%）
     // $dto["debit_fee_rate"] = "test";
@@ -556,10 +575,11 @@ function getBankCardConf() {
     // 是否交易手续费外扣
     // $dto["out_fee_flag"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getBalancePayConfig() {
+function getBalancePayConfig()
+{
     $dto = array();
     // 支付手续费(%)
     // $dto["fee_rate"] = "";
@@ -572,10 +592,11 @@ function getBalancePayConfig() {
     // 是否交易手续费外扣
     // $dto["out_fee_flag"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getHbFqFeeConfig() {
+function getHbFqFeeConfig()
+{
     $dto = array();
     // 花呗收单分期3期（%）分期费率不为空时，收单费率必填，大于0，保留2位小数，不小于渠道商成本；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.0&lt;/font&gt;代表费率为1.00%
     // $dto["acq_three_period"] = "test";
@@ -600,10 +621,11 @@ function getHbFqFeeConfig() {
     // 是否交易手续费外扣
     // $dto["out_fee_flag"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getOnlineFeeConfList() {
+function getOnlineFeeConfList()
+{
     $dto = array();
     // 业务类型
     // $dto["fee_type"] = "test";
@@ -624,10 +646,11 @@ function getOnlineFeeConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getOnlinePayFeeConfList() {
+function getOnlinePayFeeConfList()
+{
     $dto = array();
     // 业务类型
     // $dto["pay_type"] = "";
@@ -640,10 +663,11 @@ function getOnlinePayFeeConfList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getFileInfo() {
+function getFileInfo()
+{
     $dto = array();
     // D1结算协议图片文件
     // $dto["settle_agree_pic"] = "";
@@ -752,7 +776,7 @@ function getFileInfo() {
     // 支付宝授权函照片
     // $dto["contact_ali_busi_auth_pic"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

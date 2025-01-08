@@ -26,32 +26,39 @@ class V2TradeCloudmisOrderDetailRequest extends BaseRequest
      */
     private $orgReqDate;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_CLOUDMIS_ORDER_DETAIL;
     }
 
 
-    public function getOrgHuifuId() {
+    public function getOrgHuifuId()
+    {
         return $this->orgHuifuId;
     }
 
-    public function setOrgHuifuId($orgHuifuId) {
+    public function setOrgHuifuId($orgHuifuId)
+    {
         $this->orgHuifuId = $orgHuifuId;
     }
 
-    public function getOrgDeviceId() {
+    public function getOrgDeviceId()
+    {
         return $this->orgDeviceId;
     }
 
-    public function setOrgDeviceId($orgDeviceId) {
+    public function setOrgDeviceId($orgDeviceId)
+    {
         $this->orgDeviceId = $orgDeviceId;
     }
 
-    public function getOrgReqDate() {
+    public function getOrgReqDate()
+    {
         return $this->orgReqDate;
     }
 
-    public function setOrgReqDate($orgReqDate) {
+    public function setOrgReqDate($orgReqDate)
+    {
         $this->orgReqDate = $orgReqDate;
     }
 

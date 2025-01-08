@@ -62,104 +62,129 @@ class V2MerchantDirectAlipayFacetofacesignApplyRequest extends BaseRequest
      */
     private $fileList;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_DIRECT_ALIPAY_FACETOFACESIGN_APPLY;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getUpperHuifuId() {
+    public function getUpperHuifuId()
+    {
         return $this->upperHuifuId;
     }
 
-    public function setUpperHuifuId($upperHuifuId) {
+    public function setUpperHuifuId($upperHuifuId)
+    {
         $this->upperHuifuId = $upperHuifuId;
     }
 
-    public function getDirectCategory() {
+    public function getDirectCategory()
+    {
         return $this->directCategory;
     }
 
-    public function setDirectCategory($directCategory) {
+    public function setDirectCategory($directCategory)
+    {
         $this->directCategory = $directCategory;
     }
 
-    public function getAppId() {
+    public function getAppId()
+    {
         return $this->appId;
     }
 
-    public function setAppId($appId) {
+    public function setAppId($appId)
+    {
         $this->appId = $appId;
     }
 
-    public function getContactName() {
+    public function getContactName()
+    {
         return $this->contactName;
     }
 
-    public function setContactName($contactName) {
+    public function setContactName($contactName)
+    {
         $this->contactName = $contactName;
     }
 
-    public function getContactMobileNo() {
+    public function getContactMobileNo()
+    {
         return $this->contactMobileNo;
     }
 
-    public function setContactMobileNo($contactMobileNo) {
+    public function setContactMobileNo($contactMobileNo)
+    {
         $this->contactMobileNo = $contactMobileNo;
     }
 
-    public function getContactEmail() {
+    public function getContactEmail()
+    {
         return $this->contactEmail;
     }
 
-    public function setContactEmail($contactEmail) {
+    public function setContactEmail($contactEmail)
+    {
         $this->contactEmail = $contactEmail;
     }
 
-    public function getAccount() {
+    public function getAccount()
+    {
         return $this->account;
     }
 
-    public function setAccount($account) {
+    public function setAccount($account)
+    {
         $this->account = $account;
     }
 
-    public function getRate() {
+    public function getRate()
+    {
         return $this->rate;
     }
 
-    public function setRate($rate) {
+    public function setRate($rate)
+    {
         $this->rate = $rate;
     }
 
-    public function getFileList() {
+    public function getFileList()
+    {
         return $this->fileList;
     }
 
-    public function setFileList($fileList) {
+    public function setFileList($fileList)
+    {
         $this->fileList = $fileList;
     }
 

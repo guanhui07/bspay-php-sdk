@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantBasicdataModifyRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantBasicdataModifyRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantBasicdataModifyRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantBasicdataModifyRequest;
 // 2.组装请求参数
 $request = new V2MerchantBasicdataModifyRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 上级主体ID
@@ -34,7 +35,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -43,67 +44,68 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 商户简称
-    $extendInfoMap["short_name"]= "尼博网络";
+    $extendInfoMap["short_name"] = "尼博网络";
     // 营业执照类型
     // $extendInfoMap["license_type"]= "";
     // 营业执照有效期类型
-    $extendInfoMap["license_validity_type"]= "0";
+    $extendInfoMap["license_validity_type"] = "0";
     // 营业执照有效期开始日期
-    $extendInfoMap["license_begin_date"]= "20200814";
+    $extendInfoMap["license_begin_date"] = "20200814";
     // 营业执照有效期截止日期
-    $extendInfoMap["license_end_date"]= "20400813";
+    $extendInfoMap["license_end_date"] = "20400813";
     // 注册省
-    $extendInfoMap["reg_prov_id"]= "310000";
+    $extendInfoMap["reg_prov_id"] = "310000";
     // 注册市
-    $extendInfoMap["reg_area_id"]= "310100";
+    $extendInfoMap["reg_area_id"] = "310100";
     // 注册区
-    $extendInfoMap["reg_district_id"]= "310120";
+    $extendInfoMap["reg_district_id"] = "310120";
     // 注册详细地址
-    $extendInfoMap["reg_detail"]= "台州市宜山路700解放2路715";
+    $extendInfoMap["reg_detail"] = "台州市宜山路700解放2路715";
     // 法人姓名
-    $extendInfoMap["legal_name"]= "沈荣";
+    $extendInfoMap["legal_name"] = "沈荣";
     // 法人证件类型
-    $extendInfoMap["legal_cert_type"]= "00";
+    $extendInfoMap["legal_cert_type"] = "00";
     // 法人证件号码
-    $extendInfoMap["legal_cert_no"]= "320923199111206319";
+    $extendInfoMap["legal_cert_no"] = "320923199111206319";
     // 法人证件有效期类型
-    $extendInfoMap["legal_cert_validity_type"]= "0";
+    $extendInfoMap["legal_cert_validity_type"] = "0";
     // 法人证件有效期开始日期
-    $extendInfoMap["legal_cert_begin_date"]= "20200814";
+    $extendInfoMap["legal_cert_begin_date"] = "20200814";
     // 法人证件有效期截止日期
-    $extendInfoMap["legal_cert_end_date"]= "20400813";
+    $extendInfoMap["legal_cert_end_date"] = "20400813";
     // 经营省
-    $extendInfoMap["prov_id"]= "310000";
+    $extendInfoMap["prov_id"] = "310000";
     // 经营市
-    $extendInfoMap["area_id"]= "310100";
+    $extendInfoMap["area_id"] = "310100";
     // 经营区
-    $extendInfoMap["district_id"]= "310105";
+    $extendInfoMap["district_id"] = "310105";
     // 经营详细地址
-    $extendInfoMap["detail_addr"]= "徐州市徐汇区宜山路7497号";
+    $extendInfoMap["detail_addr"] = "徐州市徐汇区宜山路7497号";
     // 联系人姓名
-    $extendInfoMap["contact_name"]= "我是联系人";
+    $extendInfoMap["contact_name"] = "我是联系人";
     // 联系人手机号
-    $extendInfoMap["contact_mobile_no"]= "15556622331";
+    $extendInfoMap["contact_mobile_no"] = "15556622331";
     // 联系人电子邮箱
-    $extendInfoMap["contact_email"]= "mei.zhang@huifu.com";
+    $extendInfoMap["contact_email"] = "mei.zhang@huifu.com";
     // 客服电话
-    $extendInfoMap["service_phone"]= "15556622368";
+    $extendInfoMap["service_phone"] = "15556622368";
     // 小票名称
-    $extendInfoMap["receipt_name"]= "小票上的名称";
+    $extendInfoMap["receipt_name"] = "小票上的名称";
     // 所属行业（MCC）
-    $extendInfoMap["mcc"]= "5411";
+    $extendInfoMap["mcc"] = "5411";
     // 结算卡信息配置
-    $extendInfoMap["card_info"]= getCardInfo();
+    $extendInfoMap["card_info"] = getCardInfo();
     // 取现信息配置
-    $extendInfoMap["cash_config"]= getCashConfig();
+    $extendInfoMap["cash_config"] = getCashConfig();
     // 结算规则配置
-    $extendInfoMap["settle_config"]= getSettleConfig();
+    $extendInfoMap["settle_config"] = getSettleConfig();
     // 异步通知地址
-    $extendInfoMap["async_return_url"]= "archer://C_SSPM_NSPOSM_BUSIRESULT";
+    $extendInfoMap["async_return_url"] = "archer://C_SSPM_NSPOSM_BUSIRESULT";
     // D1结算协议图片文件
     // $extendInfoMap["settle_agree_pic"]= "";
     // 商户英文名称
@@ -127,7 +129,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getCardInfo() {
+function getCardInfo()
+{
     $dto = array();
     // 结算账户类型
     $dto["card_type"] = "0";
@@ -178,10 +181,11 @@ function getCardInfo() {
     // 结算人手机号
     $dto["mp"] = "18221987178";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCashConfig() {
+function getCashConfig()
+{
     $dto = array();
     // 状态
     $dto["switch_state"] = "1";
@@ -200,10 +204,11 @@ function getCashConfig() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSettleConfig() {
+function getSettleConfig()
+{
     $dto = array();
     // 结算开关
     $dto["settle_status"] = "1";
@@ -232,10 +237,11 @@ function getSettleConfig() {
     // 自定义结算处理时间
     // $dto["settle_time"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSignUserInfo() {
+function getSignUserInfo()
+{
     $dto = array();
     // 签约人类型
     // $dto["type"] = "test";
@@ -252,7 +258,7 @@ function getSignUserInfo() {
     // 法人授权书
     // $dto["auth_file_id"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

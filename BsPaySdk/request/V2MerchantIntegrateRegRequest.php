@@ -70,120 +70,149 @@ class V2MerchantIntegrateRegRequest extends BaseRequest
      */
     private $settleConfig;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_INTEGRATE_REG;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getUpperHuifuId() {
+    public function getUpperHuifuId()
+    {
         return $this->upperHuifuId;
     }
 
-    public function setUpperHuifuId($upperHuifuId) {
+    public function setUpperHuifuId($upperHuifuId)
+    {
         $this->upperHuifuId = $upperHuifuId;
     }
 
-    public function getEntType() {
+    public function getEntType()
+    {
         return $this->entType;
     }
 
-    public function setEntType($entType) {
+    public function setEntType($entType)
+    {
         $this->entType = $entType;
     }
 
-    public function getRegName() {
+    public function getRegName()
+    {
         return $this->regName;
     }
 
-    public function setRegName($regName) {
+    public function setRegName($regName)
+    {
         $this->regName = $regName;
     }
 
-    public function getBusiType() {
+    public function getBusiType()
+    {
         return $this->busiType;
     }
 
-    public function setBusiType($busiType) {
+    public function setBusiType($busiType)
+    {
         $this->busiType = $busiType;
     }
 
-    public function getDetailAddr() {
+    public function getDetailAddr()
+    {
         return $this->detailAddr;
     }
 
-    public function setDetailAddr($detailAddr) {
+    public function setDetailAddr($detailAddr)
+    {
         $this->detailAddr = $detailAddr;
     }
 
-    public function getProvId() {
+    public function getProvId()
+    {
         return $this->provId;
     }
 
-    public function setProvId($provId) {
+    public function setProvId($provId)
+    {
         $this->provId = $provId;
     }
 
-    public function getAreaId() {
+    public function getAreaId()
+    {
         return $this->areaId;
     }
 
-    public function setAreaId($areaId) {
+    public function setAreaId($areaId)
+    {
         $this->areaId = $areaId;
     }
 
-    public function getDistrictId() {
+    public function getDistrictId()
+    {
         return $this->districtId;
     }
 
-    public function setDistrictId($districtId) {
+    public function setDistrictId($districtId)
+    {
         $this->districtId = $districtId;
     }
 
-    public function getContactInfo() {
+    public function getContactInfo()
+    {
         return $this->contactInfo;
     }
 
-    public function setContactInfo($contactInfo) {
+    public function setContactInfo($contactInfo)
+    {
         $this->contactInfo = $contactInfo;
     }
 
-    public function getCardInfo() {
+    public function getCardInfo()
+    {
         return $this->cardInfo;
     }
 
-    public function setCardInfo($cardInfo) {
+    public function setCardInfo($cardInfo)
+    {
         $this->cardInfo = $cardInfo;
     }
 
-    public function getCashConfig() {
+    public function getCashConfig()
+    {
         return $this->cashConfig;
     }
 
-    public function setCashConfig($cashConfig) {
+    public function setCashConfig($cashConfig)
+    {
         $this->cashConfig = $cashConfig;
     }
 
-    public function getSettleConfig() {
+    public function getSettleConfig()
+    {
         return $this->settleConfig;
     }
 
-    public function setSettleConfig($settleConfig) {
+    public function setSettleConfig($settleConfig)
+    {
         $this->settleConfig = $settleConfig;
     }
 

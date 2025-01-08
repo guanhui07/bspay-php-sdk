@@ -50,80 +50,99 @@ class V2MerchantActivityAddRequest extends BaseRequest
      */
     private $payWay;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_ACTIVITY_ADD;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getBlPhoto() {
+    public function getBlPhoto()
+    {
         return $this->blPhoto;
     }
 
-    public function setBlPhoto($blPhoto) {
+    public function setBlPhoto($blPhoto)
+    {
         $this->blPhoto = $blPhoto;
     }
 
-    public function getDhPhoto() {
+    public function getDhPhoto()
+    {
         return $this->dhPhoto;
     }
 
-    public function setDhPhoto($dhPhoto) {
+    public function setDhPhoto($dhPhoto)
+    {
         $this->dhPhoto = $dhPhoto;
     }
 
-    public function getFeeType() {
+    public function getFeeType()
+    {
         return $this->feeType;
     }
 
-    public function setFeeType($feeType) {
+    public function setFeeType($feeType)
+    {
         $this->feeType = $feeType;
     }
 
-    public function getMmPhoto() {
+    public function getMmPhoto()
+    {
         return $this->mmPhoto;
     }
 
-    public function setMmPhoto($mmPhoto) {
+    public function setMmPhoto($mmPhoto)
+    {
         $this->mmPhoto = $mmPhoto;
     }
 
-    public function getSytPhoto() {
+    public function getSytPhoto()
+    {
         return $this->sytPhoto;
     }
 
-    public function setSytPhoto($sytPhoto) {
+    public function setSytPhoto($sytPhoto)
+    {
         $this->sytPhoto = $sytPhoto;
     }
 
-    public function getPayWay() {
+    public function getPayWay()
+    {
         return $this->payWay;
     }
 
-    public function setPayWay($payWay) {
+    public function setPayWay($payWay)
+    {
         $this->payWay = $payWay;
     }
 

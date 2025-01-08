@@ -94,168 +94,209 @@ class V2UserBasicdataEntRequest extends BaseRequest
      */
     private $loginName;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_USER_BASICDATA_ENT;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getRegName() {
+    public function getRegName()
+    {
         return $this->regName;
     }
 
-    public function setRegName($regName) {
+    public function setRegName($regName)
+    {
         $this->regName = $regName;
     }
 
-    public function getLicenseCode() {
+    public function getLicenseCode()
+    {
         return $this->licenseCode;
     }
 
-    public function setLicenseCode($licenseCode) {
+    public function setLicenseCode($licenseCode)
+    {
         $this->licenseCode = $licenseCode;
     }
 
-    public function getLicenseValidityType() {
+    public function getLicenseValidityType()
+    {
         return $this->licenseValidityType;
     }
 
-    public function setLicenseValidityType($licenseValidityType) {
+    public function setLicenseValidityType($licenseValidityType)
+    {
         $this->licenseValidityType = $licenseValidityType;
     }
 
-    public function getLicenseBeginDate() {
+    public function getLicenseBeginDate()
+    {
         return $this->licenseBeginDate;
     }
 
-    public function setLicenseBeginDate($licenseBeginDate) {
+    public function setLicenseBeginDate($licenseBeginDate)
+    {
         $this->licenseBeginDate = $licenseBeginDate;
     }
 
-    public function getLicenseEndDate() {
+    public function getLicenseEndDate()
+    {
         return $this->licenseEndDate;
     }
 
-    public function setLicenseEndDate($licenseEndDate) {
+    public function setLicenseEndDate($licenseEndDate)
+    {
         $this->licenseEndDate = $licenseEndDate;
     }
 
-    public function getRegProvId() {
+    public function getRegProvId()
+    {
         return $this->regProvId;
     }
 
-    public function setRegProvId($regProvId) {
+    public function setRegProvId($regProvId)
+    {
         $this->regProvId = $regProvId;
     }
 
-    public function getRegAreaId() {
+    public function getRegAreaId()
+    {
         return $this->regAreaId;
     }
 
-    public function setRegAreaId($regAreaId) {
+    public function setRegAreaId($regAreaId)
+    {
         $this->regAreaId = $regAreaId;
     }
 
-    public function getRegDistrictId() {
+    public function getRegDistrictId()
+    {
         return $this->regDistrictId;
     }
 
-    public function setRegDistrictId($regDistrictId) {
+    public function setRegDistrictId($regDistrictId)
+    {
         $this->regDistrictId = $regDistrictId;
     }
 
-    public function getRegDetail() {
+    public function getRegDetail()
+    {
         return $this->regDetail;
     }
 
-    public function setRegDetail($regDetail) {
+    public function setRegDetail($regDetail)
+    {
         $this->regDetail = $regDetail;
     }
 
-    public function getLegalName() {
+    public function getLegalName()
+    {
         return $this->legalName;
     }
 
-    public function setLegalName($legalName) {
+    public function setLegalName($legalName)
+    {
         $this->legalName = $legalName;
     }
 
-    public function getLegalCertType() {
+    public function getLegalCertType()
+    {
         return $this->legalCertType;
     }
 
-    public function setLegalCertType($legalCertType) {
+    public function setLegalCertType($legalCertType)
+    {
         $this->legalCertType = $legalCertType;
     }
 
-    public function getLegalCertNo() {
+    public function getLegalCertNo()
+    {
         return $this->legalCertNo;
     }
 
-    public function setLegalCertNo($legalCertNo) {
+    public function setLegalCertNo($legalCertNo)
+    {
         $this->legalCertNo = $legalCertNo;
     }
 
-    public function getLegalCertValidityType() {
+    public function getLegalCertValidityType()
+    {
         return $this->legalCertValidityType;
     }
 
-    public function setLegalCertValidityType($legalCertValidityType) {
+    public function setLegalCertValidityType($legalCertValidityType)
+    {
         $this->legalCertValidityType = $legalCertValidityType;
     }
 
-    public function getLegalCertBeginDate() {
+    public function getLegalCertBeginDate()
+    {
         return $this->legalCertBeginDate;
     }
 
-    public function setLegalCertBeginDate($legalCertBeginDate) {
+    public function setLegalCertBeginDate($legalCertBeginDate)
+    {
         $this->legalCertBeginDate = $legalCertBeginDate;
     }
 
-    public function getLegalCertEndDate() {
+    public function getLegalCertEndDate()
+    {
         return $this->legalCertEndDate;
     }
 
-    public function setLegalCertEndDate($legalCertEndDate) {
+    public function setLegalCertEndDate($legalCertEndDate)
+    {
         $this->legalCertEndDate = $legalCertEndDate;
     }
 
-    public function getContactName() {
+    public function getContactName()
+    {
         return $this->contactName;
     }
 
-    public function setContactName($contactName) {
+    public function setContactName($contactName)
+    {
         $this->contactName = $contactName;
     }
 
-    public function getContactMobile() {
+    public function getContactMobile()
+    {
         return $this->contactMobile;
     }
 
-    public function setContactMobile($contactMobile) {
+    public function setContactMobile($contactMobile)
+    {
         $this->contactMobile = $contactMobile;
     }
 
-    public function getLoginName() {
+    public function getLoginName()
+    {
         return $this->loginName;
     }
 
-    public function setLoginName($loginName) {
+    public function setLoginName($loginName)
+    {
         $this->loginName = $loginName;
     }
 

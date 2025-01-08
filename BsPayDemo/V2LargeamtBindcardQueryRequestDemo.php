@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2LargeamtBindcardQueryRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2LargeamtBindcardQueryRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2LargeamtBindcardQueryRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2LargeamtBindcardQueryRequest;
 // 2.组装请求参数
 $request = new V2LargeamtBindcardQueryRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 商户号
@@ -38,7 +39,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -47,15 +48,16 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 卡类型
-    $extendInfoMap["card_type"]= "";
+    $extendInfoMap["card_type"] = "";
     // 银行账户名
-    $extendInfoMap["card_name"]= "";
+    $extendInfoMap["card_name"] = "";
     // 账户号
-    $extendInfoMap["acct_id"]= "";
+    $extendInfoMap["acct_id"] = "";
     return $extendInfoMap;
 }
 

@@ -26,32 +26,39 @@ class V2TradeBatchtranslogQueryRequest extends BaseRequest
      */
     private $endDate;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_BATCHTRANSLOG_QUERY;
     }
 
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getBeginDate() {
+    public function getBeginDate()
+    {
         return $this->beginDate;
     }
 
-    public function setBeginDate($beginDate) {
+    public function setBeginDate($beginDate)
+    {
         $this->beginDate = $beginDate;
     }
 
-    public function getEndDate() {
+    public function getEndDate()
+    {
         return $this->endDate;
     }
 
-    public function setEndDate($endDate) {
+    public function setEndDate($endDate)
+    {
         $this->endDate = $endDate;
     }
 

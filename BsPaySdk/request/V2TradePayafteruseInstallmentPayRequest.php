@@ -46,72 +46,89 @@ class V2TradePayafteruseInstallmentPayRequest extends BaseRequest
      */
     private $alipayData;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_PAYAFTERUSE_INSTALLMENT_PAY;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getTransAmt() {
+    public function getTransAmt()
+    {
         return $this->transAmt;
     }
 
-    public function setTransAmt($transAmt) {
+    public function setTransAmt($transAmt)
+    {
         $this->transAmt = $transAmt;
     }
 
-    public function getGoodsDesc() {
+    public function getGoodsDesc()
+    {
         return $this->goodsDesc;
     }
 
-    public function setGoodsDesc($goodsDesc) {
+    public function setGoodsDesc($goodsDesc)
+    {
         $this->goodsDesc = $goodsDesc;
     }
 
-    public function getRiskCheckData() {
+    public function getRiskCheckData()
+    {
         return $this->riskCheckData;
     }
 
-    public function setRiskCheckData($riskCheckData) {
+    public function setRiskCheckData($riskCheckData)
+    {
         $this->riskCheckData = $riskCheckData;
     }
 
-    public function getTimeExpire() {
+    public function getTimeExpire()
+    {
         return $this->timeExpire;
     }
 
-    public function setTimeExpire($timeExpire) {
+    public function setTimeExpire($timeExpire)
+    {
         $this->timeExpire = $timeExpire;
     }
 
-    public function getAlipayData() {
+    public function getAlipayData()
+    {
         return $this->alipayData;
     }
 
-    public function setAlipayData($alipayData) {
+    public function setAlipayData($alipayData)
+    {
         $this->alipayData = $alipayData;
     }
 

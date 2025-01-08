@@ -50,80 +50,99 @@ class V2BillEntCreateRequest extends BaseRequest
      */
     private $payeeInfo;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_BILL_ENT_CREATE;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getPayerId() {
+    public function getPayerId()
+    {
         return $this->payerId;
     }
 
-    public function setPayerId($payerId) {
+    public function setPayerId($payerId)
+    {
         $this->payerId = $payerId;
     }
 
-    public function getBillName() {
+    public function getBillName()
+    {
         return $this->billName;
     }
 
-    public function setBillName($billName) {
+    public function setBillName($billName)
+    {
         $this->billName = $billName;
     }
 
-    public function getBillAmt() {
+    public function getBillAmt()
+    {
         return $this->billAmt;
     }
 
-    public function setBillAmt($billAmt) {
+    public function setBillAmt($billAmt)
+    {
         $this->billAmt = $billAmt;
     }
 
-    public function getSupportPayType() {
+    public function getSupportPayType()
+    {
         return $this->supportPayType;
     }
 
-    public function setSupportPayType($supportPayType) {
+    public function setSupportPayType($supportPayType)
+    {
         $this->supportPayType = $supportPayType;
     }
 
-    public function getBillEndDate() {
+    public function getBillEndDate()
+    {
         return $this->billEndDate;
     }
 
-    public function setBillEndDate($billEndDate) {
+    public function setBillEndDate($billEndDate)
+    {
         $this->billEndDate = $billEndDate;
     }
 
-    public function getPayeeInfo() {
+    public function getPayeeInfo()
+    {
         return $this->payeeInfo;
     }
 
-    public function setPayeeInfo($payeeInfo) {
+    public function setPayeeInfo($payeeInfo)
+    {
         $this->payeeInfo = $payeeInfo;
     }
 

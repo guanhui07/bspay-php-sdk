@@ -38,56 +38,69 @@ class V2MerchantComplaintRequestCertificatesRequest extends BaseRequest
      */
     private $paymentScene;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_COMPLAINT_REQUEST_CERTIFICATES;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getRiskBizId() {
+    public function getRiskBizId()
+    {
         return $this->riskBizId;
     }
 
-    public function setRiskBizId($riskBizId) {
+    public function setRiskBizId($riskBizId)
+    {
         $this->riskBizId = $riskBizId;
     }
 
-    public function getMerchantType() {
+    public function getMerchantType()
+    {
         return $this->merchantType;
     }
 
-    public function setMerchantType($merchantType) {
+    public function setMerchantType($merchantType)
+    {
         $this->merchantType = $merchantType;
     }
 
-    public function getOperationType() {
+    public function getOperationType()
+    {
         return $this->operationType;
     }
 
-    public function setOperationType($operationType) {
+    public function setOperationType($operationType)
+    {
         $this->operationType = $operationType;
     }
 
-    public function getPaymentScene() {
+    public function getPaymentScene()
+    {
         return $this->paymentScene;
     }
 
-    public function setPaymentScene($paymentScene) {
+    public function setPaymentScene($paymentScene)
+    {
         $this->paymentScene = $paymentScene;
     }
 

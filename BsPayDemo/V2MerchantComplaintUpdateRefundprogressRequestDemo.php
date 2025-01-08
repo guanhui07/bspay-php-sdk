@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantComplaintUpdateRefundprogressRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantComplaintUpdateRefundprogressRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantComplaintUpdateRefundprogressRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantComplaintUpdateRefundprogressRequest;
 // 2.组装请求参数
 $request = new V2MerchantComplaintUpdateRefundprogressRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求时间
 $request->setReqDate(date("Ymd"));
 // 投诉单号
@@ -36,7 +37,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -45,21 +46,23 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 预计发起退款时间
-    $extendInfoMap["launch_refund_day"]= "";
+    $extendInfoMap["launch_refund_day"] = "";
     // 拒绝退款原因
-    $extendInfoMap["reject_reason"]= "";
+    $extendInfoMap["reject_reason"] = "";
     // 备注
-    $extendInfoMap["remark"]= "我是备注1111101";
+    $extendInfoMap["remark"] = "我是备注1111101";
     // 文件列表
-    $extendInfoMap["file_info"]= getFileInfo();
+    $extendInfoMap["file_info"] = getFileInfo();
     return $extendInfoMap;
 }
 
-function getFileInfo() {
+function getFileInfo()
+{
     $dto = array();
     // 拒绝退款的举证图片1
     $dto["reject_media_pic1"] = "a8a096a3-0dd4-3b0e-886c-9afb20d23b1a";
@@ -70,7 +73,7 @@ function getFileInfo() {
     // 拒绝退款的举证图片4
     $dto["reject_media_pic4"] = "a8a096a3-0dd4-3b0e-886c-9afb20d23b4a";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

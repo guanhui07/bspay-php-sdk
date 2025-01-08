@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2InvoiceOpenRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2InvoiceOpenRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2InvoiceOpenRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2InvoiceOpenRequest;
 // 2.组装请求参数
 $request = new V2InvoiceOpenRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求时间
 $request->setReqDate(date("Ymd"));
 // 渠道号汇付商户号为空时，必传；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：6666000109812124&lt;/font&gt;
@@ -52,7 +53,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -61,43 +62,45 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 汇付商户号
-    $extendInfoMap["huifu_id"]= "6666000107430944";
+    $extendInfoMap["huifu_id"] = "6666000107430944";
     // 外部商户号
-    $extendInfoMap["ext_mer_id"]= "";
+    $extendInfoMap["ext_mer_id"] = "";
     // 税控盘编号
-    $extendInfoMap["tax_device_id"]= "661919694739";
+    $extendInfoMap["tax_device_id"] = "661919694739";
     // 购方单位识别号
-    $extendInfoMap["buyer_no"]= "";
+    $extendInfoMap["buyer_no"] = "";
     // 购方单位地址
-    $extendInfoMap["buyer_address"]= "";
+    $extendInfoMap["buyer_address"] = "";
     // 购方单位电话
-    $extendInfoMap["buyer_tel"]= "";
+    $extendInfoMap["buyer_tel"] = "";
     // 购方开户行名称
-    $extendInfoMap["buyer_bank_name"]= "";
+    $extendInfoMap["buyer_bank_name"] = "";
     // 购方银行账号
-    $extendInfoMap["buyer_acct_no"]= "";
+    $extendInfoMap["buyer_acct_no"] = "";
     // 购方企业类型
-    $extendInfoMap["buyer_ent_type"]= "";
+    $extendInfoMap["buyer_ent_type"] = "";
     // 收票人手机号
-    $extendInfoMap["rec_ivc_phone"]= "";
+    $extendInfoMap["rec_ivc_phone"] = "";
     // 收票人邮件
-    $extendInfoMap["rec_ivc_email"]= "test@126.com";
+    $extendInfoMap["rec_ivc_email"] = "test@126.com";
     // 备注
-    $extendInfoMap["resv"]= "备注";
+    $extendInfoMap["resv"] = "备注";
     // 特殊票种标识
-    $extendInfoMap["special_flag"]= "00";
+    $extendInfoMap["special_flag"] = "00";
     // 红字信息表编号
-    $extendInfoMap["red_info_number"]= "";
+    $extendInfoMap["red_info_number"] = "";
     // 开票结果异步通知地址
-    $extendInfoMap["callback_url"]= "virgo://http://192.168.85.157:30031/sspm/testVirgo";
+    $extendInfoMap["callback_url"] = "virgo://http://192.168.85.157:30031/sspm/testVirgo";
     return $extendInfoMap;
 }
 
-function getGoodsInfosRc() {
+function getGoodsInfosRc()
+{
     $dto = array();
     // 发票行性质
     $dto["ivc_nature"] = "0";
@@ -134,10 +137,11 @@ function getGoodsInfosRc() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getPayerInfo() {
+function getPayerInfo()
+{
     $dto = array();
     // 开票人
     $dto["payer_name"] = "开票人";
@@ -146,7 +150,7 @@ function getPayerInfo() {
     // 复核人
     $dto["reviewer"] = "复核";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

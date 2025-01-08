@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeOnlinepaymentBankingFrontpayRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradeOnlinepaymentBankingFrontpayRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradeOnlinepaymentBankingFrontpayRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2TradeOnlinepaymentBankingFrontpayRequest;
 // 2.组装请求参数
 $request = new V2TradeOnlinepaymentBankingFrontpayRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 商户号
@@ -44,7 +45,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -53,35 +54,37 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 收款汇付账户号
-    $extendInfoMap["acct_id"]= "";
+    $extendInfoMap["acct_id"] = "";
     // 订单类型
-    $extendInfoMap["order_type"]= "P";
+    $extendInfoMap["order_type"] = "P";
     // 付款方银行编号
-    $extendInfoMap["bank_id"]= "";
+    $extendInfoMap["bank_id"] = "";
     // 卡类型
-    $extendInfoMap["card_type"]= "D";
+    $extendInfoMap["card_type"] = "D";
     // 备注
-    $extendInfoMap["remark"]= "网银支付接口";
+    $extendInfoMap["remark"] = "网银支付接口";
     // 订单失效时间
-    $extendInfoMap["time_expire"]= "";
+    $extendInfoMap["time_expire"] = "";
     // 网关支付类型
-    $extendInfoMap["gate_type"]= "01";
+    $extendInfoMap["gate_type"] = "01";
     // 延时标记
-    $extendInfoMap["delay_acct_flag"]= "N";
+    $extendInfoMap["delay_acct_flag"] = "N";
     // 分账对象
     // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
     // 手续费扣款标志
     // $extendInfoMap["fee_flag"]= "";
     // 页面跳转地址
-    $extendInfoMap["front_url"]= "http://www.chinapnr.com";
+    $extendInfoMap["front_url"] = "http://www.chinapnr.com";
     return $extendInfoMap;
 }
 
-function getAcctInfos() {
+function getAcctInfos()
+{
     $dto = array();
     // 分账金额
     // $dto["div_amt"] = "";
@@ -97,7 +100,8 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunchRucan() {
+function getAcctSplitBunchRucan()
+{
     $dto = array();
     // 分账明细
     // $dto["acct_infos"] = getAcctInfos();
@@ -106,10 +110,11 @@ function getAcctSplitBunchRucan() {
     // 是否净值分账
     // $dto["is_clean_split"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getExtendPayData() {
+function getExtendPayData()
+{
     $dto = array();
     // 商品简称
     $dto["goods_short_name"] = "011111";
@@ -118,10 +123,11 @@ function getExtendPayData() {
     // 业务种类
     $dto["biz_tp"] = "123451";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceData() {
+function getTerminalDeviceData()
+{
     $dto = array();
     // 交易设备类型
     $dto["device_type"] = "1";
@@ -140,10 +146,11 @@ function getTerminalDeviceData() {
     // 交易设备GPS
     // $dto["device_gps"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getRiskCheckData()
+{
     $dto = array();
     // ip地址
     $dto["ip_addr"] = "1";
@@ -154,7 +161,7 @@ function getRiskCheckData() {
     // 经度
     $dto["longitude"] = "4";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

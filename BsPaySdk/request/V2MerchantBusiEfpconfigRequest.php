@@ -70,120 +70,149 @@ class V2MerchantBusiEfpconfigRequest extends BaseRequest
      */
     private $acctSource;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_BUSI_EFPCONFIG;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getUpperHuifuId() {
+    public function getUpperHuifuId()
+    {
         return $this->upperHuifuId;
     }
 
-    public function setUpperHuifuId($upperHuifuId) {
+    public function setUpperHuifuId($upperHuifuId)
+    {
         $this->upperHuifuId = $upperHuifuId;
     }
 
-    public function getSwitchState() {
+    public function getSwitchState()
+    {
         return $this->switchState;
     }
 
-    public function setSwitchState($switchState) {
+    public function setSwitchState($switchState)
+    {
         $this->switchState = $switchState;
     }
 
-    public function getOutOrderAutoAcctFlag() {
+    public function getOutOrderAutoAcctFlag()
+    {
         return $this->outOrderAutoAcctFlag;
     }
 
-    public function setOutOrderAutoAcctFlag($outOrderAutoAcctFlag) {
+    public function setOutOrderAutoAcctFlag($outOrderAutoAcctFlag)
+    {
         $this->outOrderAutoAcctFlag = $outOrderAutoAcctFlag;
     }
 
-    public function getOutFeeHuifuid() {
+    public function getOutFeeHuifuid()
+    {
         return $this->outFeeHuifuid;
     }
 
-    public function setOutFeeHuifuid($outFeeHuifuid) {
+    public function setOutFeeHuifuid($outFeeHuifuid)
+    {
         $this->outFeeHuifuid = $outFeeHuifuid;
     }
 
-    public function getOutOrderAcctCard() {
+    public function getOutOrderAcctCard()
+    {
         return $this->outOrderAcctCard;
     }
 
-    public function setOutOrderAcctCard($outOrderAcctCard) {
+    public function setOutOrderAcctCard($outOrderAcctCard)
+    {
         $this->outOrderAcctCard = $outOrderAcctCard;
     }
 
-    public function getOutOrderAcctOpenFees() {
+    public function getOutOrderAcctOpenFees()
+    {
         return $this->outOrderAcctOpenFees;
     }
 
-    public function setOutOrderAcctOpenFees($outOrderAcctOpenFees) {
+    public function setOutOrderAcctOpenFees($outOrderAcctOpenFees)
+    {
         $this->outOrderAcctOpenFees = $outOrderAcctOpenFees;
     }
 
-    public function getOtherPaymentInstitutionsPic() {
+    public function getOtherPaymentInstitutionsPic()
+    {
         return $this->otherPaymentInstitutionsPic;
     }
 
-    public function setOtherPaymentInstitutionsPic($otherPaymentInstitutionsPic) {
+    public function setOtherPaymentInstitutionsPic($otherPaymentInstitutionsPic)
+    {
         $this->otherPaymentInstitutionsPic = $otherPaymentInstitutionsPic;
     }
 
-    public function getXwDigitalCertificatePic() {
+    public function getXwDigitalCertificatePic()
+    {
         return $this->xwDigitalCertificatePic;
     }
 
-    public function setXwDigitalCertificatePic($xwDigitalCertificatePic) {
+    public function setXwDigitalCertificatePic($xwDigitalCertificatePic)
+    {
         $this->xwDigitalCertificatePic = $xwDigitalCertificatePic;
     }
 
-    public function getOutFundsGateId() {
+    public function getOutFundsGateId()
+    {
         return $this->outFundsGateId;
     }
 
-    public function setOutFundsGateId($outFundsGateId) {
+    public function setOutFundsGateId($outFundsGateId)
+    {
         $this->outFundsGateId = $outFundsGateId;
     }
 
-    public function getSignUserInfo() {
+    public function getSignUserInfo()
+    {
         return $this->signUserInfo;
     }
 
-    public function setSignUserInfo($signUserInfo) {
+    public function setSignUserInfo($signUserInfo)
+    {
         $this->signUserInfo = $signUserInfo;
     }
 
-    public function getAcctSource() {
+    public function getAcctSource()
+    {
         return $this->acctSource;
     }
 
-    public function setAcctSource($acctSource) {
+    public function setAcctSource($acctSource)
+    {
         $this->acctSource = $acctSource;
     }
 

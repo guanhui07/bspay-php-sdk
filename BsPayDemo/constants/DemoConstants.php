@@ -1,11 +1,13 @@
 <?php
+
 namespace BsPayDemo\constants;
 
 /**
  * Demo 使用到的演示参数
  * @package BsPayDemo\constants
  */
-class DemoConstants{
+class DemoConstants
+{
     /**
      * 下级商户进件后获得的商户号
      */
@@ -23,8 +25,8 @@ class DemoConstants{
      * 微信用户展示的付款二维码
      */
     const WX_AUTH_CODE = "135519197427874038";
-	
-	/**
+
+    /**
      * 取现卡序列号
      */
     const TOKEN_NO = "10010356033";

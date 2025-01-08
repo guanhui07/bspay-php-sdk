@@ -42,64 +42,79 @@ class V2MerchantBusiConfigRequest extends BaseRequest
      */
     private $wxAppletAppId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_BUSI_CONFIG;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getFeeType() {
+    public function getFeeType()
+    {
         return $this->feeType;
     }
 
-    public function setFeeType($feeType) {
+    public function setFeeType($feeType)
+    {
         $this->feeType = $feeType;
     }
 
-    public function getWxWoaAppId() {
+    public function getWxWoaAppId()
+    {
         return $this->wxWoaAppId;
     }
 
-    public function setWxWoaAppId($wxWoaAppId) {
+    public function setWxWoaAppId($wxWoaAppId)
+    {
         $this->wxWoaAppId = $wxWoaAppId;
     }
 
-    public function getWxWoaPath() {
+    public function getWxWoaPath()
+    {
         return $this->wxWoaPath;
     }
 
-    public function setWxWoaPath($wxWoaPath) {
+    public function setWxWoaPath($wxWoaPath)
+    {
         $this->wxWoaPath = $wxWoaPath;
     }
 
-    public function getWxAppletAppId() {
+    public function getWxAppletAppId()
+    {
         return $this->wxAppletAppId;
     }
 
-    public function setWxAppletAppId($wxAppletAppId) {
+    public function setWxAppletAppId($wxAppletAppId)
+    {
         $this->wxAppletAppId = $wxAppletAppId;
     }
 

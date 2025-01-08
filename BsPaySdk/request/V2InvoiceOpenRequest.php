@@ -66,112 +66,139 @@ class V2InvoiceOpenRequest extends BaseRequest
      */
     private $payerInfo;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_INVOICE_OPEN;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getChannelId() {
+    public function getChannelId()
+    {
         return $this->channelId;
     }
 
-    public function setChannelId($channelId) {
+    public function setChannelId($channelId)
+    {
         $this->channelId = $channelId;
     }
 
-    public function getIvcType() {
+    public function getIvcType()
+    {
         return $this->ivcType;
     }
 
-    public function setIvcType($ivcType) {
+    public function setIvcType($ivcType)
+    {
         $this->ivcType = $ivcType;
     }
 
-    public function getOpenType() {
+    public function getOpenType()
+    {
         return $this->openType;
     }
 
-    public function setOpenType($openType) {
+    public function setOpenType($openType)
+    {
         $this->openType = $openType;
     }
 
-    public function getBuyerName() {
+    public function getBuyerName()
+    {
         return $this->buyerName;
     }
 
-    public function setBuyerName($buyerName) {
+    public function setBuyerName($buyerName)
+    {
         $this->buyerName = $buyerName;
     }
 
-    public function getOrderAmt() {
+    public function getOrderAmt()
+    {
         return $this->orderAmt;
     }
 
-    public function setOrderAmt($orderAmt) {
+    public function setOrderAmt($orderAmt)
+    {
         $this->orderAmt = $orderAmt;
     }
 
-    public function getRedApplyReason() {
+    public function getRedApplyReason()
+    {
         return $this->redApplyReason;
     }
 
-    public function setRedApplyReason($redApplyReason) {
+    public function setRedApplyReason($redApplyReason)
+    {
         $this->redApplyReason = $redApplyReason;
     }
 
-    public function getRedApplySource() {
+    public function getRedApplySource()
+    {
         return $this->redApplySource;
     }
 
-    public function setRedApplySource($redApplySource) {
+    public function setRedApplySource($redApplySource)
+    {
         $this->redApplySource = $redApplySource;
     }
 
-    public function getOriIvcCode() {
+    public function getOriIvcCode()
+    {
         return $this->oriIvcCode;
     }
 
-    public function setOriIvcCode($oriIvcCode) {
+    public function setOriIvcCode($oriIvcCode)
+    {
         $this->oriIvcCode = $oriIvcCode;
     }
 
-    public function getOriIvcNumber() {
+    public function getOriIvcNumber()
+    {
         return $this->oriIvcNumber;
     }
 
-    public function setOriIvcNumber($oriIvcNumber) {
+    public function setOriIvcNumber($oriIvcNumber)
+    {
         $this->oriIvcNumber = $oriIvcNumber;
     }
 
-    public function getGoodsInfos() {
+    public function getGoodsInfos()
+    {
         return $this->goodsInfos;
     }
 
-    public function setGoodsInfos($goodsInfos) {
+    public function setGoodsInfos($goodsInfos)
+    {
         $this->goodsInfos = $goodsInfos;
     }
 
-    public function getPayerInfo() {
+    public function getPayerInfo()
+    {
         return $this->payerInfo;
     }
 
-    public function setPayerInfo($payerInfo) {
+    public function setPayerInfo($payerInfo)
+    {
         $this->payerInfo = $payerInfo;
     }
 

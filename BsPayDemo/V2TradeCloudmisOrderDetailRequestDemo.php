@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeCloudmisOrderDetailRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradeCloudmisOrderDetailRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradeCloudmisOrderDetailRequest;
@@ -32,7 +33,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -41,13 +42,14 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 原MIS请求流水号
-    $extendInfoMap["org_req_id"]= "reqId20240624091729005";
+    $extendInfoMap["org_req_id"] = "reqId20240624091729005";
     // 原MIS请求jsonData中的三方单号
-    $extendInfoMap["org_third_order_id"]= "20240313115926539uf7cqcmwxl30";
+    $extendInfoMap["org_third_order_id"] = "20240313115926539uf7cqcmwxl30";
     return $extendInfoMap;
 }
 

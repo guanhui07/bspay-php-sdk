@@ -130,240 +130,299 @@ class V2MerchantDirectZftRegRequest extends BaseRequest
      */
     private $fileList;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_DIRECT_ZFT_REG;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getAppId() {
+    public function getAppId()
+    {
         return $this->appId;
     }
 
-    public function setAppId($appId) {
+    public function setAppId($appId)
+    {
         $this->appId = $appId;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
     }
 
-    public function getMerchantType() {
+    public function getMerchantType()
+    {
         return $this->merchantType;
     }
 
-    public function setMerchantType($merchantType) {
+    public function setMerchantType($merchantType)
+    {
         $this->merchantType = $merchantType;
     }
 
-    public function getMcc() {
+    public function getMcc()
+    {
         return $this->mcc;
     }
 
-    public function setMcc($mcc) {
+    public function setMcc($mcc)
+    {
         $this->mcc = $mcc;
     }
 
-    public function getCertType() {
+    public function getCertType()
+    {
         return $this->certType;
     }
 
-    public function setCertType($certType) {
+    public function setCertType($certType)
+    {
         $this->certType = $certType;
     }
 
-    public function getCertNo() {
+    public function getCertNo()
+    {
         return $this->certNo;
     }
 
-    public function setCertNo($certNo) {
+    public function setCertNo($certNo)
+    {
         $this->certNo = $certNo;
     }
 
-    public function getCertName() {
+    public function getCertName()
+    {
         return $this->certName;
     }
 
-    public function setCertName($certName) {
+    public function setCertName($certName)
+    {
         $this->certName = $certName;
     }
 
-    public function getLegalName() {
+    public function getLegalName()
+    {
         return $this->legalName;
     }
 
-    public function setLegalName($legalName) {
+    public function setLegalName($legalName)
+    {
         $this->legalName = $legalName;
     }
 
-    public function getLegalCertNo() {
+    public function getLegalCertNo()
+    {
         return $this->legalCertNo;
     }
 
-    public function setLegalCertNo($legalCertNo) {
+    public function setLegalCertNo($legalCertNo)
+    {
         $this->legalCertNo = $legalCertNo;
     }
 
-    public function getServicePhone() {
+    public function getServicePhone()
+    {
         return $this->servicePhone;
     }
 
-    public function setServicePhone($servicePhone) {
+    public function setServicePhone($servicePhone)
+    {
         $this->servicePhone = $servicePhone;
     }
 
-    public function getProvId() {
+    public function getProvId()
+    {
         return $this->provId;
     }
 
-    public function setProvId($provId) {
+    public function setProvId($provId)
+    {
         $this->provId = $provId;
     }
 
-    public function getAreaId() {
+    public function getAreaId()
+    {
         return $this->areaId;
     }
 
-    public function setAreaId($areaId) {
+    public function setAreaId($areaId)
+    {
         $this->areaId = $areaId;
     }
 
-    public function getDistrictId() {
+    public function getDistrictId()
+    {
         return $this->districtId;
     }
 
-    public function setDistrictId($districtId) {
+    public function setDistrictId($districtId)
+    {
         $this->districtId = $districtId;
     }
 
-    public function getDetailAddr() {
+    public function getDetailAddr()
+    {
         return $this->detailAddr;
     }
 
-    public function setDetailAddr($detailAddr) {
+    public function setDetailAddr($detailAddr)
+    {
         $this->detailAddr = $detailAddr;
     }
 
-    public function getContactName() {
+    public function getContactName()
+    {
         return $this->contactName;
     }
 
-    public function setContactName($contactName) {
+    public function setContactName($contactName)
+    {
         $this->contactName = $contactName;
     }
 
-    public function getContactTag() {
+    public function getContactTag()
+    {
         return $this->contactTag;
     }
 
-    public function setContactTag($contactTag) {
+    public function setContactTag($contactTag)
+    {
         $this->contactTag = $contactTag;
     }
 
-    public function getContactType() {
+    public function getContactType()
+    {
         return $this->contactType;
     }
 
-    public function setContactType($contactType) {
+    public function setContactType($contactType)
+    {
         $this->contactType = $contactType;
     }
 
-    public function getContactMobileNo() {
+    public function getContactMobileNo()
+    {
         return $this->contactMobileNo;
     }
 
-    public function setContactMobileNo($contactMobileNo) {
+    public function setContactMobileNo($contactMobileNo)
+    {
         $this->contactMobileNo = $contactMobileNo;
     }
 
-    public function getZftCardInfoList() {
+    public function getZftCardInfoList()
+    {
         return $this->zftCardInfoList;
     }
 
-    public function setZftCardInfoList($zftCardInfoList) {
+    public function setZftCardInfoList($zftCardInfoList)
+    {
         $this->zftCardInfoList = $zftCardInfoList;
     }
 
-    public function getAlipayLogonId() {
+    public function getAlipayLogonId()
+    {
         return $this->alipayLogonId;
     }
 
-    public function setAlipayLogonId($alipayLogonId) {
+    public function setAlipayLogonId($alipayLogonId)
+    {
         $this->alipayLogonId = $alipayLogonId;
     }
 
-    public function getIndustryQualificationType() {
+    public function getIndustryQualificationType()
+    {
         return $this->industryQualificationType;
     }
 
-    public function setIndustryQualificationType($industryQualificationType) {
+    public function setIndustryQualificationType($industryQualificationType)
+    {
         $this->industryQualificationType = $industryQualificationType;
     }
 
-    public function getService() {
+    public function getService()
+    {
         return $this->service;
     }
 
-    public function setService($service) {
+    public function setService($service)
+    {
         $this->service = $service;
     }
 
-    public function getSignTimeWithIsv() {
+    public function getSignTimeWithIsv()
+    {
         return $this->signTimeWithIsv;
     }
 
-    public function setSignTimeWithIsv($signTimeWithIsv) {
+    public function setSignTimeWithIsv($signTimeWithIsv)
+    {
         $this->signTimeWithIsv = $signTimeWithIsv;
     }
 
-    public function getBindingAlipayLogonId() {
+    public function getBindingAlipayLogonId()
+    {
         return $this->bindingAlipayLogonId;
     }
 
-    public function setBindingAlipayLogonId($bindingAlipayLogonId) {
+    public function setBindingAlipayLogonId($bindingAlipayLogonId)
+    {
         $this->bindingAlipayLogonId = $bindingAlipayLogonId;
     }
 
-    public function getDefaultSettleType() {
+    public function getDefaultSettleType()
+    {
         return $this->defaultSettleType;
     }
 
-    public function setDefaultSettleType($defaultSettleType) {
+    public function setDefaultSettleType($defaultSettleType)
+    {
         $this->defaultSettleType = $defaultSettleType;
     }
 
-    public function getFileList() {
+    public function getFileList()
+    {
         return $this->fileList;
     }
 
-    public function setFileList($fileList) {
+    public function setFileList($fileList)
+    {
         $this->fileList = $fileList;
     }
 

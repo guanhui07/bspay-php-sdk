@@ -78,136 +78,169 @@ class V2TradeSettlementSurrogateRequest extends BaseRequest
      */
     private $intoAcctDateType;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_SETTLEMENT_SURROGATE;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getCashAmt() {
+    public function getCashAmt()
+    {
         return $this->cashAmt;
     }
 
-    public function setCashAmt($cashAmt) {
+    public function setCashAmt($cashAmt)
+    {
         $this->cashAmt = $cashAmt;
     }
 
-    public function getPurposeDesc() {
+    public function getPurposeDesc()
+    {
         return $this->purposeDesc;
     }
 
-    public function setPurposeDesc($purposeDesc) {
+    public function setPurposeDesc($purposeDesc)
+    {
         $this->purposeDesc = $purposeDesc;
     }
 
-    public function getProvince() {
+    public function getProvince()
+    {
         return $this->province;
     }
 
-    public function setProvince($province) {
+    public function setProvince($province)
+    {
         $this->province = $province;
     }
 
-    public function getArea() {
+    public function getArea()
+    {
         return $this->area;
     }
 
-    public function setArea($area) {
+    public function setArea($area)
+    {
         $this->area = $area;
     }
 
-    public function getBankCode() {
+    public function getBankCode()
+    {
         return $this->bankCode;
     }
 
-    public function setBankCode($bankCode) {
+    public function setBankCode($bankCode)
+    {
         $this->bankCode = $bankCode;
     }
 
-    public function getCorrespondentCode() {
+    public function getCorrespondentCode()
+    {
         return $this->correspondentCode;
     }
 
-    public function setCorrespondentCode($correspondentCode) {
+    public function setCorrespondentCode($correspondentCode)
+    {
         $this->correspondentCode = $correspondentCode;
     }
 
-    public function getBankAccountName() {
+    public function getBankAccountName()
+    {
         return $this->bankAccountName;
     }
 
-    public function setBankAccountName($bankAccountName) {
+    public function setBankAccountName($bankAccountName)
+    {
         $this->bankAccountName = $bankAccountName;
     }
 
-    public function getCardAcctType() {
+    public function getCardAcctType()
+    {
         return $this->cardAcctType;
     }
 
-    public function setCardAcctType($cardAcctType) {
+    public function setCardAcctType($cardAcctType)
+    {
         $this->cardAcctType = $cardAcctType;
     }
 
-    public function getBankCardNoCrypt() {
+    public function getBankCardNoCrypt()
+    {
         return $this->bankCardNoCrypt;
     }
 
-    public function setBankCardNoCrypt($bankCardNoCrypt) {
+    public function setBankCardNoCrypt($bankCardNoCrypt)
+    {
         $this->bankCardNoCrypt = $bankCardNoCrypt;
     }
 
-    public function getCertificateNoCrypt() {
+    public function getCertificateNoCrypt()
+    {
         return $this->certificateNoCrypt;
     }
 
-    public function setCertificateNoCrypt($certificateNoCrypt) {
+    public function setCertificateNoCrypt($certificateNoCrypt)
+    {
         $this->certificateNoCrypt = $certificateNoCrypt;
     }
 
-    public function getCertificateType() {
+    public function getCertificateType()
+    {
         return $this->certificateType;
     }
 
-    public function setCertificateType($certificateType) {
+    public function setCertificateType($certificateType)
+    {
         $this->certificateType = $certificateType;
     }
 
-    public function getMobileNoCrypt() {
+    public function getMobileNoCrypt()
+    {
         return $this->mobileNoCrypt;
     }
 
-    public function setMobileNoCrypt($mobileNoCrypt) {
+    public function setMobileNoCrypt($mobileNoCrypt)
+    {
         $this->mobileNoCrypt = $mobileNoCrypt;
     }
 
-    public function getIntoAcctDateType() {
+    public function getIntoAcctDateType()
+    {
         return $this->intoAcctDateType;
     }
 
-    public function setIntoAcctDateType($intoAcctDateType) {
+    public function setIntoAcctDateType($intoAcctDateType)
+    {
         $this->intoAcctDateType = $intoAcctDateType;
     }
 

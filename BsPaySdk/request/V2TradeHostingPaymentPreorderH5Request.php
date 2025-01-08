@@ -42,64 +42,79 @@ class V2TradeHostingPaymentPreorderH5Request extends BaseRequest
      */
     private $hostingData;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_HOSTING_PAYMENT_PREORDER;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getTransAmt() {
+    public function getTransAmt()
+    {
         return $this->transAmt;
     }
 
-    public function setTransAmt($transAmt) {
+    public function setTransAmt($transAmt)
+    {
         $this->transAmt = $transAmt;
     }
 
-    public function getGoodsDesc() {
+    public function getGoodsDesc()
+    {
         return $this->goodsDesc;
     }
 
-    public function setGoodsDesc($goodsDesc) {
+    public function setGoodsDesc($goodsDesc)
+    {
         $this->goodsDesc = $goodsDesc;
     }
 
-    public function getPreOrderType() {
+    public function getPreOrderType()
+    {
         return $this->preOrderType;
     }
 
-    public function setPreOrderType($preOrderType) {
+    public function setPreOrderType($preOrderType)
+    {
         $this->preOrderType = $preOrderType;
     }
 
-    public function getHostingData() {
+    public function getHostingData()
+    {
         return $this->hostingData;
     }
 
-    public function setHostingData($hostingData) {
+    public function setHostingData($hostingData)
+    {
         $this->hostingData = $hostingData;
     }
 

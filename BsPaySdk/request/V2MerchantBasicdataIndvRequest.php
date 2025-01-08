@@ -62,104 +62,129 @@ class V2MerchantBasicdataIndvRequest extends BaseRequest
      */
     private $cardInfo;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_BASICDATA_INDV;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getUpperHuifuId() {
+    public function getUpperHuifuId()
+    {
         return $this->upperHuifuId;
     }
 
-    public function setUpperHuifuId($upperHuifuId) {
+    public function setUpperHuifuId($upperHuifuId)
+    {
         $this->upperHuifuId = $upperHuifuId;
     }
 
-    public function getRegName() {
+    public function getRegName()
+    {
         return $this->regName;
     }
 
-    public function setRegName($regName) {
+    public function setRegName($regName)
+    {
         $this->regName = $regName;
     }
 
-    public function getProvId() {
+    public function getProvId()
+    {
         return $this->provId;
     }
 
-    public function setProvId($provId) {
+    public function setProvId($provId)
+    {
         $this->provId = $provId;
     }
 
-    public function getAreaId() {
+    public function getAreaId()
+    {
         return $this->areaId;
     }
 
-    public function setAreaId($areaId) {
+    public function setAreaId($areaId)
+    {
         $this->areaId = $areaId;
     }
 
-    public function getDistrictId() {
+    public function getDistrictId()
+    {
         return $this->districtId;
     }
 
-    public function setDistrictId($districtId) {
+    public function setDistrictId($districtId)
+    {
         $this->districtId = $districtId;
     }
 
-    public function getDetailAddr() {
+    public function getDetailAddr()
+    {
         return $this->detailAddr;
     }
 
-    public function setDetailAddr($detailAddr) {
+    public function setDetailAddr($detailAddr)
+    {
         $this->detailAddr = $detailAddr;
     }
 
-    public function getContactName() {
+    public function getContactName()
+    {
         return $this->contactName;
     }
 
-    public function setContactName($contactName) {
+    public function setContactName($contactName)
+    {
         $this->contactName = $contactName;
     }
 
-    public function getContactMobileNo() {
+    public function getContactMobileNo()
+    {
         return $this->contactMobileNo;
     }
 
-    public function setContactMobileNo($contactMobileNo) {
+    public function setContactMobileNo($contactMobileNo)
+    {
         $this->contactMobileNo = $contactMobileNo;
     }
 
-    public function getContactEmail() {
+    public function getContactEmail()
+    {
         return $this->contactEmail;
     }
 
-    public function setContactEmail($contactEmail) {
+    public function setContactEmail($contactEmail)
+    {
         $this->contactEmail = $contactEmail;
     }
 
-    public function getCardInfo() {
+    public function getCardInfo()
+    {
         return $this->cardInfo;
     }
 
-    public function setCardInfo($cardInfo) {
+    public function setCardInfo($cardInfo)
+    {
         $this->cardInfo = $cardInfo;
     }
 

@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2PcreditSolutionCreateRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2PcreditSolutionCreateRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2PcreditSolutionCreateRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2PcreditSolutionCreateRequest;
 // 2.组装请求参数
 $request = new V2PcreditSolutionCreateRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 汇付客户Id
@@ -54,7 +55,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -63,15 +64,17 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 开发者的应用ID
-    $extendInfoMap["app_id"]= "";
+    $extendInfoMap["app_id"] = "";
     return $extendInfoMap;
 }
 
-function getSubShopInfoList() {
+function getSubShopInfoList()
+{
     $dto = array();
     // 二级商户号
     $dto["sub_mer_id"] = "A4854135335181517376";
@@ -92,7 +95,7 @@ function getSubShopInfoList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

@@ -38,56 +38,69 @@ class V2TradePaymentJspayRequest extends BaseRequest
      */
     private $transAmt;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_PAYMENT_JSPAY;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getGoodsDesc() {
+    public function getGoodsDesc()
+    {
         return $this->goodsDesc;
     }
 
-    public function setGoodsDesc($goodsDesc) {
+    public function setGoodsDesc($goodsDesc)
+    {
         $this->goodsDesc = $goodsDesc;
     }
 
-    public function getTradeType() {
+    public function getTradeType()
+    {
         return $this->tradeType;
     }
 
-    public function setTradeType($tradeType) {
+    public function setTradeType($tradeType)
+    {
         $this->tradeType = $tradeType;
     }
 
-    public function getTransAmt() {
+    public function getTransAmt()
+    {
         return $this->transAmt;
     }
 
-    public function setTransAmt($transAmt) {
+    public function setTransAmt($transAmt)
+    {
         $this->transAmt = $transAmt;
     }
 

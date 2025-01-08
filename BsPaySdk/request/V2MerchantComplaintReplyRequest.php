@@ -46,72 +46,89 @@ class V2MerchantComplaintReplyRequest extends BaseRequest
      */
     private $mchId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_COMPLAINT_REPLY;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getComplaintId() {
+    public function getComplaintId()
+    {
         return $this->complaintId;
     }
 
-    public function setComplaintId($complaintId) {
+    public function setComplaintId($complaintId)
+    {
         $this->complaintId = $complaintId;
     }
 
-    public function getComplaintedMchid() {
+    public function getComplaintedMchid()
+    {
         return $this->complaintedMchid;
     }
 
-    public function setComplaintedMchid($complaintedMchid) {
+    public function setComplaintedMchid($complaintedMchid)
+    {
         $this->complaintedMchid = $complaintedMchid;
     }
 
-    public function getResponseContent() {
+    public function getResponseContent()
+    {
         return $this->responseContent;
     }
 
-    public function setResponseContent($responseContent) {
+    public function setResponseContent($responseContent)
+    {
         $this->responseContent = $responseContent;
     }
 
-    public function getJumpUrl() {
+    public function getJumpUrl()
+    {
         return $this->jumpUrl;
     }
 
-    public function setJumpUrl($jumpUrl) {
+    public function setJumpUrl($jumpUrl)
+    {
         $this->jumpUrl = $jumpUrl;
     }
 
-    public function getJumpUrlText() {
+    public function getJumpUrlText()
+    {
         return $this->jumpUrlText;
     }
 
-    public function setJumpUrlText($jumpUrlText) {
+    public function setJumpUrlText($jumpUrlText)
+    {
         $this->jumpUrlText = $jumpUrlText;
     }
 
-    public function getMchId() {
+    public function getMchId()
+    {
         return $this->mchId;
     }
 
-    public function setMchId($mchId) {
+    public function setMchId($mchId)
+    {
         $this->mchId = $mchId;
     }
 

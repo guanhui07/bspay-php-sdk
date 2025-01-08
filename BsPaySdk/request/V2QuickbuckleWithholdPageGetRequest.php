@@ -34,48 +34,59 @@ class V2QuickbuckleWithholdPageGetRequest extends BaseRequest
      */
     private $orderDate;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_QUICKBUCKLE_WITHHOLD_PAGE_GET;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOrderId() {
+    public function getOrderId()
+    {
         return $this->orderId;
     }
 
-    public function setOrderId($orderId) {
+    public function setOrderId($orderId)
+    {
         $this->orderId = $orderId;
     }
 
-    public function getOrderDate() {
+    public function getOrderDate()
+    {
         return $this->orderDate;
     }
 
-    public function setOrderDate($orderDate) {
+    public function setOrderDate($orderDate)
+    {
         $this->orderDate = $orderDate;
     }
 

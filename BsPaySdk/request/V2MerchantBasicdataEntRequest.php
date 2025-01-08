@@ -150,280 +150,349 @@ class V2MerchantBasicdataEntRequest extends BaseRequest
      */
     private $headHuifuId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_BASICDATA_ENT;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getUpperHuifuId() {
+    public function getUpperHuifuId()
+    {
         return $this->upperHuifuId;
     }
 
-    public function setUpperHuifuId($upperHuifuId) {
+    public function setUpperHuifuId($upperHuifuId)
+    {
         $this->upperHuifuId = $upperHuifuId;
     }
 
-    public function getRegName() {
+    public function getRegName()
+    {
         return $this->regName;
     }
 
-    public function setRegName($regName) {
+    public function setRegName($regName)
+    {
         $this->regName = $regName;
     }
 
-    public function getShortName() {
+    public function getShortName()
+    {
         return $this->shortName;
     }
 
-    public function setShortName($shortName) {
+    public function setShortName($shortName)
+    {
         $this->shortName = $shortName;
     }
 
-    public function getEntType() {
+    public function getEntType()
+    {
         return $this->entType;
     }
 
-    public function setEntType($entType) {
+    public function setEntType($entType)
+    {
         $this->entType = $entType;
     }
 
-    public function getLicenseCode() {
+    public function getLicenseCode()
+    {
         return $this->licenseCode;
     }
 
-    public function setLicenseCode($licenseCode) {
+    public function setLicenseCode($licenseCode)
+    {
         $this->licenseCode = $licenseCode;
     }
 
-    public function getLicenseValidityType() {
+    public function getLicenseValidityType()
+    {
         return $this->licenseValidityType;
     }
 
-    public function setLicenseValidityType($licenseValidityType) {
+    public function setLicenseValidityType($licenseValidityType)
+    {
         $this->licenseValidityType = $licenseValidityType;
     }
 
-    public function getLicenseBeginDate() {
+    public function getLicenseBeginDate()
+    {
         return $this->licenseBeginDate;
     }
 
-    public function setLicenseBeginDate($licenseBeginDate) {
+    public function setLicenseBeginDate($licenseBeginDate)
+    {
         $this->licenseBeginDate = $licenseBeginDate;
     }
 
-    public function getLicenseEndDate() {
+    public function getLicenseEndDate()
+    {
         return $this->licenseEndDate;
     }
 
-    public function setLicenseEndDate($licenseEndDate) {
+    public function setLicenseEndDate($licenseEndDate)
+    {
         $this->licenseEndDate = $licenseEndDate;
     }
 
-    public function getRegProvId() {
+    public function getRegProvId()
+    {
         return $this->regProvId;
     }
 
-    public function setRegProvId($regProvId) {
+    public function setRegProvId($regProvId)
+    {
         $this->regProvId = $regProvId;
     }
 
-    public function getRegAreaId() {
+    public function getRegAreaId()
+    {
         return $this->regAreaId;
     }
 
-    public function setRegAreaId($regAreaId) {
+    public function setRegAreaId($regAreaId)
+    {
         $this->regAreaId = $regAreaId;
     }
 
-    public function getRegDistrictId() {
+    public function getRegDistrictId()
+    {
         return $this->regDistrictId;
     }
 
-    public function setRegDistrictId($regDistrictId) {
+    public function setRegDistrictId($regDistrictId)
+    {
         $this->regDistrictId = $regDistrictId;
     }
 
-    public function getRegDetail() {
+    public function getRegDetail()
+    {
         return $this->regDetail;
     }
 
-    public function setRegDetail($regDetail) {
+    public function setRegDetail($regDetail)
+    {
         $this->regDetail = $regDetail;
     }
 
-    public function getLegalName() {
+    public function getLegalName()
+    {
         return $this->legalName;
     }
 
-    public function setLegalName($legalName) {
+    public function setLegalName($legalName)
+    {
         $this->legalName = $legalName;
     }
 
-    public function getLegalCertType() {
+    public function getLegalCertType()
+    {
         return $this->legalCertType;
     }
 
-    public function setLegalCertType($legalCertType) {
+    public function setLegalCertType($legalCertType)
+    {
         $this->legalCertType = $legalCertType;
     }
 
-    public function getLegalCertNo() {
+    public function getLegalCertNo()
+    {
         return $this->legalCertNo;
     }
 
-    public function setLegalCertNo($legalCertNo) {
+    public function setLegalCertNo($legalCertNo)
+    {
         $this->legalCertNo = $legalCertNo;
     }
 
-    public function getLegalCertValidityType() {
+    public function getLegalCertValidityType()
+    {
         return $this->legalCertValidityType;
     }
 
-    public function setLegalCertValidityType($legalCertValidityType) {
+    public function setLegalCertValidityType($legalCertValidityType)
+    {
         $this->legalCertValidityType = $legalCertValidityType;
     }
 
-    public function getLegalCertBeginDate() {
+    public function getLegalCertBeginDate()
+    {
         return $this->legalCertBeginDate;
     }
 
-    public function setLegalCertBeginDate($legalCertBeginDate) {
+    public function setLegalCertBeginDate($legalCertBeginDate)
+    {
         $this->legalCertBeginDate = $legalCertBeginDate;
     }
 
-    public function getLegalCertEndDate() {
+    public function getLegalCertEndDate()
+    {
         return $this->legalCertEndDate;
     }
 
-    public function setLegalCertEndDate($legalCertEndDate) {
+    public function setLegalCertEndDate($legalCertEndDate)
+    {
         $this->legalCertEndDate = $legalCertEndDate;
     }
 
-    public function getProvId() {
+    public function getProvId()
+    {
         return $this->provId;
     }
 
-    public function setProvId($provId) {
+    public function setProvId($provId)
+    {
         $this->provId = $provId;
     }
 
-    public function getAreaId() {
+    public function getAreaId()
+    {
         return $this->areaId;
     }
 
-    public function setAreaId($areaId) {
+    public function setAreaId($areaId)
+    {
         $this->areaId = $areaId;
     }
 
-    public function getDistrictId() {
+    public function getDistrictId()
+    {
         return $this->districtId;
     }
 
-    public function setDistrictId($districtId) {
+    public function setDistrictId($districtId)
+    {
         $this->districtId = $districtId;
     }
 
-    public function getDetailAddr() {
+    public function getDetailAddr()
+    {
         return $this->detailAddr;
     }
 
-    public function setDetailAddr($detailAddr) {
+    public function setDetailAddr($detailAddr)
+    {
         $this->detailAddr = $detailAddr;
     }
 
-    public function getContactName() {
+    public function getContactName()
+    {
         return $this->contactName;
     }
 
-    public function setContactName($contactName) {
+    public function setContactName($contactName)
+    {
         $this->contactName = $contactName;
     }
 
-    public function getContactMobileNo() {
+    public function getContactMobileNo()
+    {
         return $this->contactMobileNo;
     }
 
-    public function setContactMobileNo($contactMobileNo) {
+    public function setContactMobileNo($contactMobileNo)
+    {
         $this->contactMobileNo = $contactMobileNo;
     }
 
-    public function getContactEmail() {
+    public function getContactEmail()
+    {
         return $this->contactEmail;
     }
 
-    public function setContactEmail($contactEmail) {
+    public function setContactEmail($contactEmail)
+    {
         $this->contactEmail = $contactEmail;
     }
 
-    public function getServicePhone() {
+    public function getServicePhone()
+    {
         return $this->servicePhone;
     }
 
-    public function setServicePhone($servicePhone) {
+    public function setServicePhone($servicePhone)
+    {
         $this->servicePhone = $servicePhone;
     }
 
-    public function getBusiType() {
+    public function getBusiType()
+    {
         return $this->busiType;
     }
 
-    public function setBusiType($busiType) {
+    public function setBusiType($busiType)
+    {
         $this->busiType = $busiType;
     }
 
-    public function getReceiptName() {
+    public function getReceiptName()
+    {
         return $this->receiptName;
     }
 
-    public function setReceiptName($receiptName) {
+    public function setReceiptName($receiptName)
+    {
         $this->receiptName = $receiptName;
     }
 
-    public function getMcc() {
+    public function getMcc()
+    {
         return $this->mcc;
     }
 
-    public function setMcc($mcc) {
+    public function setMcc($mcc)
+    {
         $this->mcc = $mcc;
     }
 
-    public function getCardInfo() {
+    public function getCardInfo()
+    {
         return $this->cardInfo;
     }
 
-    public function setCardInfo($cardInfo) {
+    public function setCardInfo($cardInfo)
+    {
         $this->cardInfo = $cardInfo;
     }
 
-    public function getOpenLicenceNo() {
+    public function getOpenLicenceNo()
+    {
         return $this->openLicenceNo;
     }
 
-    public function setOpenLicenceNo($openLicenceNo) {
+    public function setOpenLicenceNo($openLicenceNo)
+    {
         $this->openLicenceNo = $openLicenceNo;
     }
 
-    public function getHeadHuifuId() {
+    public function getHeadHuifuId()
+    {
         return $this->headHuifuId;
     }
 
-    public function setHeadHuifuId($headHuifuId) {
+    public function setHeadHuifuId($headHuifuId)
+    {
         $this->headHuifuId = $headHuifuId;
     }
 

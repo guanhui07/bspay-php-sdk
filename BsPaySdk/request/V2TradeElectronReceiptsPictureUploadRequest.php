@@ -38,56 +38,69 @@ class V2TradeElectronReceiptsPictureUploadRequest extends BaseRequest
      */
     private $imageContent;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_ELECTRON_RECEIPTS_PICTURE_UPLOAD;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getThirdChannelType() {
+    public function getThirdChannelType()
+    {
         return $this->thirdChannelType;
     }
 
-    public function setThirdChannelType($thirdChannelType) {
+    public function setThirdChannelType($thirdChannelType)
+    {
         $this->thirdChannelType = $thirdChannelType;
     }
 
-    public function getFileName() {
+    public function getFileName()
+    {
         return $this->fileName;
     }
 
-    public function setFileName($fileName) {
+    public function setFileName($fileName)
+    {
         $this->fileName = $fileName;
     }
 
-    public function getImageContent() {
+    public function getImageContent()
+    {
         return $this->imageContent;
     }
 
-    public function setImageContent($imageContent) {
+    public function setImageContent($imageContent)
+    {
         $this->imageContent = $imageContent;
     }
 

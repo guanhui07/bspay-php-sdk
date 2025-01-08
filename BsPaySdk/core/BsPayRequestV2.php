@@ -1,8 +1,11 @@
 <?php
+
 namespace BsPaySdk\core;
+
 use BsPaySdk\config\MerConfig;
 
-class BsPayRequestV2 {
+class BsPayRequestV2
+{
     # 请求头
     private $httpHeaders;
     # 网络应答码
@@ -15,12 +18,13 @@ class BsPayRequestV2 {
     # 请求报错
     private $error = null;
 
-    public function curlRequest(MerConfig $merConfig, $url, $postFields = null, $file = null, $headers=null, $is_json=false) {
+    public function curlRequest(MerConfig $merConfig, $url, $postFields = null, $file = null, $headers = null, $is_json = false)
+    {
         // $postFields['needSign'] 是否需要添加签名， $postFields['needVerfySign'] 是否需要验证签名
         $needSign = isset($postFields['needSign']) ? $postFields['needSign'] : true;
         $needVerfySign = isset($postFields['needVerfySign']) ? $postFields['needVerfySign'] : true;
-        unset($postFields['needSign'],$postFields['needVerfySign']);
-        BsPay::writeLog("curl方法参数:". json_encode(func_get_args(), JSON_UNESCAPED_UNICODE));
+        unset($postFields['needSign'], $postFields['needVerfySign']);
+        BsPay::writeLog("curl方法参数:" . json_encode(func_get_args(), JSON_UNESCAPED_UNICODE));
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_FAILONERROR, false);
@@ -49,7 +53,7 @@ class BsPayRequestV2 {
 
         # 拼装请求头
         $this->httpHeaders = $this->createHeaders($headers);
-        BsPay::writeLog("curl请求头:". json_encode($this->httpHeaders, JSON_UNESCAPED_UNICODE));
+        BsPay::writeLog("curl请求头:" . json_encode($this->httpHeaders, JSON_UNESCAPED_UNICODE));
         curl_setopt($ch, CURLOPT_HTTPHEADER, $this->httpHeaders);
 
         # 执行网络请求
@@ -66,13 +70,13 @@ class BsPayRequestV2 {
         }
 
         # http应答码
-        $this->httpStateCode = curl_getinfo($ch,CURLINFO_HTTP_CODE);
+        $this->httpStateCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
         # 关闭本次会话
         curl_close($ch);
 
         $this->rspDatas = json_decode($resultString, true);
-        BsPay::writeLog("curl返回参数:". $this->httpStateCode. " ". $resultString);
+        BsPay::writeLog("curl返回参数:" . $this->httpStateCode . " " . $resultString);
         $resp_sign = isset($this->rspDatas['sign']) ? $this->rspDatas['sign'] : '';
 
         # 不需要对应答数据验签的逻辑分支，斗拱存在一些不用验签的接口，例如：页面版的快捷支付、手机网页支等
@@ -108,7 +112,7 @@ class BsPayRequestV2 {
         if ($this->httpStateCode < 200 || $this->httpStateCode >= 400) {
             $this->error = array(
                 'code' => 'HTTP_REQUEST_FAILED',
-                'msg' =>  "请求失败: HTTP_STATE_CODE-".$this->httpStateCode,
+                'msg' => "请求失败: HTTP_STATE_CODE-" . $this->httpStateCode,
             );
             return $this;
         }
@@ -116,18 +120,20 @@ class BsPayRequestV2 {
         return $this;
     }
 
-    private function createHeaders($header_data = array()){
+    private function createHeaders($header_data = array())
+    {
         $headers = $header_data;
-        if (empty($header_data)){
+        if (empty($header_data)) {
             $headers = array('Content-type: application/x-www-form-urlencoded');
         }
-        
+
         $headers[] = 'sdk_version:' . SDK_VERSION;
         $headers[] = 'charset:UTF-8';
         return $headers;
     }
 
-    private function createBody(MerConfig $merChantConfig, $post_data, $file = null){
+    private function createBody(MerConfig $merChantConfig, $post_data, $file = null)
+    {
         $body = array();
         $body['sys_id'] = $merChantConfig->sys_id;
         $body['product_id'] = $merChantConfig->product_id;
@@ -135,13 +141,13 @@ class BsPayRequestV2 {
         $body['data'] = $post_data;
         #  执行签名
         $sign = BsPayTools::sha_with_rsa_sign(
-            json_encode($post_data, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE),    // 数据里有中文和斜杠都不转码
+            json_encode($post_data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE),    // 数据里有中文和斜杠都不转码
             $merChantConfig->rsa_merch_private_key);
         $body['sign'] = $sign;
-		if(!empty($file)){
-			$body['file'] = $file;
-			$body['data'] = json_encode($post_data, JSON_UNESCAPED_UNICODE);
-		}
+        if (!empty($file)) {
+            $body['file'] = $file;
+            $body['data'] = json_encode($post_data, JSON_UNESCAPED_UNICODE);
+        }
         return $body;
     }
 

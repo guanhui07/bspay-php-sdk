@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeOnlinepaymentTransferBankmistakeApplyRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradeOnlinepaymentTransferBankmistakeApplyRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradeOnlinepaymentTransferBankmistakeApplyRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2TradeOnlinepaymentTransferBankmistakeApplyRequest;
 // 2.组装请求参数
 $request = new V2TradeOnlinepaymentTransferBankmistakeApplyRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 商户号
@@ -46,7 +47,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -55,15 +56,16 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 下单标识
     // $extendInfoMap["order_flag"]= "";
     // 备注
-    $extendInfoMap["remark"]= "大额支付补入账验证";
+    $extendInfoMap["remark"] = "大额支付补入账验证";
     // 银行信息数据
-    $extendInfoMap["bank_info_data"]= getBankInfoData();
+    $extendInfoMap["bank_info_data"] = getBankInfoData();
     // 延时标记
     // $extendInfoMap["delay_acct_flag"]= "";
     // 分账对象
@@ -73,7 +75,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getBankInfoData() {
+function getBankInfoData()
+{
     $dto = array();
     // 省份对公代发必填，[参见省市地区码](https://cloudpnrcdn.oss-cn-shanghai.aliyuncs.com/opps/api/prod/download_file/area/%E6%96%97%E6%8B%B1%E4%BB%A3%E5%8F%91%E7%9C%81%E4%BB%BD%E5%9C%B0%E5%8C%BA%E7%BC%96%E7%A0%81.xlsx)；&lt;font color&#x3D;&quot;green&quot;&gt;示例值：0013&lt;/font&gt;
     $dto["province"] = "0031";
@@ -88,10 +91,11 @@ function getBankInfoData() {
     // 支行名
     $dto["subbranch_bank_name"] = "中国农业银行股份有限公司上海联洋支行";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getAcctInfos() {
+function getAcctInfos()
+{
     $dto = array();
     // 支付金额
     // $dto["div_amt"] = "";
@@ -103,7 +107,8 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function getAcctSplitBunch()
+{
     $dto = array();
     // 分账信息列表
     // $dto["acct_infos"] = getAcctInfos();
@@ -111,7 +116,8 @@ function getAcctSplitBunch() {
     return $dto;
 }
 
-function getActualRemitData() {
+function getActualRemitData()
+{
     $dto = array();
     // 实际打款日期
     // $dto["actual_remit_date"] = "test";
@@ -128,7 +134,7 @@ function getActualRemitData() {
     // 退款卡标识
     // $dto["refund_card_flag"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

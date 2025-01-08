@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeOnlinepaymentRefundRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradeOnlinepaymentRefundRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradeOnlinepaymentRefundRequest;
@@ -20,7 +21,7 @@ $request = new V2TradeOnlinepaymentRefundRequest();
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 商户号
 $request->setHuifuId("6666000109133323");
 // 退款金额
@@ -38,7 +39,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -47,27 +48,29 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 原交易请求日期
-    $extendInfoMap["org_req_date"]= "20240401";
+    $extendInfoMap["org_req_date"] = "20240401";
     // 原交易全局流水号
-    $extendInfoMap["org_hf_seq_id"]= "";
+    $extendInfoMap["org_hf_seq_id"] = "";
     // 原交易请求流水号
-    $extendInfoMap["org_req_seq_id"]= "295700155481522176";
+    $extendInfoMap["org_req_seq_id"] = "295700155481522176";
     // 分账对象
     // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunchRucan();
     // 备注
     // $extendInfoMap["remark"]= "";
     // 异步通知地址
-    $extendInfoMap["notify_url"]= "http://www.baidu.com";
+    $extendInfoMap["notify_url"] = "http://www.baidu.com";
     // 大额转账支付账户信息数据
     // $extendInfoMap["bank_info_data"]= getBankInfoData();
     return $extendInfoMap;
 }
 
-function getAcctInfosRucan() {
+function getAcctInfosRucan()
+{
     $dto = array();
     // 商户号
     // $dto["huifu_id"] = "test";
@@ -81,15 +84,17 @@ function getAcctInfosRucan() {
     return $dtoList;
 }
 
-function getAcctSplitBunchRucan() {
+function getAcctSplitBunchRucan()
+{
     $dto = array();
     // 分账信息列表
     // $dto["acct_infos"] = getAcctInfosRucan();
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceData() {
+function getTerminalDeviceData()
+{
     $dto = array();
     // 交易设备ip
     $dto["device_ip"] = "172.31.31.145";
@@ -108,10 +113,11 @@ function getTerminalDeviceData() {
     // 交易设备wifimac
     $dto["device_wifi_mac"] = "06";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getRiskCheckData()
+{
     $dto = array();
     // 经度
     // $dto["longitude"] = "test";
@@ -122,10 +128,11 @@ function getRiskCheckData() {
     // ip地址
     $dto["ip_addr"] = "172.1.1.1";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getBankInfoData() {
+function getBankInfoData()
+{
     $dto = array();
     // 付款方账户类型
     // $dto["card_acct_type"] = "test";
@@ -138,7 +145,7 @@ function getBankInfoData() {
     // 联行号
     // $dto["correspondent_code"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

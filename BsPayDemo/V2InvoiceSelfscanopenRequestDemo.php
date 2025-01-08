@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2InvoiceSelfscanopenRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2InvoiceSelfscanopenRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2InvoiceSelfscanopenRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2InvoiceSelfscanopenRequest;
 // 2.组装请求参数
 $request = new V2InvoiceSelfscanopenRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求时间
 $request->setReqDate(date("Ymd"));
 // 汇付商户号
@@ -42,7 +43,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -51,7 +52,8 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 税控盘编号
@@ -65,7 +67,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getGoodsInfosRc() {
+function getGoodsInfosRc()
+{
     $dto = array();
     // 发票行性质
     // $dto["ivc_nature"] = "test";
@@ -100,10 +103,11 @@ function getGoodsInfosRc() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getPayerInfo() {
+function getPayerInfo()
+{
     $dto = array();
     // 开票人
     // $dto["payer_name"] = "test";
@@ -112,7 +116,7 @@ function getPayerInfo() {
     // 复核人
     // $dto["reviewer"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

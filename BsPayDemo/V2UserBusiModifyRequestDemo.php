@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2UserBusiModifyRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2UserBusiModifyRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2UserBusiModifyRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2UserBusiModifyRequest;
 // 2.组装请求参数
 $request = new V2UserBusiModifyRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 渠道商/商户汇付Id
@@ -36,7 +37,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -45,21 +46,22 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 结算信息配置
-    $extendInfoMap["settle_config"]= getSettleConfig();
+    $extendInfoMap["settle_config"] = getSettleConfig();
     // 结算卡信息
-    $extendInfoMap["card_info"]= getCardInfo();
+    $extendInfoMap["card_info"] = getCardInfo();
     // 取现配置列表
-    $extendInfoMap["cash_config"]= getCashConfig();
+    $extendInfoMap["cash_config"] = getCashConfig();
     // 文件列表
-    $extendInfoMap["file_list"]= getFileList();
+    $extendInfoMap["file_list"] = getFileList();
     // 延迟入账开关
     // $extendInfoMap["delay_flag"]= "";
     // 异步请求地址
-    $extendInfoMap["async_return_url"]= "//http://service.example.com/to/path";
+    $extendInfoMap["async_return_url"] = "//http://service.example.com/to/path";
     // 斗拱e账户功能配置
     // $extendInfoMap["elec_acct_config"]= getElecAcctConfig();
     // 灵活用工开关
@@ -69,7 +71,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getSettleConfig() {
+function getSettleConfig()
+{
     $dto = array();
     // 开通状态
     $dto["settle_status"] = "1";
@@ -102,10 +105,11 @@ function getSettleConfig() {
     // 工作日结算手续费固定金额
     // $dto["workday_constant_amt"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCardInfo() {
+function getCardInfo()
+{
     $dto = array();
     // 卡类型
     $dto["card_type"] = "0";
@@ -136,10 +140,11 @@ function getCardInfo() {
     // 默认结算卡标志
     // $dto["is_settle_default"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCashConfig() {
+function getCashConfig()
+{
     $dto = array();
     // 开通状态
     $dto["switch_state"] = "1";
@@ -164,10 +169,11 @@ function getCashConfig() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getFileList() {
+function getFileList()
+{
     $dto = array();
     // 文件类型
     $dto["file_type"] = "F02";
@@ -178,10 +184,11 @@ function getFileList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getElecCardList() {
+function getElecCardList()
+{
     $dto = array();
     // 银行编码
     // $dto["bank_code"] = "test";
@@ -210,10 +217,11 @@ function getElecCardList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getElecAcctConfig() {
+function getElecAcctConfig()
+{
     $dto = array();
     // 电子账户开关
     // $dto["switch_state"] = "test";
@@ -232,15 +240,16 @@ function getElecAcctConfig() {
     // 银行信息
     // $dto["bank_message"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getLjhData() {
+function getLjhData()
+{
     $dto = array();
     // 税源地id当合作平台为乐接活，必填
     // $dto["tax_area_id"] = "test";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

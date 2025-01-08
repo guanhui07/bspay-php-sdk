@@ -30,40 +30,49 @@ class V2TradePayafteruseInstallmentCreateRequest extends BaseRequest
      */
     private $fqAmt;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_PAYAFTERUSE_INSTALLMENT_CREATE;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getFqAmt() {
+    public function getFqAmt()
+    {
         return $this->fqAmt;
     }
 
-    public function setFqAmt($fqAmt) {
+    public function setFqAmt($fqAmt)
+    {
         $this->fqAmt = $fqAmt;
     }
 

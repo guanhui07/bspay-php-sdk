@@ -26,32 +26,39 @@ class V2UserListQueryRequest extends BaseRequest
      */
     private $reqSeqId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_USER_LIST_QUERY;
     }
 
 
-    public function getLegalCertNo() {
+    public function getLegalCertNo()
+    {
         return $this->legalCertNo;
     }
 
-    public function setLegalCertNo($legalCertNo) {
+    public function setLegalCertNo($legalCertNo)
+    {
         $this->legalCertNo = $legalCertNo;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 

@@ -30,40 +30,49 @@ class V2TradeSettleCollectionRuleQueryRequest extends BaseRequest
      */
     private $inHuifuId;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_SETTLE_COLLECTION_RULE_QUERY;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getOutHuifuId() {
+    public function getOutHuifuId()
+    {
         return $this->outHuifuId;
     }
 
-    public function setOutHuifuId($outHuifuId) {
+    public function setOutHuifuId($outHuifuId)
+    {
         $this->outHuifuId = $outHuifuId;
     }
 
-    public function getInHuifuId() {
+    public function getInHuifuId()
+    {
         return $this->inHuifuId;
     }
 
-    public function setInHuifuId($inHuifuId) {
+    public function setInHuifuId($inHuifuId)
+    {
         $this->inHuifuId = $inHuifuId;
     }
 

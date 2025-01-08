@@ -38,56 +38,69 @@ class V2TradeSettlementEnchashmentRequest extends BaseRequest
      */
     private $tokenNo;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_SETTLEMENT_ENCHASHMENT;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getCashAmt() {
+    public function getCashAmt()
+    {
         return $this->cashAmt;
     }
 
-    public function setCashAmt($cashAmt) {
+    public function setCashAmt($cashAmt)
+    {
         $this->cashAmt = $cashAmt;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getIntoAcctDateType() {
+    public function getIntoAcctDateType()
+    {
         return $this->intoAcctDateType;
     }
 
-    public function setIntoAcctDateType($intoAcctDateType) {
+    public function setIntoAcctDateType($intoAcctDateType)
+    {
         $this->intoAcctDateType = $intoAcctDateType;
     }
 
-    public function getTokenNo() {
+    public function getTokenNo()
+    {
         return $this->tokenNo;
     }
 
-    public function setTokenNo($tokenNo) {
+    public function setTokenNo($tokenNo)
+    {
         $this->tokenNo = $tokenNo;
     }
 

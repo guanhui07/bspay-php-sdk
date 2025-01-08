@@ -26,32 +26,39 @@ class V2TradeOnlinepaymentTransferRemittanceorderRequest extends BaseRequest
      */
     private $orgReqEndDate;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_ONLINEPAYMENT_TRANSFER_REMITTANCEORDER;
     }
 
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOrgReqStartDate() {
+    public function getOrgReqStartDate()
+    {
         return $this->orgReqStartDate;
     }
 
-    public function setOrgReqStartDate($orgReqStartDate) {
+    public function setOrgReqStartDate($orgReqStartDate)
+    {
         $this->orgReqStartDate = $orgReqStartDate;
     }
 
-    public function getOrgReqEndDate() {
+    public function getOrgReqEndDate()
+    {
         return $this->orgReqEndDate;
     }
 
-    public function setOrgReqEndDate($orgReqEndDate) {
+    public function setOrgReqEndDate($orgReqEndDate)
+    {
         $this->orgReqEndDate = $orgReqEndDate;
     }
 

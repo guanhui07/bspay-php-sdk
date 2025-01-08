@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradePreauthRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradePreauthRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradePreauthRequest;
@@ -20,7 +21,7 @@ $request = new V2TradePreauthRequest();
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 商户号
 $request->setHuifuId("6666000108854952");
 // 交易金额
@@ -40,7 +41,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -49,47 +50,49 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 外部订单号
-    $extendInfoMap["out_ord_id"]= "2021031722001427671459048436";
+    $extendInfoMap["out_ord_id"] = "2021031722001427671459048436";
     // 交易发起时间
-    $extendInfoMap["send_time"]= "12345678901234567";
+    $extendInfoMap["send_time"] = "12345678901234567";
     // 交易失效时间
-    $extendInfoMap["time_expire"]= "20221130121212";
+    $extendInfoMap["time_expire"] = "20221130121212";
     // 禁用信用卡标记
-    $extendInfoMap["limit_pay_type"]= "NO_CREDIT";
+    $extendInfoMap["limit_pay_type"] = "NO_CREDIT";
     // 场景类型
-    $extendInfoMap["pay_scene"]= "02";
+    $extendInfoMap["pay_scene"] = "02";
     // 渠道号
-    $extendInfoMap["channel_no"]= "";
+    $extendInfoMap["channel_no"] = "";
     // 传入分帐遇到优惠的处理规则
-    $extendInfoMap["term_div_coupon_type"]= "1";
+    $extendInfoMap["term_div_coupon_type"] = "1";
     // 支付宝扩展参数集合
-    $extendInfoMap["alipay_data"]= getAlipayData();
+    $extendInfoMap["alipay_data"] = getAlipayData();
     // 微信扩展参数集合
-    $extendInfoMap["wx_data"]= getWxData();
+    $extendInfoMap["wx_data"] = getWxData();
     // 商户扩展域
-    $extendInfoMap["mer_priv"]= "{\"callType\":\"01\",\"lc\":\"12345678901234567890123456789012123\",\"softVersion\":\"6.5.3\"}";
+    $extendInfoMap["mer_priv"] = "{\"callType\":\"01\",\"lc\":\"12345678901234567890123456789012123\",\"softVersion\":\"6.5.3\"}";
     // 备注
-    $extendInfoMap["remark"]= "123213132132";
+    $extendInfoMap["remark"] = "123213132132";
     // 授权号
-    $extendInfoMap["auth_no"]= "608467";
+    $extendInfoMap["auth_no"] = "608467";
     // 批次号
-    $extendInfoMap["batch_id"]= "987654";
+    $extendInfoMap["batch_id"] = "987654";
     // 商户操作员号
-    $extendInfoMap["mer_oper_id"]= "12345678901234567890123456789012";
+    $extendInfoMap["mer_oper_id"] = "12345678901234567890123456789012";
     // 输入密码提示
     // $extendInfoMap["password_trade"]= "";
     // 设备信息
-    $extendInfoMap["terminal_device_data"]= getTerminalDeviceData();
+    $extendInfoMap["terminal_device_data"] = getTerminalDeviceData();
     // 异步通知地址
-    $extendInfoMap["notify_url"]= "http://www.baidu.com";
+    $extendInfoMap["notify_url"] = "http://www.baidu.com";
     return $extendInfoMap;
 }
 
-function getExtendParams() {
+function getExtendParams()
+{
     $dto = array();
     // 卡类型
     $dto["card_type"] = "";
@@ -104,10 +107,11 @@ function getExtendParams() {
     // 系统商编号
     $dto["sys_service_provider_id"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getAliGoodsDetail() {
+function getAliGoodsDetail()
+{
     $dto = array();
     // 商品的编号
     $dto["goods_id"] = "12345678901234567890123456789012";
@@ -131,7 +135,8 @@ function getAliGoodsDetail() {
     return $dtoList;
 }
 
-function getAlipayData() {
+function getAlipayData()
+{
     $dto = array();
     // 支付宝的店铺编号
     $dto["alipay_store_id"] = "";
@@ -144,10 +149,11 @@ function getAlipayData() {
     // 商户门店编号
     $dto["store_id"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getWxGoodsDetailRucan() {
+function getWxGoodsDetailRucan()
+{
     $dto = array();
     // 商品编码
     $dto["goods_id"] = "1232131";
@@ -165,7 +171,8 @@ function getWxGoodsDetailRucan() {
     return $dtoList;
 }
 
-function getWxGoodsRucan() {
+function getWxGoodsRucan()
+{
     $dto = array();
     // 单品列表
     $dto["goods_detail"] = getWxGoodsDetailRucan();
@@ -177,7 +184,8 @@ function getWxGoodsRucan() {
     return $dto;
 }
 
-function getWxStoreRucan() {
+function getWxStoreRucan()
+{
     $dto = array();
     // 门店详细地址
     $dto["address"] = "汇付天下桂林路";
@@ -191,7 +199,8 @@ function getWxStoreRucan() {
     return $dto;
 }
 
-function getWxSceneRucan() {
+function getWxSceneRucan()
+{
     $dto = array();
     // 门店信息
     $dto["store_info"] = getWxStoreRucan();
@@ -199,7 +208,8 @@ function getWxSceneRucan() {
     return $dto;
 }
 
-function getWxData() {
+function getWxData()
+{
     $dto = array();
     // 附加数据
     $dto["attach"] = "";
@@ -214,10 +224,11 @@ function getWxData() {
     // 子商户公众账号ID
     $dto["sub_appid"] = "wx48abf94e085e98e1";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getRiskCheckData()
+{
     $dto = array();
     // 基站地址
     $dto["base_station"] = "192.168.1.1";
@@ -228,10 +239,11 @@ function getRiskCheckData() {
     // 经度
     $dto["longitude"] = "33.3";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceData() {
+function getTerminalDeviceData()
+{
     $dto = array();
     // 商户终端版本号
     $dto["app_version"] = "";
@@ -270,7 +282,7 @@ function getTerminalDeviceData() {
     // 商户终端序列号
     $dto["serial_num"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

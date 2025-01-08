@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradePaymentPreauthpaycancelRefundRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradePaymentPreauthpaycancelRefundRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradePaymentPreauthpaycancelRefundRequest;
@@ -20,7 +21,7 @@ $request = new V2TradePaymentPreauthpaycancelRefundRequest();
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 客户号
 $request->setHuifuId("6666000108854952");
 // 原预授权完成交易请求日期
@@ -38,7 +39,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -47,23 +48,24 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 外部订单号
-    $extendInfoMap["out_ord_Id"]= "";
+    $extendInfoMap["out_ord_Id"] = "";
     // 原预授权完成交易请求流水号
-    $extendInfoMap["org_req_seq_id"]= "20211667205111";
+    $extendInfoMap["org_req_seq_id"] = "20211667205111";
     // 交易发起时间
-    $extendInfoMap["send_time"]= "312321321321";
+    $extendInfoMap["send_time"] = "312321321321";
     // 商品描述
-    $extendInfoMap["good_desc"]= "商户描述商户描述商户描述商户描述商户描述";
+    $extendInfoMap["good_desc"] = "商户描述商户描述商户描述商户描述商户描述";
     // 是否人工介入
-    $extendInfoMap["is_manual_process"]= "Y";
+    $extendInfoMap["is_manual_process"] = "Y";
     // 备注
-    $extendInfoMap["remark"]= "商户描述商户描述商户描述商户描述商户描述";
+    $extendInfoMap["remark"] = "商户描述商户描述商户描述商户描述商户描述";
     // 汇付机具号
-    $extendInfoMap["devs_id"]= "SPINTP366061800405501";
+    $extendInfoMap["devs_id"] = "SPINTP366061800405501";
     // 商户操作员号
     // $extendInfoMap["mer_oper_id"]= "";
     // 批次号
@@ -71,13 +73,14 @@ function getExtendInfos() {
     // 扩展域
     // $extendInfoMap["mer_priv"]= "";
     // 设备信息
-    $extendInfoMap["terminal_device_info"]= getTerminalDeviceInfo();
+    $extendInfoMap["terminal_device_info"] = getTerminalDeviceInfo();
     // 异步通知地址
-    $extendInfoMap["notify_url"]= "http://www.baidu.com";
+    $extendInfoMap["notify_url"] = "http://www.baidu.com";
     return $extendInfoMap;
 }
 
-function getRiskCheckInfo() {
+function getRiskCheckInfo()
+{
     $dto = array();
     // 基站地址
     $dto["base_station"] = "192.168.1.1";
@@ -88,10 +91,11 @@ function getRiskCheckInfo() {
     // 经度
     $dto["longitude"] = "33.3";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getTerminalDeviceInfo() {
+function getTerminalDeviceInfo()
+{
     $dto = array();
     // 交易设备GPS
     $dto["device_gps"] = "192.168.0.0";

@@ -58,96 +58,119 @@ class V2MerchantDirectWechatSignRequest extends BaseRequest
      */
     private $settlementInfo;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_DIRECT_WECHAT_SIGN;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getUpperHuifuId() {
+    public function getUpperHuifuId()
+    {
         return $this->upperHuifuId;
     }
 
-    public function setUpperHuifuId($upperHuifuId) {
+    public function setUpperHuifuId($upperHuifuId)
+    {
         $this->upperHuifuId = $upperHuifuId;
     }
 
-    public function getAppId() {
+    public function getAppId()
+    {
         return $this->appId;
     }
 
-    public function setAppId($appId) {
+    public function setAppId($appId)
+    {
         $this->appId = $appId;
     }
 
-    public function getMchId() {
+    public function getMchId()
+    {
         return $this->mchId;
     }
 
-    public function setMchId($mchId) {
+    public function setMchId($mchId)
+    {
         $this->mchId = $mchId;
     }
 
-    public function getOwner() {
+    public function getOwner()
+    {
         return $this->owner;
     }
 
-    public function setOwner($owner) {
+    public function setOwner($owner)
+    {
         $this->owner = $owner;
     }
 
-    public function getContactInfo() {
+    public function getContactInfo()
+    {
         return $this->contactInfo;
     }
 
-    public function setContactInfo($contactInfo) {
+    public function setContactInfo($contactInfo)
+    {
         $this->contactInfo = $contactInfo;
     }
 
-    public function getSalesScenesType() {
+    public function getSalesScenesType()
+    {
         return $this->salesScenesType;
     }
 
-    public function setSalesScenesType($salesScenesType) {
+    public function setSalesScenesType($salesScenesType)
+    {
         $this->salesScenesType = $salesScenesType;
     }
 
-    public function getSalesInfo() {
+    public function getSalesInfo()
+    {
         return $this->salesInfo;
     }
 
-    public function setSalesInfo($salesInfo) {
+    public function setSalesInfo($salesInfo)
+    {
         $this->salesInfo = $salesInfo;
     }
 
-    public function getSettlementInfo() {
+    public function getSettlementInfo()
+    {
         return $this->settlementInfo;
     }
 
-    public function setSettlementInfo($settlementInfo) {
+    public function setSettlementInfo($settlementInfo)
+    {
         $this->settlementInfo = $settlementInfo;
     }
 

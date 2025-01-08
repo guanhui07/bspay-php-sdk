@@ -22,24 +22,29 @@ class V2TradePayscoreServiceorderCancelRequest extends BaseRequest
      */
     private $reason;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_PAYSCORE_SERVICEORDER_CANCEL;
     }
 
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getReason() {
+    public function getReason()
+    {
         return $this->reason;
     }
 
-    public function setReason($reason) {
+    public function setReason($reason)
+    {
         $this->reason = $reason;
     }
 

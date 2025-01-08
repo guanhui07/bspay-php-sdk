@@ -46,72 +46,89 @@ class V2TradeAcctpaymentPayRequest extends BaseRequest
      */
     private $transFeeTakeFlag;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_ACCTPAYMENT_PAY;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getOutHuifuId() {
+    public function getOutHuifuId()
+    {
         return $this->outHuifuId;
     }
 
-    public function setOutHuifuId($outHuifuId) {
+    public function setOutHuifuId($outHuifuId)
+    {
         $this->outHuifuId = $outHuifuId;
     }
 
-    public function getOrdAmt() {
+    public function getOrdAmt()
+    {
         return $this->ordAmt;
     }
 
-    public function setOrdAmt($ordAmt) {
+    public function setOrdAmt($ordAmt)
+    {
         $this->ordAmt = $ordAmt;
     }
 
-    public function getAcctSplitBunch() {
+    public function getAcctSplitBunch()
+    {
         return $this->acctSplitBunch;
     }
 
-    public function setAcctSplitBunch($acctSplitBunch) {
+    public function setAcctSplitBunch($acctSplitBunch)
+    {
         $this->acctSplitBunch = $acctSplitBunch;
     }
 
-    public function getRiskCheckData() {
+    public function getRiskCheckData()
+    {
         return $this->riskCheckData;
     }
 
-    public function setRiskCheckData($riskCheckData) {
+    public function setRiskCheckData($riskCheckData)
+    {
         $this->riskCheckData = $riskCheckData;
     }
 
-    public function getFundType() {
+    public function getFundType()
+    {
         return $this->fundType;
     }
 
-    public function setFundType($fundType) {
+    public function setFundType($fundType)
+    {
         $this->fundType = $fundType;
     }
 
-    public function getTransFeeTakeFlag() {
+    public function getTransFeeTakeFlag()
+    {
         return $this->transFeeTakeFlag;
     }
 
-    public function setTransFeeTakeFlag($transFeeTakeFlag) {
+    public function setTransFeeTakeFlag($transFeeTakeFlag)
+    {
         $this->transFeeTakeFlag = $transFeeTakeFlag;
     }
 

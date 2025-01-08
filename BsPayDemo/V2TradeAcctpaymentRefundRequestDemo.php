@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2TradeAcctpaymentRefundRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2TradeAcctpaymentRefundRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2TradeAcctpaymentRefundRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2TradeAcctpaymentRefundRequest;
 // 2.组装请求参数
 $request = new V2TradeAcctpaymentRefundRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 商户号
@@ -40,7 +41,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -49,19 +50,21 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 分账对象
     // $extendInfoMap["acct_split_bunch"]= getAcctSplitBunch();
     // 安全信息
-    $extendInfoMap["risk_check_data"]= getRiskCheckData();
+    $extendInfoMap["risk_check_data"] = getRiskCheckData();
     // 备注
-    $extendInfoMap["remark"]= "1234567890";
+    $extendInfoMap["remark"] = "1234567890";
     return $extendInfoMap;
 }
 
-function getAcctInfos() {
+function getAcctInfos()
+{
     $dto = array();
     // 退款金额
     // $dto["div_amt"] = "test";
@@ -73,22 +76,24 @@ function getAcctInfos() {
     return $dtoList;
 }
 
-function getAcctSplitBunch() {
+function getAcctSplitBunch()
+{
     $dto = array();
     // 退账明细
     // $dto["acct_infos"] = getAcctInfos();
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskCheckData() {
+function getRiskCheckData()
+{
     $dto = array();
     // 转账原因
     $dto["transfer_type"] = "04";
     // 产品子类
     $dto["sub_product"] = "卡券推广类";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

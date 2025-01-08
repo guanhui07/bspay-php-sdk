@@ -42,64 +42,79 @@ class V2MerchantBusiRealnameRequest extends BaseRequest
      */
     private $contactType;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_BUSI_REALNAME;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
     }
 
-    public function getMobile() {
+    public function getMobile()
+    {
         return $this->mobile;
     }
 
-    public function setMobile($mobile) {
+    public function setMobile($mobile)
+    {
         $this->mobile = $mobile;
     }
 
-    public function getIdCardNumber() {
+    public function getIdCardNumber()
+    {
         return $this->idCardNumber;
     }
 
-    public function setIdCardNumber($idCardNumber) {
+    public function setIdCardNumber($idCardNumber)
+    {
         $this->idCardNumber = $idCardNumber;
     }
 
-    public function getContactType() {
+    public function getContactType()
+    {
         return $this->contactType;
     }
 
-    public function setContactType($contactType) {
+    public function setContactType($contactType)
+    {
         $this->contactType = $contactType;
     }
 

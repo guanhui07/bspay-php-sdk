@@ -66,112 +66,139 @@ class V2QuickbuckleOnekeyCardbindRequest extends BaseRequest
      */
     private $trxDeviceInf;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_QUICKBUCKLE_ONEKEY_CARDBIND;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOutCustId() {
+    public function getOutCustId()
+    {
         return $this->outCustId;
     }
 
-    public function setOutCustId($outCustId) {
+    public function setOutCustId($outCustId)
+    {
         $this->outCustId = $outCustId;
     }
 
-    public function getBankId() {
+    public function getBankId()
+    {
         return $this->bankId;
     }
 
-    public function setBankId($bankId) {
+    public function setBankId($bankId)
+    {
         $this->bankId = $bankId;
     }
 
-    public function getCardName() {
+    public function getCardName()
+    {
         return $this->cardName;
     }
 
-    public function setCardName($cardName) {
+    public function setCardName($cardName)
+    {
         $this->cardName = $cardName;
     }
 
-    public function getCertId() {
+    public function getCertId()
+    {
         return $this->certId;
     }
 
-    public function setCertId($certId) {
+    public function setCertId($certId)
+    {
         $this->certId = $certId;
     }
 
-    public function getCertType() {
+    public function getCertType()
+    {
         return $this->certType;
     }
 
-    public function setCertType($certType) {
+    public function setCertType($certType)
+    {
         $this->certType = $certType;
     }
 
-    public function getCertEndDate() {
+    public function getCertEndDate()
+    {
         return $this->certEndDate;
     }
 
-    public function setCertEndDate($certEndDate) {
+    public function setCertEndDate($certEndDate)
+    {
         $this->certEndDate = $certEndDate;
     }
 
-    public function getCardMp() {
+    public function getCardMp()
+    {
         return $this->cardMp;
     }
 
-    public function setCardMp($cardMp) {
+    public function setCardMp($cardMp)
+    {
         $this->cardMp = $cardMp;
     }
 
-    public function getDcType() {
+    public function getDcType()
+    {
         return $this->dcType;
     }
 
-    public function setDcType($dcType) {
+    public function setDcType($dcType)
+    {
         $this->dcType = $dcType;
     }
 
-    public function getAsyncReturnUrl() {
+    public function getAsyncReturnUrl()
+    {
         return $this->asyncReturnUrl;
     }
 
-    public function setAsyncReturnUrl($asyncReturnUrl) {
+    public function setAsyncReturnUrl($asyncReturnUrl)
+    {
         $this->asyncReturnUrl = $asyncReturnUrl;
     }
 
-    public function getTrxDeviceInf() {
+    public function getTrxDeviceInf()
+    {
         return $this->trxDeviceInf;
     }
 
-    public function setTrxDeviceInf($trxDeviceInf) {
+    public function setTrxDeviceInf($trxDeviceInf)
+    {
         $this->trxDeviceInf = $trxDeviceInf;
     }
 

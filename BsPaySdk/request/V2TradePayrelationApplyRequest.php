@@ -30,40 +30,49 @@ class V2TradePayrelationApplyRequest extends BaseRequest
      */
     private $payRelations;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_PAYRELATION_APPLY;
     }
 
 
-    public function getOutHuifuId() {
+    public function getOutHuifuId()
+    {
         return $this->outHuifuId;
     }
 
-    public function setOutHuifuId($outHuifuId) {
+    public function setOutHuifuId($outHuifuId)
+    {
         $this->outHuifuId = $outHuifuId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getPayRelations() {
+    public function getPayRelations()
+    {
         return $this->payRelations;
     }
 
-    public function setPayRelations($payRelations) {
+    public function setPayRelations($payRelations)
+    {
         $this->payRelations = $payRelations;
     }
 

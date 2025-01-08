@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2QuickbuckleWithholdPageGetRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2QuickbuckleWithholdPageGetRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2QuickbuckleWithholdPageGetRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2QuickbuckleWithholdPageGetRequest;
 // 2.组装请求参数
 $request = new V2QuickbuckleWithholdPageGetRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求时间
 $request->setReqDate(date("Ymd"));
 // 汇付Id
@@ -36,7 +37,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -45,27 +46,29 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 页面有效期
-    $extendInfoMap["expire_time"]= "20";
+    $extendInfoMap["expire_time"] = "20";
     // 页面跳转地址
-    $extendInfoMap["return_url"]= "https://api.huifu.com";
+    $extendInfoMap["return_url"] = "https://api.huifu.com";
     // 客户用户号
-    $extendInfoMap["out_cust_id"]= "Q837467382819";
+    $extendInfoMap["out_cust_id"] = "Q837467382819";
     // 用户汇付号
-    $extendInfoMap["user_huifu_id"]= "6666000107386236";
+    $extendInfoMap["user_huifu_id"] = "6666000107386236";
     // 异步通知地址
-    $extendInfoMap["notify_url"]= "https://api.huifu.com";
+    $extendInfoMap["notify_url"] = "https://api.huifu.com";
     // 设备信息域
-    $extendInfoMap["trx_device_info"]= getTrxDeviceInfo();
+    $extendInfoMap["trx_device_info"] = getTrxDeviceInfo();
     // 风控信息
-    $extendInfoMap["risk_info"]= getRiskInfo();
+    $extendInfoMap["risk_info"] = getRiskInfo();
     return $extendInfoMap;
 }
 
-function getTrxDeviceInfo() {
+function getTrxDeviceInfo()
+{
     $dto = array();
     // 银行预留手机号
     $dto["trx_mobile_num"] = "13428722321";
@@ -86,10 +89,11 @@ function getTrxDeviceInfo() {
     // 交易设备GPS
     $dto["trx_device_gps"] = "gps";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getRiskInfo() {
+function getRiskInfo()
+{
     $dto = array();
     // IP类型
     $dto["ip_type"] = "04";
@@ -102,7 +106,7 @@ function getRiskInfo() {
     // 银行预留手机号
     $dto["mobile"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

@@ -50,80 +50,99 @@ class V2UserBasicdataIndvRequest extends BaseRequest
      */
     private $address;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_USER_BASICDATA_INDV;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
     }
 
-    public function getCertType() {
+    public function getCertType()
+    {
         return $this->certType;
     }
 
-    public function setCertType($certType) {
+    public function setCertType($certType)
+    {
         $this->certType = $certType;
     }
 
-    public function getCertNo() {
+    public function getCertNo()
+    {
         return $this->certNo;
     }
 
-    public function setCertNo($certNo) {
+    public function setCertNo($certNo)
+    {
         $this->certNo = $certNo;
     }
 
-    public function getCertValidityType() {
+    public function getCertValidityType()
+    {
         return $this->certValidityType;
     }
 
-    public function setCertValidityType($certValidityType) {
+    public function setCertValidityType($certValidityType)
+    {
         $this->certValidityType = $certValidityType;
     }
 
-    public function getCertBeginDate() {
+    public function getCertBeginDate()
+    {
         return $this->certBeginDate;
     }
 
-    public function setCertBeginDate($certBeginDate) {
+    public function setCertBeginDate($certBeginDate)
+    {
         $this->certBeginDate = $certBeginDate;
     }
 
-    public function getMobileNo() {
+    public function getMobileNo()
+    {
         return $this->mobileNo;
     }
 
-    public function setMobileNo($mobileNo) {
+    public function setMobileNo($mobileNo)
+    {
         $this->mobileNo = $mobileNo;
     }
 
-    public function getAddress() {
+    public function getAddress()
+    {
         return $this->address;
     }
 
-    public function setAddress($address) {
+    public function setAddress($address)
+    {
         $this->address = $address;
     }
 

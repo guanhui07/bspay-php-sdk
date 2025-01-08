@@ -30,40 +30,49 @@ class V2TradePayscoreServiceorderCompleteRequest extends BaseRequest
      */
     private $timeRange;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_PAYSCORE_SERVICEORDER_COMPLETE;
     }
 
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOutOrderNo() {
+    public function getOutOrderNo()
+    {
         return $this->outOrderNo;
     }
 
-    public function setOutOrderNo($outOrderNo) {
+    public function setOutOrderNo($outOrderNo)
+    {
         $this->outOrderNo = $outOrderNo;
     }
 
-    public function getOrdAmt() {
+    public function getOrdAmt()
+    {
         return $this->ordAmt;
     }
 
-    public function setOrdAmt($ordAmt) {
+    public function setOrdAmt($ordAmt)
+    {
         $this->ordAmt = $ordAmt;
     }
 
-    public function getTimeRange() {
+    public function getTimeRange()
+    {
         return $this->timeRange;
     }
 
-    public function setTimeRange($timeRange) {
+    public function setTimeRange($timeRange)
+    {
         $this->timeRange = $timeRange;
     }
 

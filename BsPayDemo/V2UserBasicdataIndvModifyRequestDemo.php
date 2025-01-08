@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2UserBasicdataIndvModifyRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2UserBasicdataIndvModifyRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2UserBasicdataIndvModifyRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2UserBasicdataIndvModifyRequest;
 // 2.组装请求参数
 $request = new V2UserBasicdataIndvModifyRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 汇付客户Id
@@ -32,7 +33,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -41,19 +42,20 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 个人证件有效期类型
-    $extendInfoMap["cert_validity_type"]= "2";
+    $extendInfoMap["cert_validity_type"] = "2";
     // 个人证件有效期开始日期
-    $extendInfoMap["cert_begin_date"]= "20200111";
+    $extendInfoMap["cert_begin_date"] = "20200111";
     // 个人证件有效期截止日期
-    $extendInfoMap["cert_end_date"]= "20400111";
+    $extendInfoMap["cert_end_date"] = "20400111";
     // 电子邮箱
-    $extendInfoMap["email"]= "jeff.peng@huifu.com";
+    $extendInfoMap["email"] = "jeff.peng@huifu.com";
     // 手机号
-    $extendInfoMap["mobile_no"]= "15556622000";
+    $extendInfoMap["mobile_no"] = "15556622000";
     // 文件列表
     // $extendInfoMap["file_list"]= getFileList();
     // 地址
@@ -61,7 +63,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getFileList() {
+function getFileList()
+{
     $dto = array();
     // 文件类型
     // $dto["file_type"] = "test";
@@ -72,7 +75,7 @@ function getFileList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

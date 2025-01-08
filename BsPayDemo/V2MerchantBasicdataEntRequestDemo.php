@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantBasicdataEntRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantBasicdataEntRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantBasicdataEntRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantBasicdataEntRequest;
 // 2.组装请求参数
 $request = new V2MerchantBasicdataEntRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 直属渠道号
@@ -94,7 +95,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -103,29 +104,30 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 营业执照类型
-    $extendInfoMap["license_type"]= "";
+    $extendInfoMap["license_type"] = "";
     // 商户通知标识
-    $extendInfoMap["sms_send_flag"]= "Y";
+    $extendInfoMap["sms_send_flag"] = "Y";
     // 管理员账号
-    $extendInfoMap["login_name"]= "LG20220422267883697";
+    $extendInfoMap["login_name"] = "LG20220422267883697";
     // 取现信息配置
-    $extendInfoMap["cash_config"]= getCashConfig();
+    $extendInfoMap["cash_config"] = getCashConfig();
     // 结算规则配置
-    $extendInfoMap["settle_config"]= getSettleConfig();
+    $extendInfoMap["settle_config"] = getSettleConfig();
     // 异步请求地址
-    $extendInfoMap["async_return_url"]= "virgo://http://192.168.85.157:30031/sspm/testVirgo";
+    $extendInfoMap["async_return_url"] = "virgo://http://192.168.85.157:30031/sspm/testVirgo";
     // D1结算协议
-    $extendInfoMap["settle_agree_pic"]= "";
+    $extendInfoMap["settle_agree_pic"] = "";
     // 商户英文名称
-    $extendInfoMap["mer_en_name"]= "";
+    $extendInfoMap["mer_en_name"] = "";
     // 商户主页URL
-    $extendInfoMap["mer_url"]= "";
+    $extendInfoMap["mer_url"] = "";
     // 商户ICP备案编号
-    $extendInfoMap["mer_icp"]= "";
+    $extendInfoMap["mer_icp"] = "";
     // 签约人
     // $extendInfoMap["sign_user_info"]= getSignUserInfo();
     // 是否总部商户
@@ -157,7 +159,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getCardInfo() {
+function getCardInfo()
+{
     $dto = array();
     // 结算账户类型
     $dto["card_type"] = "1";
@@ -188,10 +191,11 @@ function getCardInfo() {
     // 结算人手机号
     $dto["mp"] = "13700000000";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getCashConfig() {
+function getCashConfig()
+{
     $dto = array();
     // 取现固定手续费（元）fix_amt与fee_rate至少填写一项，单位元，需保留小数点后两位，不收费请填写0.00； &lt;font color&#x3D;&quot;green&quot;&gt;示例值：1.00&lt;/font&gt;
     $dto["fix_amt"] = "1.00";
@@ -208,10 +212,11 @@ function getCashConfig() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSettleConfig() {
+function getSettleConfig()
+{
     $dto = array();
     // 结算周期
     $dto["settle_cycle"] = "D1";
@@ -240,10 +245,11 @@ function getSettleConfig() {
     // 节假日结算手续费固定金额（元）
     // $dto["constant_amt"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getSignUserInfo() {
+function getSignUserInfo()
+{
     $dto = array();
     // 签约人类型
     // $dto["type"] = "test";
@@ -260,7 +266,7 @@ function getSignUserInfo() {
     // 法人授权书
     // $dto["auth_file_id"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

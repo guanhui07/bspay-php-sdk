@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2UserBasicdataEntRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2UserBasicdataEntRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2UserBasicdataEntRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2UserBasicdataEntRequest;
 // 2.组装请求参数
 $request = new V2UserBasicdataEntRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 企业用户名称
@@ -66,7 +67,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -75,19 +76,20 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 经营简称
-    $extendInfoMap["short_name"]= "企业商户";
+    $extendInfoMap["short_name"] = "企业商户";
     // 联系人电子邮箱
-    $extendInfoMap["contact_email"]= "jeff.peng@huifu.com";
+    $extendInfoMap["contact_email"] = "jeff.peng@huifu.com";
     // 操作员
-    $extendInfoMap["operator_id"]= "";
+    $extendInfoMap["operator_id"] = "";
     // 是否发送短信标识
-    $extendInfoMap["sms_send_flag"]= "1";
+    $extendInfoMap["sms_send_flag"] = "1";
     // 扩展方字段
-    $extendInfoMap["expand_id"]= "";
+    $extendInfoMap["expand_id"] = "";
     // 文件列表
     // $extendInfoMap["file_list"]= getFileList();
     // 公司类型
@@ -95,7 +97,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getFileList() {
+function getFileList()
+{
     $dto = array();
     // 文件类型
     // $dto["file_type"] = "test";
@@ -106,7 +109,7 @@ function getFileList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

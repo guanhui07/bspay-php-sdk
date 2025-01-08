@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantBusiEfpconfigRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantBusiEfpconfigRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantBusiEfpconfigRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantBusiEfpconfigRequest;
 // 2.组装请求参数
 $request = new V2MerchantBusiEfpconfigRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // 商户汇付id
@@ -54,7 +55,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -63,27 +64,28 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 支付手续费百分比
-    $extendInfoMap["fee_rate"]= "0.04";
+    $extendInfoMap["fee_rate"] = "0.04";
     // 支付手续费最小值
-    $extendInfoMap["fee_min_amt"]= "";
+    $extendInfoMap["fee_min_amt"] = "";
     // 支付手续费外扣账户类型
-    $extendInfoMap["out_fee_acct_type"]= "";
+    $extendInfoMap["out_fee_acct_type"] = "";
     // 支付手续费外扣标记
-    $extendInfoMap["out_fee_flag"]= "2";
+    $extendInfoMap["out_fee_flag"] = "2";
     // 业务模式
-    $extendInfoMap["business_model"]= "acquiringMode";
+    $extendInfoMap["business_model"] = "acquiringMode";
     // 异步消息接收地址
-    $extendInfoMap["async_return_url"]= "http://service.example.com/to/path";
+    $extendInfoMap["async_return_url"] = "http://service.example.com/to/path";
     // 业务开通结果异步消息接收地址
-    $extendInfoMap["busi_async_return_url"]= "http://service.example.com/to/path";
+    $extendInfoMap["busi_async_return_url"] = "http://service.example.com/to/path";
     // 申请单笔限额
-    $extendInfoMap["pay_every_deal"]= "";
+    $extendInfoMap["pay_every_deal"] = "";
     // 申请单日限额
-    $extendInfoMap["pay_every_day"]= "";
+    $extendInfoMap["pay_every_day"] = "";
     // 抖音合作证明材料
     // $extendInfoMap["dy_cooperation_prove_pic"]= "";
     // 美团合作证明材料

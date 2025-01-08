@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2QuickbuckleOnekeyCardbindRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2QuickbuckleOnekeyCardbindRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2QuickbuckleOnekeyCardbindRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2QuickbuckleOnekeyCardbindRequest;
 // 2.组装请求参数
 $request = new V2QuickbuckleOnekeyCardbindRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求时间
 $request->setReqDate(date("Ymd"));
 // 汇付Id
@@ -52,7 +53,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -61,15 +62,16 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 证件有效期类型
-    $extendInfoMap["cert_validity_type"]= "0";
+    $extendInfoMap["cert_validity_type"] = "0";
     // 证件有效期起始日
-    $extendInfoMap["cert_begin_date"]= "20170121";
+    $extendInfoMap["cert_begin_date"] = "20170121";
     // 挂网协议编号
-    $extendInfoMap["protocol_no"]= "";
+    $extendInfoMap["protocol_no"] = "";
     // 风控信息
     // $extendInfoMap["risk_info"]= getRiskInfo();
     // 回调页面地址
@@ -77,7 +79,8 @@ function getExtendInfos() {
     return $extendInfoMap;
 }
 
-function getRiskInfo() {
+function getRiskInfo()
+{
     $dto = array();
     // IP类型
     // $dto["ip_type"] = "test";
@@ -92,10 +95,11 @@ function getRiskInfo() {
     // 银行预留手机号
     // $dto["mobile"] = "";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
-function getTrxDeviceInf() {
+function getTrxDeviceInf()
+{
     $dto = array();
     // 银行预留手机号
     $dto["trx_mobile_num"] = "15556622368";
@@ -116,7 +120,7 @@ function getTrxDeviceInf() {
     // 交易设备GPS
     $dto["trx_device_gps"] = "030147441006000182623";
 
-    return json_encode($dto,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dto, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

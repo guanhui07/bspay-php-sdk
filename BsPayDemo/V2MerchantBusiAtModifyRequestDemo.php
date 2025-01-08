@@ -6,11 +6,12 @@
  * @author sdk-generator
  * @Description
  */
+
 namespace BsPayDemo;
 
 // 1. 资源及配置加载
 require_once dirname(__FILE__) . "/loader.php";
-require_once  dirname(__FILE__). "/../BsPaySdk/request/V2MerchantBusiAtModifyRequest.php";
+require_once dirname(__FILE__) . "/../BsPaySdk/request/V2MerchantBusiAtModifyRequest.php";
 
 use BsPaySdk\core\BsPayClient;
 use BsPaySdk\request\V2MerchantBusiAtModifyRequest;
@@ -18,7 +19,7 @@ use BsPaySdk\request\V2MerchantBusiAtModifyRequest;
 // 2.组装请求参数
 $request = new V2MerchantBusiAtModifyRequest();
 // 请求流水号
-$request->setReqSeqId(date("YmdHis").mt_rand());
+$request->setReqSeqId(date("YmdHis") . mt_rand());
 // 请求日期
 $request->setReqDate(date("Ymd"));
 // AT信息修改列表
@@ -32,7 +33,7 @@ $request->setExtendInfo($extendInfoMap);
 $client = new BsPayClient();
 $result = $client->postRequest($request);
 if (!$result || $result->isError()) {  //失败处理
-    var_dump($result -> getErrorInfo());
+    var_dump($result->getErrorInfo());
 } else {    //成功处理
     var_dump($result);
 }
@@ -41,17 +42,19 @@ if (!$result || $result->isError()) {  //失败处理
  * 非必填字段
  *
  */
-function getExtendInfos() {
+function getExtendInfos()
+{
     // 设置非必填字段
     $extendInfoMap = array();
     // 业务开通结果异步消息接收地址
-    $extendInfoMap["busi_async_return_url"]= "http://service.example.com/to/path";
+    $extendInfoMap["busi_async_return_url"] = "http://service.example.com/to/path";
     // 支付成功页商户LOGO图片
     // $extendInfoMap["ali_mer_logo"]= "";
     return $extendInfoMap;
 }
 
-function getAtRegList() {
+function getAtRegList()
+{
     $dto = array();
     // 商户汇付ID
     $dto["huifu_id"] = "6666000***456098";
@@ -108,7 +111,7 @@ function getAtRegList() {
 
     $dtoList = array();
     array_push($dtoList, $dto);
-    return json_encode($dtoList,JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
+    return json_encode($dtoList, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 }
 
 

@@ -62,104 +62,129 @@ class V3QuickbuckleApplyRequest extends BaseRequest
      */
     private $protocolNo;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V3_QUICKBUCKLE_APPLY;
     }
 
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOutCustId() {
+    public function getOutCustId()
+    {
         return $this->outCustId;
     }
 
-    public function setOutCustId($outCustId) {
+    public function setOutCustId($outCustId)
+    {
         $this->outCustId = $outCustId;
     }
 
-    public function getCardNo() {
+    public function getCardNo()
+    {
         return $this->cardNo;
     }
 
-    public function setCardNo($cardNo) {
+    public function setCardNo($cardNo)
+    {
         $this->cardNo = $cardNo;
     }
 
-    public function getCardName() {
+    public function getCardName()
+    {
         return $this->cardName;
     }
 
-    public function setCardName($cardName) {
+    public function setCardName($cardName)
+    {
         $this->cardName = $cardName;
     }
 
-    public function getCertNo() {
+    public function getCertNo()
+    {
         return $this->certNo;
     }
 
-    public function setCertNo($certNo) {
+    public function setCertNo($certNo)
+    {
         $this->certNo = $certNo;
     }
 
-    public function getCertValidityType() {
+    public function getCertValidityType()
+    {
         return $this->certValidityType;
     }
 
-    public function setCertValidityType($certValidityType) {
+    public function setCertValidityType($certValidityType)
+    {
         $this->certValidityType = $certValidityType;
     }
 
-    public function getCertBeginDate() {
+    public function getCertBeginDate()
+    {
         return $this->certBeginDate;
     }
 
-    public function setCertBeginDate($certBeginDate) {
+    public function setCertBeginDate($certBeginDate)
+    {
         $this->certBeginDate = $certBeginDate;
     }
 
-    public function getCertEndDate() {
+    public function getCertEndDate()
+    {
         return $this->certEndDate;
     }
 
-    public function setCertEndDate($certEndDate) {
+    public function setCertEndDate($certEndDate)
+    {
         $this->certEndDate = $certEndDate;
     }
 
-    public function getMobileNo() {
+    public function getMobileNo()
+    {
         return $this->mobileNo;
     }
 
-    public function setMobileNo($mobileNo) {
+    public function setMobileNo($mobileNo)
+    {
         $this->mobileNo = $mobileNo;
     }
 
-    public function getProtocolNo() {
+    public function getProtocolNo()
+    {
         return $this->protocolNo;
     }
 
-    public function setProtocolNo($protocolNo) {
+    public function setProtocolNo($protocolNo)
+    {
         $this->protocolNo = $protocolNo;
     }
 

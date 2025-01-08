@@ -30,40 +30,49 @@ class V2MerchantElecCardBindRequest extends BaseRequest
      */
     private $elecCardInfo;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_MERCHANT_ELEC_CARD_BIND;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getElecCardInfo() {
+    public function getElecCardInfo()
+    {
         return $this->elecCardInfo;
     }
 
-    public function setElecCardInfo($elecCardInfo) {
+    public function setElecCardInfo($elecCardInfo)
+    {
         $this->elecCardInfo = $elecCardInfo;
     }
 

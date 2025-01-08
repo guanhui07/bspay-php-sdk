@@ -26,32 +26,39 @@ class V2TradeTransSplitQueryRequest extends BaseRequest
      */
     private $ordType;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_TRANS_SPLIT_QUERY;
     }
 
 
-    public function getHfSeqId() {
+    public function getHfSeqId()
+    {
         return $this->hfSeqId;
     }
 
-    public function setHfSeqId($hfSeqId) {
+    public function setHfSeqId($hfSeqId)
+    {
         $this->hfSeqId = $hfSeqId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getOrdType() {
+    public function getOrdType()
+    {
         return $this->ordType;
     }
 
-    public function setOrdType($ordType) {
+    public function setOrdType($ordType)
+    {
         $this->ordType = $ordType;
     }
 

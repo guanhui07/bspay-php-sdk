@@ -26,32 +26,39 @@ class V2TradeCloudmisDeviceInformationMisRequest extends BaseRequest
      */
     private $jsonData;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_TRADE_CLOUDMIS_DEVICE_INFORMATION_MIS;
     }
 
 
-    public function getDeviceId() {
+    public function getDeviceId()
+    {
         return $this->deviceId;
     }
 
-    public function setDeviceId($deviceId) {
+    public function setDeviceId($deviceId)
+    {
         $this->deviceId = $deviceId;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getJsonData() {
+    public function getJsonData()
+    {
         return $this->jsonData;
     }
 
-    public function setJsonData($jsonData) {
+    public function setJsonData($jsonData)
+    {
         $this->jsonData = $jsonData;
     }
 

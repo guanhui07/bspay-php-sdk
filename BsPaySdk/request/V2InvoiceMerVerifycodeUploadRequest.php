@@ -38,56 +38,69 @@ class V2InvoiceMerVerifycodeUploadRequest extends BaseRequest
      */
     private $verifyCode;
 
-    public function getFunctionCode() {
+    public function getFunctionCode()
+    {
         return FunctionCodeEnum::$V2_INVOICE_MER_VERIFYCODE_UPLOAD;
     }
 
 
-    public function getReqSeqId() {
+    public function getReqSeqId()
+    {
         return $this->reqSeqId;
     }
 
-    public function setReqSeqId($reqSeqId) {
+    public function setReqSeqId($reqSeqId)
+    {
         $this->reqSeqId = $reqSeqId;
     }
 
-    public function getReqDate() {
+    public function getReqDate()
+    {
         return $this->reqDate;
     }
 
-    public function setReqDate($reqDate) {
+    public function setReqDate($reqDate)
+    {
         $this->reqDate = $reqDate;
     }
 
-    public function getHuifuId() {
+    public function getHuifuId()
+    {
         return $this->huifuId;
     }
 
-    public function setHuifuId($huifuId) {
+    public function setHuifuId($huifuId)
+    {
         $this->huifuId = $huifuId;
     }
 
-    public function getVerifyType() {
+    public function getVerifyType()
+    {
         return $this->verifyType;
     }
 
-    public function setVerifyType($verifyType) {
+    public function setVerifyType($verifyType)
+    {
         $this->verifyType = $verifyType;
     }
 
-    public function getSerialNum() {
+    public function getSerialNum()
+    {
         return $this->serialNum;
     }
 
-    public function setSerialNum($serialNum) {
+    public function setSerialNum($serialNum)
+    {
         $this->serialNum = $serialNum;
     }
 
-    public function getVerifyCode() {
+    public function getVerifyCode()
+    {
         return $this->verifyCode;
     }
 
-    public function setVerifyCode($verifyCode) {
+    public function setVerifyCode($verifyCode)
+    {
         $this->verifyCode = $verifyCode;
     }
 
