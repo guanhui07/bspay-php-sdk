@@ -38,40 +38,17 @@ PHP 版本 5.6 及以上
 ```
 composer require guanhui07/dg-php-sdk
 ```
-
-2 . 文件拷贝
-
-```
-    2.1 从对应包中查找BsPayConfig.json 和 BsPayConfig.php 文件并拷贝到项目对应配置文件目录下，如 /config/
-    
-    2.2 需要确保放置路径和 composer.json 的 autoload配置路径一致
-```
-
-3 .  composer 配置自动加载项；路径参考应用根目录下 composer.json 文件，添加如下 autoload 配置：
-```
-    "autoload": {
-        ......
-        "files": ["config/BsPayConfig.php","vendor/huifurepo/dg-php-sdk/BsPaySdk/init.php"],
-        "classmap": ["vendor/huifurepo/dg-php-sdk/BsPaySdk"]
-    },
-
-```
-
-4 .  执行命令，使配置生效
+执行命令，使配置生效
 ```
 composer dumpautoload
 ```
 
 ```php
-if (!defined("DEBUG")) {
-    define("DEBUG", true);
-}
-
 # init方法，从 config.json 加载系统参数
 BsPay::init(__DIR__ .'/BsPayConfig.json', false);
 
 ```
-5 .  引用方法；以 V2MerchantActivityAddRequest 为例，使用 composer 方式不需要重复使用 require_once 资源，
+引用方法；以 V2MerchantActivityAddRequest 为例，使用 composer 方式不需要重复使用 require_once 资源，
 直接使用命名空间方式引入即可；
 
 ```php
@@ -112,31 +89,7 @@ BsPay::init(__DIR__ .'/BsPayConfig.json', false);
     }
 ```
 
-# 使用方法
 
-### 1. 将 **BsPaySdk** 目录下文件内容整体复制到您的项目工程内
-
-### 2. 在您的项目创建 SDK 初始化的入口文件，完成如下配置：
-
-#### 2.1 进行相关环境及调试参数的配置
-
-   ```php
-    # 设置是否调试模式，不配置默认关闭：false
-    define("DEBUG", true);
-    
-    # 设置调试日志路径，不配置默认为SDK同级的log目录下
-    define("LOG", dirname(__FILE__)."/log");
-    
-    # 设置生产模式，不配置默认生产模式：true，设置为 false 时调用联调测试环境
-    define("PROD_MODE", true);
-   ```
-
-#### 2.2 完成 sdk 初始化
-
-   ```php
-    # 加载 SDK 初始化文件
-    require_once  dirname(__FILE__). "/../BsPaySdk/init.php";
-   ```
 
 #### 2.3 完成系统参数的导入
 
