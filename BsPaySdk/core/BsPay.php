@@ -23,7 +23,7 @@ class BsPay extends BsPayRequestV2
     private static $merConfigMap = array();
 
     /**
-     * @param $config_info array
+     * @param $config_info object|string json_file_path
      * @param $is_object bool
      * @param $merchantKey string
      * @param $isDebug bool
