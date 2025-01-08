@@ -3,8 +3,9 @@ namespace BsPaySdk;
 
 require_once  __DIR__ . "/BsPaySdk/init.php";
 
+$sdk_ver = 'php#v2.0.14';
 $rootDir = opendir(__DIR__);
-$packageName = "php_sdk_" . substr_replace(SDK_VERSION, "", 0, 4) . "_" . date("Ymd");
+$packageName = "php_sdk_" . substr_replace($sdk_ver, "", 0, 4) . "_" . date("Ymd");
 $build = __DIR__ . "/" . $packageName;
 
 if (is_dir($build)) {

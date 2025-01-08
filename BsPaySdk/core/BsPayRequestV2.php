@@ -127,7 +127,7 @@ class BsPayRequestV2
             $headers = array('Content-type: application/x-www-form-urlencoded');
         }
 
-        $headers[] = 'sdk_version:' . SDK_VERSION;
+        $headers[] = 'sdk_version:' . SDK_VERSION_BSPAY;
         $headers[] = 'charset:UTF-8';
         return $headers;
     }
