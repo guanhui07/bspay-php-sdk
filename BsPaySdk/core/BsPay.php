@@ -33,33 +33,21 @@ class BsPay extends BsPayRequestV2
     {
 
         if (empty($config_info)) {
-            try {
-                throw new Exception('缺少SDK配置信息');
-            } catch (Exception $e) {
-                echo $e->getMessage();
-            }
+            throw new Exception('缺少SDK配置信息');
         }
 
         if ($is_object) {
             $config_obj = $config_info;
         } else {
             if (!file_exists($config_info)) {
-                try {
-                    throw new Exception('SDK配置文件不存在');
-                } catch (Exception $e) {
-                    echo $e->getMessage();
-                }
+                throw new Exception('缺少SDK配置信息');
             }
             $cfg_file_str = file_get_contents($config_info);
             $config_obj = json_decode($cfg_file_str, true);
 
             // 处理 json 文件格式异常
             if (!$config_obj) {
-                try {
-                    throw new Exception('SDK配置文件格式异常');
-                } catch (Exception $e) {
-                    echo $e->getMessage();
-                }
+                throw new Exception('SDK配置文件格式异常');
             }
         }
 
