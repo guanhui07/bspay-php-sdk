@@ -11,7 +11,9 @@ if (is_dir($build)) {
     del_tree($build);
     unlink($packageName.".zip");
 }
-mkdir($build, 0777, true);
+if (!mkdir($build, 0777, true) && !is_dir($build)) {
+    throw new \RuntimeException(sprintf('Directory "%s" was not created', $build));
+}
 
 # 将被过滤掉的打包文件
 $filter = array(
@@ -27,7 +29,7 @@ $filter = array(
 # do copy
 while ($file = readdir($rootDir)) {
     // filter
-    if (substr(strtolower($file), 0, 1) == "." || match_name($file, $filter)) {
+    if (substr(strtolower($file), 0, 1) === "." || match_name($file, $filter)) {
         continue;
     }
 
@@ -40,7 +42,7 @@ while ($file = readdir($rootDir)) {
 }
 
 # do zip(只在mac系统下执行，其他操作系统保留build目录自行手动处理)
-if (PHP_OS == "Darwin") {
+if (PHP_OS === "Darwin") {
     $shell = "zip -q -r $packageName.zip ./$packageName";
     echo $shell;
     system($shell, $status);
@@ -61,10 +63,12 @@ if (PHP_OS == "Darwin") {
 function full_copy($source, $target, $filter=null)
 {
     if (is_dir($source)) {
-        mkdir($target);
+        if (!mkdir($target) && !is_dir($target)) {
+            throw new \RuntimeException(sprintf('Directory "%s" was not created', $target));
+        }
         $d = dir($source);
         while (FALSE !== ($entry = $d->read())) {
-            if ($entry == '.' || $entry == '..' || match_name($entry, $filter)) {
+            if ($entry === '.' || $entry === '..' || match_name($entry, $filter)) {
                 continue;
             }
             $Entry = $source . '/' . $entry;
