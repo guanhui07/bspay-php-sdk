@@ -44,8 +44,8 @@ composer dumpautoload
 BsPay::init( '/path/to/BsPayConfig.json', false);
 
 ```
-引用方法；以 V2MerchantActivityAddRequest 为例，使用 composer 方式不需要重复使用 require_once 资源，
-直接使用命名空间方式引入即可；
+
+## usage 
 
 ```php
     use BsPaySdk\core\BsPayClient;
