@@ -59,6 +59,13 @@ class BsPayRequestV2
         # 执行网络请求
         $resultString = curl_exec($ch);
 
+        $log = [
+          'headers' => $this->createHeaders($merConfig,$headers),
+          'body' => $body,
+          'url' => $url,
+        ];
+        //print_r($log); 
+        
         # 处理系统的报错
         if (curl_errno($ch)) {
             $this->error = curl_error($ch);
