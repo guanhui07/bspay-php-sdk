@@ -61,40 +61,46 @@ BsPay::init( '/path/to/BsPayConfig.json', false);
 
 ```php
     use BsPaySdk\core\BsPayClient;
-    use BsPaySdk\request\V2MerchantActivityAddRequest;
+    use BsPaySdk\request\V2TradePaymentJspayRequest;
 
-    $request = new V2MerchantActivityAddRequest();
-    // 请求日期
-    $request->setReqDate(date("Ymd"));
-    // 请求流水号
-    $request->setReqSeqId(date("YmdHis").mt_rand());
-    // 汇付客户Id
-    $request->setHuifuId("6666000103627938");
-    // 营业执照图片
-    $request->setBlPhoto("42204258-967e-373c-88d2-1afa4c7bb8ef");
-    // 店内环境图片
-    $request->setDhPhoto("42204258-967e-373c-88d2-1afa4c7bb8ef");
-    // 手续费类型
-    $request->setFeeType("7");
-    // 整体门面图片（门头照）
-    $request->setMmPhoto("42204258-967e-373c-88d2-1afa4c7bb8ef");
-    // 收银台照片
-    $request->setSytPhoto("42204258-967e-373c-88d2-1afa4c7bb8ef");
-    // 支付通道
-    $request->setPayWay("W");
+        $requestParams = new V2TradePaymentJspayRequest();
+        // 请求日期
+        $requestParams->setReqDate(date("Ymd"));
+        // 请求流水号
+//        $requestParams->setReqSeqId(date("YmdHis") . mt_rand());
+        $requestParams->setReqSeqId($orderNo);
+        // 商户号
+        $requestParams->setHuifuId(self::HUIFU_ID);
+        // 商品描述
+        $requestParams->setGoodsDesc($title);
+        // 交易类型 	T_JSAPI: 微信公众号
+        //T_MINIAPP: 微信小程序
+        //A_JSAPI: 支付宝JS
+        //A_NATIVE: 支付宝正扫
+        //U_NATIVE: 银联正扫
+        //U_JSAPI: 银联JS
+        //D_NATIVE: 数字人民币正扫
+        //T_H5：微信直连H5支付
+        //T_APP：微信APP支付
+        //T_NATIVE：微信正扫
+        $requestParams->setTradeType($tradeType);
+        // 交易金额 单位元
+        $requestParams->setTransAmt((string)$amount);
 
-    // 设置非必填字段
-    $extendInfoMap = [];
-    $request->setExtendInfo($extendInfoMap);
+        // 设置非必填字段
+        $extendInfoMap = $this->getExtendInfos();
+        $requestParams->setExtendInfo($extendInfoMap);
 
-    // 3. 发起API调用
-    $client = new BsPayClient();
-    $result = $client->postRequest($request);
-    if (!$result || $result->isError()) {  //失败处理
-        var_dump($result -> getErrorInfo());
-    } else {    //成功处理
-        var_dump($result);
-    }
+        $client = new BsPayClient();
+        $result = $client->postRequest($requestParams);
+        if (!$result || $result->isError()) {  //失败处理
+            var_dump($result->getErrorInfo());
+            throw new CoreException('支付发起失败');
+        }
+
+        //成功处理
+        $result = $result->getReqDatas();
+
 ```
 
 
