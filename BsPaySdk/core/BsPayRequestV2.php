@@ -15,6 +15,9 @@ class BsPayRequestV2
     # 应答数据
     private $rspDatas;
 
+    // 请求载体
+    private $log;
+
     # 请求报错
     private $error = null;
 
