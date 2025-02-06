@@ -214,4 +214,21 @@ class BsPayRequestV2
     {
         return $this->error != null;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getLog()
+    {
+        return $this->log;
+    }
+
+    /**
+     * @param mixed $log
+     */
+    public function setLog($log)
+    {
+        $this->log = $log;
+    }
+
 }
