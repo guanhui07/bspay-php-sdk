@@ -16,7 +16,7 @@ class BsPayRequestV2
     private $rspDatas;
 
     // 请求载体
-    private $log;
+    public $log;
 
     # 请求报错
     private $error = null;
@@ -55,7 +55,8 @@ class BsPayRequestV2
         }
 
         # 拼装请求头
-        $this->httpHeaders = $this->createHeaders($merConfig,$headers);
+        $allHeaders = $this->createHeaders($merConfig, $headers);
+        $this->httpHeaders = $allHeaders;
         BsPay::writeLog("curl请求头:" . json_encode($this->httpHeaders, JSON_UNESCAPED_UNICODE));
         curl_setopt($ch, CURLOPT_HTTPHEADER, $this->httpHeaders);
 
@@ -63,10 +64,11 @@ class BsPayRequestV2
         $resultString = curl_exec($ch);
 
         $log = [
-          'headers' => $this->createHeaders($merConfig,$headers),
+          'headers' => $allHeaders,
           'body' => $body,
           'url' => $url,
         ];
+        $this->log = $log;
         //print_r($log); 
         
         # 处理系统的报错
