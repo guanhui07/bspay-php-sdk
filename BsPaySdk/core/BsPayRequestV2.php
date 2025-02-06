@@ -87,7 +87,12 @@ class BsPayRequestV2
         # 关闭本次会话
         curl_close($ch);
 
-        $this->rspDatas = json_decode($resultString, true);
+        $resultData = json_decode($resultString, true);
+        $this->rspDatas = $resultData;
+
+        $log['response'] = $resultData;
+        $this->log = $log;
+
         BsPay::writeLog("curl返回参数:" . $this->httpStateCode . " " . $resultString);
         $resp_sign = isset($this->rspDatas['sign']) ? $this->rspDatas['sign'] : '';
 
