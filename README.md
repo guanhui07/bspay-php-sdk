@@ -36,6 +36,16 @@
 ```
 composer require guanhui07/dg-php-sdk:dev-master
 ```
+
+composer 配置自动加载项；路径参考应用根目录下 composer.json 文件，添加如下 autoload 配置：
+```
+    "autoload": {
+        ......
+        "classmap": ["vendor/guanhui07/dg-php-sdk/BsPaySdk"]
+    },
+
+```
+
 执行命令，使配置生效
 ```
 composer dumpautoload

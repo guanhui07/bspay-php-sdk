@@ -17,73 +17,71 @@ README.md   # 使用说明
 1 .  composer 安装  guanhui07/dg-php-sdk
 
 ```
-composer require guanhui07/dg-php-sdk
+composer require guanhui07/dg-php-sdk:dev-master
 ```
 
-2 . 文件拷贝
 
-```
-    2.1 从对应包中查找BsPayConfig.json 和 BsPayConfig.php 文件并拷贝到项目对应配置文件目录下，如 /config/
-    
-    2.2 需要确保放置路径和 composer.json 的 autoload配置路径一致
-```
 
-3 .  composer 配置自动加载项；路径参考应用根目录下 composer.json 文件，添加如下 autoload 配置：
+2 .  composer 配置自动加载项；路径参考应用根目录下 composer.json 文件，添加如下 autoload 配置：
 ```
     "autoload": {
         ......
-        "files": ["config/BsPayConfig.php","vendor/huifurepo/dg-php-sdk/BsPaySdk/init.php"],
-        "classmap": ["vendor/huifurepo/dg-php-sdk/BsPaySdk"]
+        "classmap": ["vendor/guanhui07/dg-php-sdk/BsPaySdk"]
     },
 
 ```
 
-4 .  执行命令，使配置生效
+3 .  执行命令，使配置生效
 ```
 composer dumpautoload
 ```
 
-5 .  引用方法；以 V2MerchantActivityAddRequest 为例，使用 composer 方式不需要重复使用 require_once 资源，
+4 .  引用方法；以 V2MerchantActivityAddRequest 为例，使用 composer 方式不需要重复使用 require_once 资源，
 直接使用命名空间方式引入即可；
 
 ```php
-    use BsPaySdk\core\BsPayClient;
-    use BsPaySdk\request\V2MerchantActivityAddRequest;
+      use BsPaySdk\core\BsPayClient;
+      use BsPaySdk\request\V2TradePaymentJspayRequest;
 
-    $request = new V2MerchantActivityAddRequest();
-    // 请求日期
-    $request->setReqDate(date("Ymd"));
-    // 请求流水号
-    $request->setReqSeqId(date("YmdHis").mt_rand());
-    // 汇付客户Id
-    $request->setHuifuId("6666000103627938");
-    // 营业执照图片
-    $request->setBlPhoto("42204258-967e-373c-88d2-1afa4c7bb8ef");
-    // 店内环境图片
-    $request->setDhPhoto("42204258-967e-373c-88d2-1afa4c7bb8ef");
-    // 手续费类型
-    $request->setFeeType("7");
-    // 整体门面图片（门头照）
-    $request->setMmPhoto("42204258-967e-373c-88d2-1afa4c7bb8ef");
-    // 收银台照片
-    $request->setSytPhoto("42204258-967e-373c-88d2-1afa4c7bb8ef");
-    // 支付通道
-    $request->setPayWay("W");
+        $requestParams = new V2TradePaymentJspayRequest();
+        // 请求日期
+        $requestParams->setReqDate(date("Ymd"));
+        // 请求流水号
+//        $requestParams->setReqSeqId(date("YmdHis") . mt_rand());
+        $requestParams->setReqSeqId($orderNo);
+        // 商户号
+        $requestParams->setHuifuId(self::HUIFU_ID);
+        // 商品描述
+        $requestParams->setGoodsDesc($title);
+        // 交易类型 	T_JSAPI: 微信公众号
+        //T_MINIAPP: 微信小程序
+        //A_JSAPI: 支付宝JS
+        //A_NATIVE: 支付宝正扫
+        //U_NATIVE: 银联正扫
+        //U_JSAPI: 银联JS
+        //D_NATIVE: 数字人民币正扫
+        //T_H5：微信直连H5支付
+        //T_APP：微信APP支付
+        //T_NATIVE：微信正扫
+        $requestParams->setTradeType($tradeType);
+        // 交易金额 单位元
+        $requestParams->setTransAmt((string)$amount);
 
-    // 设置非必填字段
-    $extendInfoMap = [];
-    $request->setExtendInfo($extendInfoMap);
+        // 设置非必填字段
+        $extendInfoMap = $this->getExtendInfos();
+        $requestParams->setExtendInfo($extendInfoMap);
 
-    // 3. 发起API调用
-    $client = new BsPayClient();
-    $result = $client->postRequest($request);
-    if (!$result || $result->isError()) {  //失败处理
-        var_dump($result -> getErrorInfo());
-    } else {    //成功处理
-        var_dump($result);
-    }
+        $client = new BsPayClient();
+        $result = $client->postRequest($requestParams);
+        if (!$result || $result->isError()) {  //失败处理
+            var_dump($result->getErrorInfo());
+            throw new CoreException('支付发起失败');
+        }
+
+        //成功处理
+        $result = $result->getReqDatas();
 ```
 
 ## 更多方法使用
     
-    请参考对应 demo，使用 composer 方式配置自动加载后，引入方法不需要重复 require_once 资源，直接使用命名空间方式引入即可；
+    请参考对应 demo
