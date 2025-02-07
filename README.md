@@ -109,7 +109,7 @@ BsPay::init( '/path/to/BsPayConfig.json', false);
         }
 
         //成功处理
-        $result = $result->getReqDatas();
+        $result = $resultObj->getRspDatas();
 
 ```
 
