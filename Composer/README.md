@@ -80,7 +80,6 @@ composer dumpautoload
 
         //成功处理
         $result = $resultObj->getRspDatas();
-        $requestLog = $resultObj->getLog();
 ```
 
 ## 更多方法使用
