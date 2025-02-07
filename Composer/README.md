@@ -40,46 +40,46 @@ composer dumpautoload
 直接使用命名空间方式引入即可；
 
 ```php
-      use BsPaySdk\core\BsPayClient;
-      use BsPaySdk\request\V2TradePaymentJspayRequest;
+    use BsPaySdk\core\BsPayClient;
+    use BsPaySdk\request\V2TradePaymentJspayRequest;
 
-        $requestParams = new V2TradePaymentJspayRequest();
-        // 请求日期
-        $requestParams->setReqDate(date("Ymd"));
-        // 请求流水号
+    $requestParams = new V2TradePaymentJspayRequest();
+    // 请求日期
+    $requestParams->setReqDate(date("Ymd"));
+    // 请求流水号
 //        $requestParams->setReqSeqId(date("YmdHis") . mt_rand());
-        $requestParams->setReqSeqId($orderNo);
-        // 商户号
-        $requestParams->setHuifuId(self::HUIFU_ID);
-        // 商品描述
-        $requestParams->setGoodsDesc($title);
-        // 交易类型 	T_JSAPI: 微信公众号
-        //T_MINIAPP: 微信小程序
-        //A_JSAPI: 支付宝JS
-        //A_NATIVE: 支付宝正扫
-        //U_NATIVE: 银联正扫
-        //U_JSAPI: 银联JS
-        //D_NATIVE: 数字人民币正扫
-        //T_H5：微信直连H5支付
-        //T_APP：微信APP支付
-        //T_NATIVE：微信正扫
-        $requestParams->setTradeType($tradeType);
-        // 交易金额 单位元
-        $requestParams->setTransAmt((string)$amount);
+    $requestParams->setReqSeqId($orderNo);
+    // 商户号
+    $requestParams->setHuifuId(self::HUIFU_ID);
+    // 商品描述
+    $requestParams->setGoodsDesc($title);
+    // 交易类型 	T_JSAPI: 微信公众号
+    //T_MINIAPP: 微信小程序
+    //A_JSAPI: 支付宝JS
+    //A_NATIVE: 支付宝正扫
+    //U_NATIVE: 银联正扫
+    //U_JSAPI: 银联JS
+    //D_NATIVE: 数字人民币正扫
+    //T_H5：微信直连H5支付
+    //T_APP：微信APP支付
+    //T_NATIVE：微信正扫
+    $requestParams->setTradeType($tradeType);
+    // 交易金额 单位元
+    $requestParams->setTransAmt((string)$amount);
 
-        // 设置非必填字段
-        $extendInfoMap = $this->getExtendInfos();
-        $requestParams->setExtendInfo($extendInfoMap);
+    // 设置非必填字段
+    $extendInfoMap = $this->getExtendInfos();
+    $requestParams->setExtendInfo($extendInfoMap);
 
-        $client = new BsPayClient();
-        $result = $client->postRequest($requestParams);
-        if (!$result || $result->isError()) {  //失败处理
-            var_dump($result->getErrorInfo());
-            throw new CoreException('支付发起失败');
-        }
+    $client = new BsPayClient();
+    $result = $client->postRequest($requestParams);
+    if (!$result || $result->isError()) {  //失败处理
+        var_dump($result->getErrorInfo());
+        throw new CoreException('支付发起失败');
+    }
 
-        //成功处理
-        $result = $resultObj->getRspDatas();
+    //成功处理
+    $result = $resultObj->getRspDatas();
 ```
 
 ## 更多方法使用
