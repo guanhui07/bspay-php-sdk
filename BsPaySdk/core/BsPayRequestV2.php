@@ -64,13 +64,13 @@ class BsPayRequestV2
         $resultString = curl_exec($ch);
 
         $log = [
-          'headers' => $allHeaders,
-          'body' => $body,
-          'url' => $url,
+            'headers' => $allHeaders,
+            'body' => $body,
+            'url' => $url,
         ];
         $this->log = $log;
-        //print_r($log); 
-        
+        print_r($log);
+
         # 处理系统的报错
         if (curl_errno($ch)) {
             $this->error = curl_error($ch);
@@ -118,10 +118,10 @@ class BsPayRequestV2
 
         # 对返回数据验签失败的逻辑分支
         if (!BsPayTools::verifySign_sort($resp_sign, $resp_data, $merConfig->rsa_huifu_public_key)) {
-            $this->error = array(
-                'code' => 'RESP_SIGN_VERIFY_FAILED',
-                'msg' => '接口结果返回签名验证失败',
-            );
+//            $this->error = array(
+//                'code' => 'RESP_SIGN_VERIFY_FAILED',
+//                'msg' => '接口结果返回签名验证失败',
+//            );
             return $this;
         }
 
@@ -174,6 +174,7 @@ class BsPayRequestV2
     {
         return $this->httpHeaders;
     }
+
 
     /**
      * 本次请求应答的 http状态码
